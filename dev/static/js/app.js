@@ -87,7 +87,9 @@
 		fade: true,
 		arrows: false,
 		asNavFor: '.review__users',
-		cssEase: 'linear'
+		cssEase: 'linear',
+		autoplay: true,
+		autoplaySpeed: 7000
 	});
 
 	$('.review__users').slick({

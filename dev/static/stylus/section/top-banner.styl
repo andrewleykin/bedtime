@@ -2,6 +2,11 @@
   background url('../img/content/top-banner/bg.jpg') center no-repeat
   // background-color #12233E
   background-size cover
+  .container
+    height 100vh
+    display flex
+    flex-direction column
+    justify-content center
 
 .top-banner__wrap
   max-width 1033px
@@ -45,6 +50,7 @@
 .tbt__slider
   display flex
   position relative
+  margin-top -5px
 
 .tbt__wrap
   display flex
@@ -52,12 +58,8 @@
   padding 5px 0
 
 .tbt__arrows
-  margin-left 10px
-  // первый вариант, если делать статичные стрелки
   position absolute
-  right 50px
-  // второй вариант, если делать стрелки около каждого слова
-  // transform translateY(-5px)
+  left -25px
 
 .tbt__arrow
   width 14px
