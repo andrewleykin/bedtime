@@ -1,0 +1,73 @@
+.top-banner
+  background url('../img/content/top-banner/bg.jpg') center no-repeat
+  // background-color #12233E
+  background-size cover
+
+.top-banner__wrap
+  max-width 1033px
+  width 100%
+  margin 0 auto
+  display flex
+  align-items center
+  justify-content space-between
+  padding-top 80px
+
+.top-banner__info
+  width 100%
+  max-width 400px
+
+.top-banner__title
+  margin-bottom 35px
+  font-family font-montserrat
+  font-size 48px
+  font-weight 700
+  color #fff
+
+.top-banner__descr
+  color #ffffff
+  font-family font-lora
+  font-size 18px
+  font-style italic
+  font-weight 400
+  line-height 30px
+  margin-bottom 55px
+  max-width 300px
+
+.top-banner__btn
+  &.btn
+    width 300px
+    height 60px
+
+.top-banner__img
+  flex none
+  margin-left 10px
+
+.tbt__slider
+  display flex
+  position relative
+
+.tbt__wrap
+  display flex
+  color kournikova
+  padding 5px 0
+
+.tbt__arrows
+  margin-left 10px
+  // первый вариант, если делать статичные стрелки
+  position absolute
+  right 50px
+  // второй вариант, если делать стрелки около каждого слова
+  // transform translateY(-5px)
+
+.tbt__arrow
+  width 14px
+  height 14px
+  cursor pointer
+  .icon
+    width 14px
+    height 14px
+    fill kournikova
+    @extend .trs
+  &:hover
+    .icon
+      opacity 0.8

@@ -1,0 +1,21 @@
+section.section.top-banner(id=content.topBanner.id)
+  .container
+    .top-banner__wrap
+      .top-banner__info
+        h1.top-banner__title.tbt
+          span.tbt__title= content.topBanner.title
+          .tbt__slider
+            .tbt__list
+              each item in content.topBanner.slider
+                .tbt__item
+                  .tbt__wrap
+                    span.tbt__text= item["text"]
+            .tbt__arrows
+              .tbt__arrow.tbt__arrow--prev
+                +icon(content.topBanner.arrows.up)
+              .tbt__arrow.tbt__arrow--next
+                +icon(content.topBanner.arrows.down)
+        p.top-banner__descr= content.topBanner.descr
+        a.top-banner__btn.btn.btn--big(href=content.general.btn.order.modal)= content.topBanner.btn
+      .top-banner__img
+        img(src=content.topBanner.img.src, alt=content.topBanner.img.alt)

@@ -1,0 +1,39 @@
+section.section.info(id=content.info.id)
+  .container
+    .info__wrap
+      .info__promo 
+        .info__age
+          each item in content.info.age
+            .info__age-tab= item["text"]
+        each item in content.info.age
+          .info__age-block
+            .info__language
+              each lang in item["language"]
+                .info__language-tab= lang["text"]
+            .info__language-block
+              each lang in item["language"]
+                .info__content
+                  p= lang["content"]["text"]["1"]
+                  p= lang["content"]["text"]["2"]
+                  ul
+                    each listItem in lang["content"]["list"]
+                      li= listItem["text"]
+                  p= lang["content"]["text"]["3"]
+        .info__action
+          a.btn.btn--big(href=content.general.btn.order.modal)= content.info.btn
+      .info__review
+        .info__block
+          .info__review-triangle
+            +icon(content.info.review.triangle)
+          .info__review-icon
+            +icon(content.info.review.icon)
+          p.info__review-text Язык — это часть сознания, он часть тебя. Поэтому так сложно выучить язык по учебникам: учебник можно выучить, а&nbsp;прожить&nbsp;—&nbsp;никак.
+          p.info__review-text= content.info.review.text["2"]
+          p.info__review-text.hide= content.info.review.text["3"]
+          .info__review-more= content.info.review.more
+        .info__author
+          .info__author-info
+            span.info__author-name= content.info.review.author
+            span.info__author-post= content.info.review.post
+          .info__author-pic
+            img(src=content.info.review.pic.src alt=content.info.review.pic.alt)

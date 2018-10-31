@@ -1,0 +1,37 @@
+section.section.contacts(id=content.contacts.id)
+  .container
+    .contacts__wrap
+      .contacts__teachers
+        h2.contacts__title= content.contacts.title
+        each item in content.contacts.teachers.list
+          .contacts__teacher
+            .contacts__pic
+              img(src=item["src"] alt=item["name"])
+            .contacts__info
+              .contacts__name
+                span= item["name"]
+                a.contacts__link(target="_blank")
+                  +icon(content.contacts.teachers.icon)
+              span.contacts__post= item["post"]
+              .contacts__hide
+                p= item["text"]
+              .contacts__more= content.contacts.teachers.more
+        .contacts__social
+          span.contacts__social-title= content.contacts.social.title
+          ul.contacts__social-list
+            each item in content.contacts.social.list
+              li.contacts__social-item
+                a.contacts__social-link(href=item["href"])
+                  +icon(item["icon"])
+      .contacts__connect
+        h3.contacts__connect-title= content.contacts.form.title
+        span.contacts__connect-subtitle= content.contacts.form.subtitle
+        form.contacts__connect-form.contacts-form.form(action=content.contacts.form.action)
+          each item in content.contacts.form.list
+            .form__group
+              input.form__input(type=item["type"] name=item["name"] id=item["id"] data-name=item["data"])
+              label.form__label(for=item["id"])= item["label"]
+          .form__group.form__group--textarea
+            textarea.form__textarea(id=content.contacts.form.textarea.id name=content.contacts.form.textarea.name placeholder=content.contacts.form.textarea.placeholder)
+          .form__action
+            button.btn.form__btn(type="submit")= content.contacts.form.btn

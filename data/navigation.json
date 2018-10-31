@@ -1,7 +1,20 @@
 {
-  "navPages": {
-    "Главная страница" : "main.html",
-    "О компании" : "about.html",
-    "Каталог" : "catalog.html"
-  }
+  "list": [
+    {
+      "text": "чтение",
+      "href": "#info"
+    },
+    {
+      "text": "отзывы",
+      "href": "#review"
+    },
+    {
+      "text": "архив занятий",
+      "href": "#archive"
+    },
+    {
+      "text": "контакты",
+      "href": "#contacts"
+    }
+  ]
 }

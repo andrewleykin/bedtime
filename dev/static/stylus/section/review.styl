@@ -1,0 +1,84 @@
+.review
+  background bunting 
+  padding-top 200px
+  padding-bottom 120px
+
+.review__wrap
+  width 100%
+  max-width 730px
+  height auto
+  min-height 400px
+  margin 0 auto
+  position relative
+  display flex
+  align-items center
+  justify-content center
+  text-align center
+  padding 0 100px
+  z-index 1
+
+.review__border
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+  z-index -1
+  .icon
+    width 100%
+    height 100%
+    fill rgba(white, .1)
+
+.review__icon
+  position absolute
+  top -18px
+  left 50%
+  transform translateX(-50%)
+  .icon
+    width 40px
+    height 27px
+    fill rgba(white, .5)
+
+.review__content
+  max-width 100%
+  p
+    font-family font-lora
+    font-size 18px
+    line-height 30px
+
+.review__users
+  position absolute
+  left 50%
+  transform translateX(-50%)
+  bottom -35px
+  display flex
+  max-width 220px
+
+.review__user
+  width 40px
+  height 76px
+  opacity .5
+  position relative
+  margin 0 25px
+  cursor pointer
+  &:before
+    content ''
+    display block
+    opacity 0
+    width 76px
+    height 76px
+    border-radius 50%
+    background rgba(white, .1)
+    absolute-center()
+    @extend .trs
+  img
+    border-radius 50%
+    overflow hidden
+    width 100%
+    absolute-center()
+  &.slick-center
+    opacity 1
+    img
+      min-width 70px
+    &:before
+      opacity 1

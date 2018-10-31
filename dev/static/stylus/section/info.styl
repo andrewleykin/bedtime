@@ -1,0 +1,192 @@
+.info
+  background-color bunting
+  background-size cover
+  padding-top 180px
+  padding-bottom 90px
+
+.info__wrap
+  width 100%
+  display flex
+  justify-content space-between
+  max-width 1164px
+  margin 0 auto
+
+.info__promo
+  width 100%
+  max-width 500px
+
+.info__age
+  margin-bottom 40px
+  display flex
+  align-items center
+
+.info__age-tab
+  font-family font-montserrat
+  font-size 24px
+  font-weight 600
+  line-height 32px
+  display block
+  padding 15px 35px
+  cursor pointer
+  border-radius 30px
+  @extend .trs
+  &.active
+    background rgba(bunting, .5)
+
+.info__age-block
+  padding-left 35px
+  display none
+  &.active
+    display block
+
+.info__language
+  display flex
+  align-items center
+  flex-wrap wrap
+  margin 0 -25px 40px
+
+.info__language-tab
+  font-family font-montserrat
+  font-size 18px
+  font-weight 600
+  line-height 32px
+  margin 0 25px
+  cursor pointer
+  &.active
+    color kournikova
+
+.info__content
+  display none
+  &.active
+    display block
+  p
+    font-family font-open
+    font-size 14px
+    line-height 24px
+  p+p
+    margin-top 30px
+  ul
+    margin 20px 0 30px
+    li
+      font-family font-open
+      font-size 14px
+      line-height 24px
+      padding-left 45px
+      position relative
+      &:before
+        content ''
+        display block
+        width 8px
+        height 8px
+        background-color carnation
+        border-radius 50%
+        position absolute
+        top 20px
+        left 20px
+    li+li
+      margin-top 10px
+
+.info__action
+  margin-top 30px
+
+.info__review
+  width 100%
+  max-width 540px
+  margin-left 10px
+
+.info__block
+  padding 65px 60px
+  display flex
+  flex-direction column
+  align-items flex-start
+  background rgba(white, .1)
+  border-radius 24px
+  position relative
+  margin-bottom 45px
+
+.info__review-triangle
+  position absolute
+  right 40px
+  bottom -26px
+  .icon
+    width 105px
+    height 26px
+    fill white
+
+.info__review-icon
+  position absolute
+  top 50px
+  left 40px
+  z-index -1
+  .icon
+    width 70px
+    height 40px
+    fill rgba(#182f4c, .9)
+
+.info__review-text
+  font-family font-lora
+  font-size 18px
+  font-weight 400
+  font-style italic
+  line-height 30px
+  @extend .trs
+  &+&
+    margin-top 25px
+  &.hide
+    height 0
+    overflow hidden
+    margin-top 0
+
+.info__review-more
+  font-family font-open
+  font-size 14px
+  font-weight 700
+  line-height 36px
+  display flex
+  align-items center
+  cursor pointer
+  margin-top 30px
+  &:before
+    content ''
+    display block
+    width 10px
+    height 10px
+    border 2px solid transparent
+    border-top-color carnation 
+    border-right-color carnation
+    border-radius 2px
+    transform rotate(45deg)
+    margin-right 10px
+    @extend .trs
+  &.hide
+    opacity 0
+    visibility hidden
+    height 0
+    margin-top 0
+
+.info__author
+  display flex
+  align-items center
+  justify-content flex-end
+  padding-right 42px
+
+.info__author-info
+  margin-right 40px
+  text-align right
+
+.info__author-name
+  font-family font-montserrat
+  font-size 18px
+  font-weight 600
+  display block
+  margin-bottom 20px
+
+.info__author-post
+  font-family font-lora
+  font-size 18px
+  font-weight 400
+  font-style italic
+
+.info__author-pic
+  border-radius 50%
+  overflow hidden

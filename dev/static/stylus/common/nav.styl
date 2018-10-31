@@ -1,0 +1,24 @@
+.menu__list
+  display flex
+  align-items center
+
+.menu__item
+  &+&
+    margin-left 50px
+  &.active
+    .menu__link
+     color kournikova
+
+.menu__link
+  color #ffffff
+  font-family font-montserrat
+  font-size 12px
+  font-weight 700
+  letter-spacing 0.6px
+  line-height 14px
+  display block
+  padding 5px
+  text-transform uppercase
+  @extend .trs
+  &:hover
+    opacity 0.8

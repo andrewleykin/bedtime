@@ -1,0 +1,34 @@
+.remodal.order(data-remodal-id=content.general.modal.order.id)
+  button.remodal-close.order__close(data-remodal-action='close')
+    +icon(content.modal.icon)
+  form.order__wrap.form(action="#" data-action=content.modal.action data-validation)
+    h2.order__title Записаться на&nbsp;пробное чтение
+    .form__group
+      input.form__input(type=content.modal.email.type name=content.modal.email.name data-name=content.modal.email.data id=content.modal.email.id)
+      label.form__label(for=content.modal.email.id)= content.modal.email.label
+    .form__row
+      .form__col
+        .form__group
+          input.form__input(type=content.modal.name.type name=content.modal.name.name data-name=content.modal.name.data id=content.modal.name.id)
+          label.form__label(for=content.modal.name.id)= content.modal.name.label
+      .form__col
+        .form__group
+          input.form__input(type=content.modal.age.type name=content.modal.age.name data-name=content.modal.age.data id=content.modal.age.id)
+          label.form__label(for=content.modal.age.id)= content.modal.age.label
+    .form__group
+      span.form__sublabel= content.modal.level.sublabel
+      select.form__select(name=content.modal.level.name id=content.modal.level.id)
+        each item in content.modal.level.option
+          option.form__option(value=item["value"])= item["text"]
+    .form__group
+      span.form__sublabel= content.modal.language.sublabel
+      select.form__select(name=content.modal.language.name id=content.modal.language.id)
+        each item in content.modal.language.option
+          option.form__option(value=item["value"])= item["text"]
+    .form__group
+      span.form__sublabel.form__sublabel--other= content.modal.other.sublabel
+      span.form__dont-required= content.modal.other.dontRequired
+      input.form__input(type=content.modal.other.type name=content.modal.other.name id=content.modal.other.id)
+      label.form__label(for=content.modal.other.id)= content.modal.other.label
+    .form__action.form__action--order
+      btn.btn.order__btn(type=content.modal.btn.type)= content.modal.btn.text

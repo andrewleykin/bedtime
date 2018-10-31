@@ -1,0 +1,16 @@
+section.section.review(id=content.review.id)
+  .container
+    .review__wrap
+      .review__border
+        +icon('border')
+      .review__icon
+        +icon(content.review.icon)
+      .review__content
+        each item in content.review.list
+          .review__item
+            each val in item["content"]
+              p= val["text"]
+      .review__users
+        each item in content.review.list
+          .review__user
+            img(src=item["src"], alt=item["alt"])

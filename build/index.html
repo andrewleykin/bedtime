@@ -11,9 +11,418 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
     <body>
       <div class="wrapper">
+        <header class="header">
+          <div class="container">
+            <div class="header__wrap">
+              <div class="header__logo"><a class="logo js-scroll-to" href="#top-banner"><img class="logo__main" src="app/img/general/logo.svg" alt="Bedtime book logo"><img class="logo__fixed hide" src="app/img/general/logo-fixed.svg" alt="Bedtime book logo"></a></div>
+              <div class="header__menu">
+                <nav class="menu">
+                  <ul class="menu__list">
+                    <li class="menu__item"><a class="menu__link js-scroll-to" href="#info">чтение</a></li>
+                    <li class="menu__item"><a class="menu__link js-scroll-to" href="#review">отзывы</a></li>
+                    <li class="menu__item"><a class="menu__link js-scroll-to" href="#archive">архив занятий</a></li>
+                    <li class="menu__item"><a class="menu__link js-scroll-to" href="#contacts">контакты</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="header__action"><a class="btn btn--border" href="#order">записаться</a></div>
+            </div>
+          </div>
+        </header>
+        <main class="main">
+          <section class="section top-banner" id="top-banner">
+            <div class="container">
+              <div class="top-banner__wrap">
+                <div class="top-banner__info">
+                  <h1 class="top-banner__title tbt"><span class="tbt__title">Ежедневная практика</span>
+                    <div class="tbt__slider">
+                      <div class="tbt__list">
+                        <div class="tbt__item">
+                          <div class="tbt__wrap"><span class="tbt__text">английского</span></div>
+                        </div>
+                        <div class="tbt__item">
+                          <div class="tbt__wrap"><span class="tbt__text">французского</span></div>
+                        </div>
+                        <div class="tbt__item">
+                          <div class="tbt__wrap"><span class="tbt__text">русского</span></div>
+                        </div>
+                      </div>
+                      <div class="tbt__arrows">
+                        <div class="tbt__arrow tbt__arrow--prev">
+                          <svg class="icon icon-word-slider-arrow-up ">
+                            <use xlink:href="app/img/svg/symbol/sprite.svg#word-slider-arrow-up"></use>
+                          </svg>
+                        </div>
+                        <div class="tbt__arrow tbt__arrow--next">
+                          <svg class="icon icon-word-slider-arrow-down ">
+                            <use xlink:href="app/img/svg/symbol/sprite.svg#word-slider-arrow-down"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </h1>
+                  <p class="top-banner__descr">Онлайн-чтения для тех, кто живет вне языковой среды</p><a class="top-banner__btn btn btn--big" href="#order">записаться на пробные чтения</a>
+                </div>
+                <div class="top-banner__img"><img src="app/img/content/top-banner/img.png" alt="top bannner img"></div>
+              </div>
+            </div>
+          </section>
+          <section class="section info" id="info">
+            <div class="container">
+              <div class="info__wrap">
+                <div class="info__promo"> 
+                  <div class="info__age">
+                    <div class="info__age-tab">Для взрослых</div>
+                    <div class="info__age-tab">Для детей</div>
+                  </div>
+                  <div class="info__age-block">
+                    <div class="info__language">
+                      <div class="info__language-tab">Английский</div>
+                      <div class="info__language-tab">Русский</div>
+                    </div>
+                    <div class="info__language-block">
+                      <div class="info__content">
+                        <p>Слишком сложно читать неадаптированную литературу? С нами намного легче! Мы встречаемся онлайн, ведущий читает текст, который виден на экране, параллельно мы разбираем незнакомые слова, обсуждаем смысл.</p>
+                        <p>Почему это легче, чем в одиночку, и чем отличается от аудио книг:</p>
+                        <ul>
+                          <li>на экране текст, лицо читающего, легче разобрать звук, когда видно мимику;</li>
+                          <li>слушатели распределяются по группам, на основании уровня языка, и по выбору книг;</li>
+                          <li>идет живой контакт с группой, при необходимости, поясняем и разбираем больше, снижаем темп чтения.</li>
+                        </ul>
+                        <p>После личного тестирования, точнее, индивидуального чтения, определяем, насколько это вам будет полезно, предлагаем группу и книгу.</p>
+                      </div>
+                      <div class="info__content">
+                        <p>Слишком сложно читать неадаптированную литературу? С нами намного легче! Мы встречаемся онлайн, ведущий читает текст, который виден на экране, параллельно мы разбираем незнакомые слова, обсуждаем смысл. 2</p>
+                        <p>Почему это легче, чем в одиночку, и чем отличается от аудио книг:</p>
+                        <ul>
+                          <li>на экране текст, лицо читающего, легче разобрать звук, когда видно мимику;</li>
+                          <li>слушатели распределяются по группам, на основании уровня языка, и по выбору книг;</li>
+                          <li>идет живой контакт с группой, при необходимости, поясняем и разбираем больше, снижаем темп чтения.</li>
+                        </ul>
+                        <p>После личного тестирования, точнее, индивидуального чтения, определяем, насколько это вам будет полезно, предлагаем группу и книгу.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="info__age-block">
+                    <div class="info__language">
+                      <div class="info__language-tab">Русский</div>
+                      <div class="info__language-tab">Английский</div>
+                      <div class="info__language-tab">Французский</div>
+                    </div>
+                    <div class="info__language-block">
+                      <div class="info__content">
+                        <p>Слишком сложно читать неадаптированную литературу? С нами намного легче! Мы встречаемся онлайн, ведущий читает текст, который виден на экране, параллельно мы разбираем незнакомые слова, обсуждаем смысл. 3</p>
+                        <p>Почему это легче, чем в одиночку, и чем отличается от аудио книг:</p>
+                        <ul>
+                          <li>на экране текст, лицо читающего, легче разобрать звук, когда видно мимику;</li>
+                          <li>слушатели распределяются по группам, на основании уровня языка, и по выбору книг;</li>
+                          <li>идет живой контакт с группой, при необходимости, поясняем и разбираем больше, снижаем темп чтения.</li>
+                        </ul>
+                        <p>После личного тестирования, точнее, индивидуального чтения, определяем, насколько это вам будет полезно, предлагаем группу и книгу.</p>
+                      </div>
+                      <div class="info__content">
+                        <p>Слишком сложно читать неадаптированную литературу? С нами намного легче! Мы встречаемся онлайн, ведущий читает текст, который виден на экране, параллельно мы разбираем незнакомые слова, обсуждаем смысл. 4</p>
+                        <p>Почему это легче, чем в одиночку, и чем отличается от аудио книг:</p>
+                        <ul>
+                          <li>на экране текст, лицо читающего, легче разобрать звук, когда видно мимику;</li>
+                          <li>слушатели распределяются по группам, на основании уровня языка, и по выбору книг;</li>
+                          <li>идет живой контакт с группой, при необходимости, поясняем и разбираем больше, снижаем темп чтения.</li>
+                        </ul>
+                        <p>После личного тестирования, точнее, индивидуального чтения, определяем, насколько это вам будет полезно, предлагаем группу и книгу.</p>
+                      </div>
+                      <div class="info__content">
+                        <p>Слишком сложно читать неадаптированную литературу? С нами намного легче! Мы встречаемся онлайн, ведущий читает текст, который виден на экране, параллельно мы разбираем незнакомые слова, обсуждаем смысл. 5</p>
+                        <p>Почему это легче, чем в одиночку, и чем отличается от аудио книг:</p>
+                        <ul>
+                          <li>на экране текст, лицо читающего, легче разобрать звук, когда видно мимику;</li>
+                          <li>слушатели распределяются по группам, на основании уровня языка, и по выбору книг;</li>
+                          <li>идет живой контакт с группой, при необходимости, поясняем и разбираем больше, снижаем темп чтения.</li>
+                        </ul>
+                        <p>После личного тестирования, точнее, индивидуального чтения, определяем, насколько это вам будет полезно, предлагаем группу и книгу.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="info__action"><a class="btn btn--big" href="#order">записаться на пробное чнение</a></div>
+                </div>
+                <div class="info__review">
+                  <div class="info__block">
+                    <div class="info__review-triangle">
+                      <svg class="icon icon-triangle ">
+                        <use xlink:href="app/img/svg/symbol/sprite.svg#triangle"></use>
+                      </svg>
+                    </div>
+                    <div class="info__review-icon">
+                      <svg class="icon icon-quote ">
+                        <use xlink:href="app/img/svg/symbol/sprite.svg#quote"></use>
+                      </svg>
+                    </div>
+                    <p class="info__review-text">Язык — это часть сознания, он часть тебя. Поэтому так сложно выучить язык по учебникам: учебник можно выучить, а&nbsp;прожить&nbsp;—&nbsp;никак.</p>
+                    <p class="info__review-text">Но в сознание есть потайной ход: книги. Истории, которые по-настоящему интересны, в которые вживаешься.</p>
+                    <p class="info__review-text hide">Но в сознание есть потайной ход: книги. Истории, которые по-настоящему интересны, в которые вживаешься.</p>
+                    <div class="info__review-more">Читать полностью</div>
+                  </div>
+                  <div class="info__author">
+                    <div class="info__author-info"><span class="info__author-name">Александра Байчурина</span><span class="info__author-post">автор проекта</span></div>
+                    <div class="info__author-pic"><img src="app/img/content/info/author.jpg" alt="info author project"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section review" id="review">
+            <div class="container">
+              <div class="review__wrap">
+                <div class="review__border">
+                  <svg class="icon icon-border ">
+                    <use xlink:href="app/img/svg/symbol/sprite.svg#border"></use>
+                  </svg>
+                </div>
+                <div class="review__icon">
+                  <svg class="icon icon-quote ">
+                    <use xlink:href="app/img/svg/symbol/sprite.svg#quote"></use>
+                  </svg>
+                </div>
+                <div class="review__content">
+                  <div class="review__item">
+                    <p>Мне никогда не нравились учебники, разговорники, темы для заучивания, не нравились упражнения и «топики», диалоги. Поэтому трудно не упустить язык «предыдущей жизни», если вы переехали в другую страну.</p>
+                    <p>Особенно если вам ещё не много лет.</p>
+                    <p>Весь новый опыт, вся новая жизнь — на новом языке.</p>
+                  </div>
+                  <div class="review__item">
+                    <p>Мне никогда не нравились учебники, разговорники, темы для заучивания, не нравились упражнения и «топики», диалоги. Поэтому трудно не упустить язык «предыдущей жизни», если вы переехали в другую страну. 2</p>
+                    <p>Особенно если вам ещё не много лет.</p>
+                    <p>Весь новый опыт, вся новая жизнь — на новом языке.</p>
+                  </div>
+                  <div class="review__item">
+                    <p>Мне никогда не нравились учебники, разговорники, темы для заучивания, не нравились упражнения и «топики», диалоги. Поэтому трудно не упустить язык «предыдущей жизни», если вы переехали в другую страну.</p>
+                    <p>Особенно если вам ещё не много лет.</p>
+                    <p>Весь новый опыт, вся новая жизнь — на новом языке.</p>
+                  </div>
+                  <div class="review__item">
+                    <p>Мне никогда не нравились учебники, разговорники, темы для заучивания, не нравились упражнения и «топики», диалоги. Поэтому трудно не упустить язык «предыдущей жизни», если вы переехали в другую страну.</p>
+                    <p>Особенно если вам ещё не много лет.</p>
+                    <p>Весь новый опыт, вся новая жизнь — на новом языке.</p>
+                  </div>
+                  <div class="review__item">
+                    <p>Мне никогда не нравились учебники, разговорники, темы для заучивания, не нравились упражнения и «топики», диалоги. Поэтому трудно не упустить язык «предыдущей жизни», если вы переехали в другую страну.</p>
+                    <p>Особенно если вам ещё не много лет.</p>
+                    <p>Весь новый опыт, вся новая жизнь — на новом языке.</p>
+                  </div>
+                </div>
+                <div class="review__users">
+                  <div class="review__user"><img src="app/img/content/review/1.png" alt="review user 1"></div>
+                  <div class="review__user"><img src="app/img/content/review/2.png" alt="review user 2"></div>
+                  <div class="review__user"><img src="app/img/content/review/3.png" alt="review user 3"></div>
+                  <div class="review__user"><img src="app/img/content/review/4.png" alt="review user 4"></div>
+                  <div class="review__user"><img src="app/img/content/review/5.png" alt="review user 5"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section archive" id="archive">
+            <div class="archive__lock hide">
+              <div class="archive__icon">
+                <svg class="icon icon-lock ">
+                  <use xlink:href="app/img/svg/symbol/sprite.svg#lock"></use>
+                </svg>
+              </div>
+              <p class="archive__text">Оформите подписку, чтобы получить доступ к просмотру урока</p><a class="btn archive__btn" href="#">Подписаться</a>
+            </div>
+            <div class="archive__list">
+              <div class="archive__item" data-status="true">
+                <div class="archive__play">
+                  <svg class="icon icon-play ">
+                    <use xlink:href="app/img/svg/symbol/sprite.svg#play"></use>
+                  </svg>
+                </div>
+                <div class="archive__item-wrap">
+                  <div class="archive__info">
+                    <div class="archive__logo"><img src="app/img/general/logo.svg" alt="Bedtime book logo"></div>
+                    <h3 class="archive__title">ЗАНЯТИЕ №26</h3><span class="archive__name">Приключения Тома Сойера</span>
+                  </div>
+                  <div class="archive__img"><img src="app/img/content/archive/1.png" alt="ЗАНЯТИЕ №26"></div>
+                </div>
+              </div>
+              <div class="archive__item" data-status="false">
+                <div class="archive__play">
+                  <svg class="icon icon-play ">
+                    <use xlink:href="app/img/svg/symbol/sprite.svg#play"></use>
+                  </svg>
+                </div>
+                <div class="archive__item-wrap">
+                  <div class="archive__info">
+                    <div class="archive__logo"><img src="app/img/general/logo.svg" alt="Bedtime book logo"></div>
+                    <h3 class="archive__title">ЗАНЯТИЕ №27</h3><span class="archive__name">Приключения Тома Сойера</span>
+                  </div>
+                  <div class="archive__img"><img src="app/img/content/archive/1.png" alt="ЗАНЯТИЕ №27"></div>
+                </div>
+              </div>
+              <div class="archive__item" data-status="false">
+                <div class="archive__play">
+                  <svg class="icon icon-play ">
+                    <use xlink:href="app/img/svg/symbol/sprite.svg#play"></use>
+                  </svg>
+                </div>
+                <div class="archive__item-wrap">
+                  <div class="archive__info">
+                    <div class="archive__logo"><img src="app/img/general/logo.svg" alt="Bedtime book logo"></div>
+                    <h3 class="archive__title">ЗАНЯТИЕ №28</h3><span class="archive__name">Приключения Тома Сойера</span>
+                  </div>
+                  <div class="archive__img"><img src="app/img/content/archive/1.png" alt="ЗАНЯТИЕ №28"></div>
+                </div>
+              </div>
+              <div class="archive__item" data-status="false">
+                <div class="archive__play">
+                  <svg class="icon icon-play ">
+                    <use xlink:href="app/img/svg/symbol/sprite.svg#play"></use>
+                  </svg>
+                </div>
+                <div class="archive__item-wrap">
+                  <div class="archive__info">
+                    <div class="archive__logo"><img src="app/img/general/logo.svg" alt="Bedtime book logo"></div>
+                    <h3 class="archive__title">ЗАНЯТИЕ №29</h3><span class="archive__name">Приключения Тома Сойера</span>
+                  </div>
+                  <div class="archive__img"><img src="app/img/content/archive/1.png" alt="ЗАНЯТИЕ №29"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section contacts" id="contacts">
+            <div class="container">
+              <div class="contacts__wrap">
+                <div class="contacts__teachers">
+                  <h2 class="contacts__title">Наши преподаватели</h2>
+                  <div class="contacts__teacher">
+                    <div class="contacts__pic"><img src="app/img/content/contacts/1.png" alt="Евгения Заверняева"></div>
+                    <div class="contacts__info">
+                      <div class="contacts__name"><span>Евгения Заверняева</span><a class="contacts__link" target="_blank">
+                          <svg class="icon icon-teacher-fb ">
+                            <use xlink:href="app/img/svg/symbol/sprite.svg#teacher-fb"></use>
+                          </svg></a></div><span class="contacts__post">Специалист по французской литературе</span>
+                      <div class="contacts__hide">
+                        <p>Анна Логвинова — поэт, чьи стихи публикуются в журналах и сборниках с 2000 года, постоянный автор журнала Новый Мир. Анну можно увидеть и услышать на поэтических вечерах, или у нас в эфире на чтениях. Окончила факультет журналистики МГУ им. Ломоносова, жила и училась в США в последних классах школы. Важное дополнение: Анна ведет не только чтения на английском, но и на русском языке. Дети, родители которых переехали в дальние страны, но хотят, чтобы у детей сохранился русский, читают с Аней классические и современные юмористические и лирические рассказы, сказки. Поверьте, это стоит услышать!</p>
+                      </div>
+                      <div class="contacts__more">Подробнее</div>
+                    </div>
+                  </div>
+                  <div class="contacts__teacher">
+                    <div class="contacts__pic"><img src="app/img/content/contacts/2.png" alt="Анна Логвинова"></div>
+                    <div class="contacts__info">
+                      <div class="contacts__name"><span>Анна Логвинова</span><a class="contacts__link" target="_blank">
+                          <svg class="icon icon-teacher-fb ">
+                            <use xlink:href="app/img/svg/symbol/sprite.svg#teacher-fb"></use>
+                          </svg></a></div><span class="contacts__post">Специалист по русской и английской литературе, поэт </span>
+                      <div class="contacts__hide">
+                        <p>Анна Логвинова — поэт, чьи стихи публикуются в журналах и сборниках с 2000 года, постоянный автор журнала Новый Мир. Анну можно увидеть и услышать на поэтических вечерах, или у нас в эфире на чтениях. Окончила факультет журналистики МГУ им. Ломоносова, жила и училась в США в последних классах школы. Важное дополнение: Анна ведет не только чтения на английском, но и на русском языке. Дети, родители которых переехали в дальние страны, но хотят, чтобы у детей сохранился русский, читают с Аней классические и современные юмористические и лирические рассказы, сказки. Поверьте, это стоит услышать!</p>
+                      </div>
+                      <div class="contacts__more">Подробнее</div>
+                    </div>
+                  </div>
+                  <div class="contacts__teacher">
+                    <div class="contacts__pic"><img src="app/img/content/contacts/3.png" alt="Александра Байчурина"></div>
+                    <div class="contacts__info">
+                      <div class="contacts__name"><span>Александра Байчурина</span><a class="contacts__link" target="_blank">
+                          <svg class="icon icon-teacher-fb ">
+                            <use xlink:href="app/img/svg/symbol/sprite.svg#teacher-fb"></use>
+                          </svg></a></div><span class="contacts__post">Специалист по детям, английской литературе, reading coach для взрослых</span>
+                      <div class="contacts__hide">
+                        <p>Анна Логвинова — поэт, чьи стихи публикуются в журналах и сборниках с 2000 года, постоянный автор журнала Новый Мир. Анну можно увидеть и услышать на поэтических вечерах, или у нас в эфире на чтениях. Окончила факультет журналистики МГУ им. Ломоносова, жила и училась в США в последних классах школы. Важное дополнение: Анна ведет не только чтения на английском, но и на русском языке. Дети, родители которых переехали в дальние страны, но хотят, чтобы у детей сохранился русский, читают с Аней классические и современные юмористические и лирические рассказы, сказки. Поверьте, это стоит услышать!</p>
+                      </div>
+                      <div class="contacts__more">Подробнее</div>
+                    </div>
+                  </div>
+                  <div class="contacts__social"><span class="contacts__social-title">Группы в социальных сетях:</span>
+                    <ul class="contacts__social-list">
+                      <li class="contacts__social-item"><a class="contacts__social-link" href="#">
+                          <svg class="icon icon-fb ">
+                            <use xlink:href="app/img/svg/symbol/sprite.svg#fb"></use>
+                          </svg></a></li>
+                      <li class="contacts__social-item"><a class="contacts__social-link" href="#">
+                          <svg class="icon icon-telegram ">
+                            <use xlink:href="app/img/svg/symbol/sprite.svg#telegram"></use>
+                          </svg></a></li>
+                      <li class="contacts__social-item"><a class="contacts__social-link" href="#">
+                          <svg class="icon icon-inst ">
+                            <use xlink:href="app/img/svg/symbol/sprite.svg#inst"></use>
+                          </svg></a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="contacts__connect">
+                  <h3 class="contacts__connect-title">Быстрая связь</h3><span class="contacts__connect-subtitle">Возникли вопросы? Отправьте сообщение и мы ответим в течение часа.</span>
+                  <form class="contacts__connect-form contacts-form form" action="#">
+                    <div class="form__group">
+                      <input class="form__input" type="text" name="name" id="connect-name" data-name="name">
+                      <label class="form__label" for="connect-name">Ваше имя</label>
+                    </div>
+                    <div class="form__group">
+                      <input class="form__input" type="text" name="email" id="connect-email" data-name="email">
+                      <label class="form__label" for="connect-email">E-mail</label>
+                    </div>
+                    <div class="form__group form__group--textarea">
+                      <textarea class="form__textarea" id="connect-textarea" name="connect-textarea" placeholder="Сообщение"></textarea>
+                    </div>
+                    <div class="form__action">
+                      <button class="btn form__btn" type="submit">отправить</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <div class="remodal order" data-remodal-id="order">
+          <button class="remodal-close order__close" data-remodal-action="close">
+            <svg class="icon icon-close ">
+              <use xlink:href="app/img/svg/symbol/sprite.svg#close"></use>
+            </svg>
+          </button>
+          <form class="order__wrap form" action="#" data-action="app/mail/sendOrder.php" data-validation>
+            <h2 class="order__title">Записаться на&nbsp;пробное чтение</h2>
+            <div class="form__group">
+              <input class="form__input" type="text" name="email" data-name="email" id="email">
+              <label class="form__label" for="email">Ваш e-mail</label>
+            </div>
+            <div class="form__row">
+              <div class="form__col">
+                <div class="form__group">
+                  <input class="form__input" type="text" name="name" data-name="name" id="name">
+                  <label class="form__label" for="name">Имя ребенка</label>
+                </div>
+              </div>
+              <div class="form__col">
+                <div class="form__group">
+                  <input class="form__input" type="text" name="num" data-name="num" id="num">
+                  <label class="form__label" for="num">Возраст ребенка</label>
+                </div>
+              </div>
+            </div>
+            <div class="form__group"><span class="form__sublabel">Приблизительный уровень языка ребенка</span>
+              <select class="form__select" name="level" id="level">
+                <option class="form__option" value="continuing">Продолжающий</option>
+                <option class="form__option" value="start">Начинающий</option>
+                <option class="form__option" value="proffesional">Продвинутый</option>
+              </select>
+            </div>
+            <div class="form__group"><span class="form__sublabel">Язык чтения</span>
+              <select class="form__select" name="language" id="language">
+                <option class="form__option" value="en">Английский</option>
+                <option class="form__option" value="ru">Русский</option>
+                <option class="form__option" value="fr">Французский</option>
+              </select>
+            </div>
+            <div class="form__group"><span class="form__sublabel form__sublabel--other">Номер для звонка, сообщение  WhatsApp</span><span class="form__dont-required">Не обязательно</span>
+              <input class="form__input" type="text" name="other" id="other">
+              <label class="form__label" for="other">Другой предпочтительный способ связи</label>
+            </div>
+            <div class="form__action form__action--order">
+              <btn class="btn order__btn" type="submit">Отправить заявку</btn>
+            </div>
+          </form>
+        </div>
       </div>
       <script src="app/js/libs.min.js"></script>
-      <script src="app/js/main.js"></script>
+      <script src="app/js/app.js"></script>
     </body>
   </head>
 </html>
