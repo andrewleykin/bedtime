@@ -1,6 +1,47 @@
 // Начальная функция
 
 (function(){
+	// загрузка страницы
+	$(document).ready(function(){
+		setTimeout(function(){
+			$('.top-banner__bg').removeClass('hide');
+		},200);
+
+		$('.top-banner__bg').on('transitionend', function(){
+			$('.top-banner__title').removeClass('hide');
+			$('.top-banner__descr').removeClass('hide');
+			$('.top-banner__btn').removeClass('hide');
+			$('.top-banner__bg-clouds').animate({opacity: 1})
+			setTimeout(function(){
+				topBannerAnimation()
+			},600);
+		});
+
+		function topBannerAnimation () {
+			$('.top-banner__moon').removeClass('hide');
+			$('.top-banner__books').removeClass('hide');
+			setTimeout(function(){
+				$('.top-banner__book-item').removeClass('hide');
+			},600);
+		}
+	});
+
+	var scene = document.getElementById('parallax-1');
+	var scene2 = document.getElementById('parallax-2');
+
+	var parallaxInstance = new Parallax(scene, {
+		limitX: 20,
+		limitY: 10,
+		relativeInput: true
+	});
+
+	var parallaxInstance = new Parallax(scene2, {
+		invertX: true,
+		limitX: 10,
+		limitY: 5,
+		relativeInput: true
+	});
+
 	function scrollNav() {
 		$('.js-scroll-to').on("click", function(){
 			//Animate
@@ -36,7 +77,9 @@
 		vertical: true,
 		appendArrows: $('.tbt__arrows'),
 		prevArrow: $('.tbt__arrow--prev'),
-		nextArrow: $('.tbt__arrow--next')
+		nextArrow: $('.tbt__arrow--next'),
+		autoplay: true,
+		autoplaySpeed: 3000,
 	});
 })();
 

@@ -1,8 +1,12 @@
 section.section.top-banner(id=content.topBanner.id)
+  .top-banner__bg.hide
+    img(src=content.topBanner.bg.src alt=content.topBanner.bg.alt)
   .container
     .top-banner__wrap
+      each item in content.topBanner.clouds
+        .top-banner__bg-clouds(style="background-image: " + item["src"] class=item["class"])
       .top-banner__info
-        h1.top-banner__title.tbt
+        h1.top-banner__title.tbt.hide
           span.tbt__title= content.topBanner.title
           .tbt__slider
             .tbt__list
@@ -15,7 +19,14 @@ section.section.top-banner(id=content.topBanner.id)
                 +icon(content.topBanner.arrows.up)
               .tbt__arrow.tbt__arrow--next
                 +icon(content.topBanner.arrows.down)
-        p.top-banner__descr= content.topBanner.descr
-        a.top-banner__btn.btn.btn--big(href=content.general.btn.order.modal)= content.topBanner.btn
+        p.top-banner__descr.hide= content.topBanner.descr
+        a.top-banner__btn.btn.btn--big.hide(href=content.general.btn.order.modal)= content.topBanner.btn
       .top-banner__img
-        img(src=content.topBanner.img.src, alt=content.topBanner.img.alt)
+        .top-banner__moon.hide
+          img.top-banner__moon-img(src=content.topBanner.img.moon.src alt=content.topBanner.img.moon.alt)
+          .top-banner__books.hide
+            img.top-banner__books-img(src=content.topBanner.img.books.src alt=content.topBanner.img.books.alt)
+        .top-banner__book-list
+          each item in content.topBanner.img.list
+            .top-banner__book-item.hide(class="top-banner__book-item--"+item["num"])
+              img(src=item["src"] alt=item["alt"])

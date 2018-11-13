@@ -4,6 +4,11 @@ block variables
 	- var title = 'Главная страница'
 
 block content
+	.parallax
+		.parallax__clouds.parallax__clouds--1#parallax-1
+			img(src="app/img/content/top-banner/parallax-cloud1.png", alt="parallax cloud", data-depth="0.2")
+		.parallax__clouds.parallax__clouds--2#parallax-2
+			img(src="app/img/content/top-banner/parallax-cloud2.png", alt="parallax cloud", data-depth="0.2")
 	main.main
 		include ../section/top-banner
 		include ../section/info
