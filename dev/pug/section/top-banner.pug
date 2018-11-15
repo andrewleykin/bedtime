@@ -26,7 +26,11 @@ section.section.top-banner(id=content.topBanner.id)
           img.top-banner__moon-img(src=content.topBanner.img.moon.src alt=content.topBanner.img.moon.alt)
           .top-banner__books.hide
             img.top-banner__books-img(src=content.topBanner.img.books.src alt=content.topBanner.img.books.alt)
-        .top-banner__book-list
-          each item in content.topBanner.img.list
-            .top-banner__book-item.hide(class="top-banner__book-item--"+item["num"])
+        .top-banner__book-list#top-banner__book-list--front
+          each item in content.topBanner.img.list.front
+            .top-banner__book-item.hide(class="top-banner__book-item--"+item["num"] data-depth=item["depth"])
+              img(src=item["src"] alt=item["alt"])
+        .top-banner__book-list#top-banner__book-list--back
+          each item in content.topBanner.img.list.back
+            .top-banner__book-item.hide(class="top-banner__book-item--"+item["num"] data-depth=item["depth"])
               img(src=item["src"] alt=item["alt"])

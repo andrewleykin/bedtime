@@ -11,7 +11,8 @@
 			$('.top-banner__title').removeClass('hide');
 			$('.top-banner__descr').removeClass('hide');
 			$('.top-banner__btn').removeClass('hide');
-			$('.top-banner__bg-clouds').animate({opacity: 1})
+			$('.parallax__clouds').animate({opacity: 1}, 1000);
+			$('.top-banner__bg-clouds').animate({opacity: 1}, 1000);
 			setTimeout(function(){
 				topBannerAnimation()
 			},600);
@@ -24,21 +25,51 @@
 				$('.top-banner__book-item').removeClass('hide');
 			},600);
 		}
+
+		$('.top-banner__book-item').eq(0).on('transitionend', function(){
+			$(window).on('mousemove', function(e) {
+				var w = $(window).width();
+				var h = $(window).height();
+
+				var offsetX = 0.5 - e.pageX / w;
+				var offsetY = 0.5 - e.pageY / h;
+
+				$('#top-banner__book-list--front').find('.top-banner__book-item').each(function(i,el){
+					var offset = 40;
+					
+					var translate = "translate3d(" + Math.round(offsetX * offset) + "px," + Math.round(offsetY * offset) + "px, 0";
+					
+					$(el).css({
+						'transform': translate
+					})
+				})
+
+				$('#top-banner__book-list--back').find('.top-banner__book-item').each(function(i,el){
+					var offset = -20;
+					
+					var translate = "translate3d(" + Math.round(offsetX * offset) + "px," + Math.round(offsetY * offset) + "px, 0";
+					
+					$(el).css({
+						'transform': translate
+					})
+				})
+			})
+		});
 	});
 
 	var scene = document.getElementById('parallax-1');
 	var scene2 = document.getElementById('parallax-2');
 
 	var parallaxInstance = new Parallax(scene, {
-		limitX: 20,
-		limitY: 10,
+		limitX: 30,
+		limitY: 20,
 		relativeInput: true
 	});
 
 	var parallaxInstance = new Parallax(scene2, {
 		invertX: true,
-		limitX: 10,
-		limitY: 5,
+		limitX: 20,
+		limitY: 10,
 		relativeInput: true
 	});
 
