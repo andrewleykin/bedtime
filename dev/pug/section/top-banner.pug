@@ -20,7 +20,7 @@ section.section.top-banner(id=content.topBanner.id)
               .tbt__arrow.tbt__arrow--next
                 +icon(content.topBanner.arrows.down)
         p.top-banner__descr.hide= content.topBanner.descr
-        a.top-banner__btn.btn.btn--big.hide(href=content.general.btn.order.modal)= content.topBanner.btn
+        a.top-banner__btn.btn.btn--big.hide.trs-delay(href=content.general.btn.order.modal)= content.topBanner.btn
       .top-banner__img
         .top-banner__moon.hide
           img.top-banner__moon-img(src=content.topBanner.img.moon.src alt=content.topBanner.img.moon.alt)
@@ -28,9 +28,9 @@ section.section.top-banner(id=content.topBanner.id)
             img.top-banner__books-img(src=content.topBanner.img.books.src alt=content.topBanner.img.books.alt)
         .top-banner__book-list#top-banner__book-list--front
           each item in content.topBanner.img.list.front
-            .top-banner__book-item.hide(class="top-banner__book-item--"+item["num"] data-depth=item["depth"])
+            .top-banner__book-item.hide(class="top-banner__book-item--"+item["num"] data-offset=item["offset"])
               img(src=item["src"] alt=item["alt"])
         .top-banner__book-list#top-banner__book-list--back
           each item in content.topBanner.img.list.back
-            .top-banner__book-item.hide(class="top-banner__book-item--"+item["num"] data-depth=item["depth"])
+            .top-banner__book-item.hide(class="top-banner__book-item--"+item["num"] data-offset=item["offset"])
               img(src=item["src"] alt=item["alt"])

@@ -14,6 +14,7 @@
 			$('.parallax__clouds').animate({opacity: 1}, 1000);
 			$('.top-banner__bg-clouds').animate({opacity: 1}, 1000);
 			setTimeout(function(){
+				$('.top-banner__btn').removeClass('trs-delay');
 				topBannerAnimation()
 			},600);
 		});
@@ -35,7 +36,7 @@
 				var offsetY = 0.5 - e.pageY / h;
 
 				$('#top-banner__book-list--front').find('.top-banner__book-item').each(function(i,el){
-					var offset = 40;
+					var offset = $(el).data('offset');
 					
 					var translate = "translate3d(" + Math.round(offsetX * offset) + "px," + Math.round(offsetY * offset) + "px, 0";
 					
@@ -45,7 +46,7 @@
 				})
 
 				$('#top-banner__book-list--back').find('.top-banner__book-item').each(function(i,el){
-					var offset = -20;
+					var offset = $(el).data('offset');
 					
 					var translate = "translate3d(" + Math.round(offsetX * offset) + "px," + Math.round(offsetY * offset) + "px, 0";
 					
