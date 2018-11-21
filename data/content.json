@@ -24,7 +24,7 @@
   "topBanner": {
     "id": "top-banner",
     "bg": {
-      "src": "app/img/content/top-banner/bg.jpg",
+      "src": "url(app/img/content/top-banner/bg.jpg)",
       "alt": "top bannner bg"
     },
     "clouds": [

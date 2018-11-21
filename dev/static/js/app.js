@@ -28,6 +28,7 @@
 		}
 
 		$('.top-banner__book-item').eq(0).on('transitionend', function(){
+			$('.top-banner__book-item').addClass('trs-none');
 			$(window).on('mousemove', function(e) {
 				var w = $(window).width();
 				var h = $(window).height();

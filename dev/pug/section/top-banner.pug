@@ -1,6 +1,5 @@
 section.section.top-banner(id=content.topBanner.id)
-  .top-banner__bg.hide
-    img(src=content.topBanner.bg.src alt=content.topBanner.bg.alt)
+  .top-banner__bg.hide(style="background-image: " + content.topBanner.bg.src)
   .container
     .top-banner__wrap
       each item in content.topBanner.clouds

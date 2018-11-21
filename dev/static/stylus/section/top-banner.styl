@@ -18,6 +18,8 @@
   transform-origin center
   transform scale(1)
   transition all .8s ease-out
+  background-position center center
+  background-size cover
   img
     min-width 100%
   &.hide
@@ -35,13 +37,13 @@
   background-repeat repeat-x
   opacity 0
   &--1
-    animation cloudsLinearMove 30s linear infinite
+    animation cloudsLinearMove 300s linear infinite
     z-index 10
   &--2
-    animation cloudsLinearMove 60s linear infinite
+    animation cloudsLinearMove 600s linear infinite
 
 @keyframes cloudsLinearMove {
-  from { background-position: -1000px bottom;}
+  from { background-position: -10000px bottom;}
   to { background-position: 0 bottom; }
 }
 
@@ -172,7 +174,9 @@
 .top-banner__book-item
   position absolute
   transform none
-  transition all .2s ease-in-out
+  transition all .4s ease-in-out
+  &.trs-none
+    transition none
   img
     max-width none
   &--1
