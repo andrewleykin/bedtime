@@ -74,35 +74,6 @@
 		limitY: 10,
 		relativeInput: true
 	});
-
-	function scrollNav() {
-		$('.js-scroll-to').on("click", function(){
-			//Animate
-			$('html, body').stop().animate({
-					scrollTop: $( $(this).attr('href') ).offset().top
-			}, 400);
-			return false;
-		});
-	}
-	scrollNav();
-
-	// Add and remove on header fixed
-	function stickyMenu(){
-		var scroll = $(window).scrollTop();
-
-		if (scroll >= 65) {
-				$('.header').addClass('header--fixed');
-				$('.logo__fixed').removeClass('hide').siblings().addClass('hide');
-		}
-		else {
-				$('.header').removeClass('header--fixed');
-				$('.logo__main').removeClass('hide').siblings().addClass('hide');
-		}
-	}
-
-	$(window).on('scroll', function() {
-		stickyMenu();
-	})
 })();
 
 (function(){
@@ -200,7 +171,7 @@
 		activeIndex = $(this).index();
 
 		var status = $(this).data('status'),
-			translatePerc = 50 * activeIndex,
+			translatePerc = 47.7 * activeIndex,
 			translateString = 'translateX(-' +translatePerc+ '%)'
 
 		list.css('transform', translateString);
@@ -230,4 +201,68 @@
 			hideBlock.addClass(activeClass);
 		}
 	});
+})();
+
+(function(){
+	var activeIndex = 0,
+		flag = true,
+		mainParent = $('.main'),
+		allSection = mainParent.find('.section'),
+		clouds = $('.top-banner__bg-clouds');
+
+	var changeFlag = function() {
+		setTimeout(function(){
+			flag = true;
+		},400);
+	}
+
+	var changePos = function (index) {
+		var posTop = allSection.eq(index).position().top
+		mainParent.css('margin-top', '-' +posTop+ 'px');
+
+		if (index > 0) {
+			$('.header').addClass('header--fixed');
+			$('.logo__fixed').removeClass('hide').siblings().addClass('hide');
+			$('.menu__item').eq(index-1).addClass('active').siblings().removeClass('active');
+		} else {
+			$('.header').removeClass('header--fixed');
+			$('.logo__main').removeClass('hide').siblings().addClass('hide');
+		}
+		
+	}
+	
+
+	document.onwheel = function (e) {
+		if (flag) {
+			flag = false
+			if (e.deltaY > 0 && activeIndex != allSection.length - 1) {
+				activeIndex++;
+			} 
+			if (e.deltaY < 0 && activeIndex != 0) {
+				activeIndex--;
+			}
+			changePos(activeIndex);
+			changeFlag();
+		}
+	}
+
+	$('.menu__link').click(function(e) {
+		e.preventDefault();
+		activeIndex = $(this).closest('.menu__item').index() + 1;
+		if (flag) {
+			flag = false;
+			changePos(activeIndex);
+			changeFlag();
+		}
+	})
+
+	$('.logo').click(function(e) {
+		e.preventDefault();
+		activeIndex = 0;
+		if (flag) {
+			flag = false;
+			changePos(activeIndex);
+			changeFlag();
+		}
+	})
 })();

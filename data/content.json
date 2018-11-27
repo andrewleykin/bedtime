@@ -358,6 +358,27 @@
         "name": "Приключения Тома Сойера",
         "src": "app/img/content/archive/1.png",
         "status": "false"
+      },
+      {
+        "href": "#",
+        "title": "ЗАНЯТИЕ №30",
+        "name": "Приключения Тома Сойера",
+        "src": "app/img/content/archive/1.png",
+        "status": "false"
+      },
+      {
+        "href": "#",
+        "title": "ЗАНЯТИЕ №31",
+        "name": "Приключения Тома Сойера",
+        "src": "app/img/content/archive/1.png",
+        "status": "false"
+      },
+      {
+        "href": "#",
+        "title": "ЗАНЯТИЕ №32",
+        "name": "Приключения Тома Сойера",
+        "src": "app/img/content/archive/1.png",
+        "status": "false"
       }
     ],
     "play": "play",

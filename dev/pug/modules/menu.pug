@@ -2,4 +2,4 @@ nav.menu
   ul.menu__list
     each item in nav.list
       li.menu__item
-        a.menu__link.js-scroll-to(href=item["href"])= item["text"]
+        a.menu__link(href=item["href"])= item["text"]
