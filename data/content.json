@@ -68,13 +68,13 @@
             "src": "app/img/content/top-banner/book3.png",
             "alt": "top banner book 3",
             "num": "3",
-            "offset": "30"
+            "offset": "20"
           },
           {
             "src": "app/img/content/top-banner/book5.png",
             "alt": "top banner book 5",
             "num": "5",
-            "offset": "50"
+            "offset": "40"
           }
         ],
         "back": [

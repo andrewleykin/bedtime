@@ -28,7 +28,6 @@
 		}
 
 		$('.top-banner__book-item').eq(0).on('transitionend', function(){
-			$('.top-banner__book-item').addClass('trs-none');
 			$(window).on('mousemove', function(e) {
 				var w = $(window).width();
 				var h = $(window).height();
@@ -171,7 +170,7 @@
 		activeIndex = $(this).index();
 
 		var status = $(this).data('status'),
-			translatePerc = 47.7 * activeIndex,
+			translatePerc = 47.2 * activeIndex,
 			translateString = 'translateX(-' +translatePerc+ '%)'
 
 		list.css('transform', translateString);
