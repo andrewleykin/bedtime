@@ -171,14 +171,18 @@
 		activeIndex = $(this).index();
 
 		var status = $(this).data('status'),
-			translatePerc = 47.2 * activeIndex,
-			translateString = 'translateX(-' +translatePerc+ '%)'
+			translatePerc = 755 * activeIndex,
+			translateString = 'translateX(-' +translatePerc+ 'px)'
 
 		list.css('transform', translateString);
 
 		if (!status) {
-			list.addClass(disableClass);
-			lockBlock.removeClass(hideClass);
+			list.removeClass(disableClass);
+			lockBlock.addClass(hideClass);
+			setTimeout(function(){
+				list.addClass(disableClass);
+				lockBlock.removeClass(hideClass);
+			},500);
 		} else {
 			list.removeClass(disableClass);
 			lockBlock.addClass(hideClass);
