@@ -232,21 +232,33 @@
 			$('.header').removeClass('header--fixed');
 			$('.logo__main').removeClass('hide').siblings().addClass('hide');
 		}
-		
 	}
-	
 
-	document.onwheel = function (e) {
+	var initChange = function (event) {
 		if (flag) {
 			flag = false
-			if (e.deltaY > 0 && activeIndex != allSection.length - 1) {
+			if (event.deltaY > 0 && activeIndex != allSection.length - 1) {
 				activeIndex++;
 			} 
-			if (e.deltaY < 0 && activeIndex != 0) {
+			if (event.deltaY < 0 && activeIndex != 0) {
 				activeIndex--;
 			}
 			changePos(activeIndex);
 			changeFlag();
+		}
+	}
+
+	
+	
+
+	document.onwheel = function (e) {
+		var sectionScroll = $(e.target.closest('.section'))[0];
+			
+		if ($(sectionScroll).find('.container').height() > window.innerHeight) {
+			if (event.deltaY > 0 && sectionScroll.scrollTop === sectionScroll.scrollHeight - sectionScroll.clientHeight) initChange(e)
+			if (event.deltaY < 0 && sectionScroll.scrollTop === 0) initChange(e)
+		} else {
+			initChange(e)
 		}
 	}
 
@@ -270,6 +282,7 @@
 		}
 	})
 })();
+
 $(document).ready(function () {
     svg4everybody({});
 });
