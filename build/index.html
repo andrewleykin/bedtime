@@ -89,7 +89,7 @@
               </div>
             </div>
           </section>
-          <section class="section about" id="about">
+          <section class="section about" id="about" data-scroll>
             <div class="container">
               <div class="about__wrap"><span class="about__subtitle">Как это работает?</span>
                 <h2 class="about__title">Лучше аудио книг, легче, чем в одиночку</h2>
@@ -107,108 +107,701 @@
                     <p class="about__advantage-text">при необходимости, поясняем и разбираем больше, снижаем темп чтения</p>
                   </div>
                 </div>
-                <div class="info__review">
-                  <div class="info__block">
-                    <div class="info__review-triangle">
+                <div class="about__review">
+                  <div class="about__block">
+                    <div class="about__review-triangle">
                       <svg class="icon icon-triangle ">
                         <use xlink:href="app/img/svg/symbol/sprite.svg#triangle"></use>
                       </svg>
                     </div>
-                    <div class="info__review-icon">
+                    <div class="about__review-icon">
                       <svg class="icon icon-quote ">
                         <use xlink:href="app/img/svg/symbol/sprite.svg#quote"></use>
                       </svg>
                     </div>
-                    <p class="info__review-text">Язык — это часть сознания, он часть тебя. Поэтому так сложно выучить язык по учебникам: учебник можно выучить, а&nbsp;прожить&nbsp;—&nbsp;никак.</p>
-                    <p class="info__review-text">Но в сознание есть потайной ход: книги. Истории, которые по-настоящему интересны, в которые вживаешься.</p>
-                    <p class="info__review-text hide">Но в сознание есть потайной ход: книги. Истории, которые по-настоящему интересны, в которые вживаешься.</p>
-                    <div class="info__review-more">Читать полностью</div>
+                    <p class="about__review-text">Язык — это часть сознания, он часть тебя. Поэтому так сложно выучить язык по учебникам: учебник можно выучить, а&nbsp;прожить&nbsp;—&nbsp;никак.</p>
+                    <p class="about__review-text">Но в сознание есть потайной ход: книги. Истории, которые по-настоящему интересны, в которые вживаешься.</p>
+                    <p class="about__review-text hide">Но в сознание есть потайной ход: книги. Истории, которые по-настоящему интересны, в которые вживаешься.</p>
+                    <div class="about__review-more">Читать полностью</div>
                   </div>
-                  <div class="info__author">
-                    <div class="info__author-info"><span class="info__author-name">Александра Байчурина</span><span class="info__author-post">автор проекта</span></div>
-                    <div class="info__author-pic"><img src="app/img/content/info/author.jpg" alt="info author project"></div>
+                  <div class="about__author">
+                    <div class="about__author-pic"><img src="app/img/content/about/author.jpg" alt="info author project"></div>
+                    <div class="about__author-info"><span class="about__author-name">Александра Байчурина</span><span class="about__author-post">автор проекта</span></div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-          <section class="section info" id="info">
+          <section class="section info" id="info" data-scroll>
             <div class="container">
               <div class="info__wrap">
-                <div class="info__promo"> 
+                <div class="info__promo">
+                  <h2 class="info__title">Группы и расписание</h2>
                   <div class="info__age">
                     <div class="info__age-tab">Для взрослых</div>
                     <div class="info__age-tab">Для детей</div>
                   </div>
                   <div class="info__age-block">
                     <div class="info__language">
-                      <div class="info__language-tab">Английский</div>
-                      <div class="info__language-tab">Русский</div>
+                      <div class="info__language-active">
+                        <div class="info__language-active-flag"><img src="app/img/content/info/flags/russia.png" alt="active flag"></div><span class="info__language-active-text"></span>
+                      </div>
+                      <div class="info__language-tabs hide">
+                        <div class="info__language-tab" data-name="england">Английский</div>
+                        <div class="info__language-tab" data-name="russia">Русский</div>
+                      </div>
                     </div>
                     <div class="info__language-block">
-                      <div class="info__content">
-                        <p>Слишком сложно читать неадаптированную литературу? С нами намного легче! Мы встречаемся онлайн, ведущий читает текст, который виден на экране, параллельно мы разбираем незнакомые слова, обсуждаем смысл.</p>
-                        <p>Почему это легче, чем в одиночку, и чем отличается от аудио книг:</p>
-                        <ul>
-                          <li>на экране текст, лицо читающего, легче разобрать звук, когда видно мимику;</li>
-                          <li>слушатели распределяются по группам, на основании уровня языка, и по выбору книг;</li>
-                          <li>идет живой контакт с группой, при необходимости, поясняем и разбираем больше, снижаем темп чтения.</li>
-                        </ul>
-                        <p>После личного тестирования, точнее, индивидуального чтения, определяем, насколько это вам будет полезно, предлагаем группу и книгу.</p>
+                      <div class="info__group">
+                        <div class="info__group-tabs">
+                          <div class="info__group-tab">Продвинутая группа</div>
+                          <div class="info__group-tab">Начальная группа</div>
+                        </div>
                       </div>
-                      <div class="info__content">
-                        <p>Слишком сложно читать неадаптированную литературу? С нами намного легче! Мы встречаемся онлайн, ведущий читает текст, который виден на экране, параллельно мы разбираем незнакомые слова, обсуждаем смысл. 2</p>
-                        <p>Почему это легче, чем в одиночку, и чем отличается от аудио книг:</p>
-                        <ul>
-                          <li>на экране текст, лицо читающего, легче разобрать звук, когда видно мимику;</li>
-                          <li>слушатели распределяются по группам, на основании уровня языка, и по выбору книг;</li>
-                          <li>идет живой контакт с группой, при необходимости, поясняем и разбираем больше, снижаем темп чтения.</li>
-                        </ul>
-                        <p>После личного тестирования, точнее, индивидуального чтения, определяем, насколько это вам будет полезно, предлагаем группу и книгу.</p>
+                      <div class="info__group-block ig">
+                        <div class="ig__header">
+                          <div class="ig__header-block ig__days">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-days ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#days"></use>
+                              </svg>
+                            </div><span>Пн, Ср, Пт</span>
+                          </div>
+                          <div class="ig__header-block ig__timeStart">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-timeStart ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#timeStart"></use>
+                              </svg>
+                            </div><span>22:00</span>
+                          </div>
+                          <div class="ig__header-block ig__time">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-time ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#time"></use>
+                              </svg>
+                            </div><span>30 минут</span>
+                          </div>
+                        </div>
+                        <p class="ig__text">Продолжающая группа. Менее регулярная, чем детские, чтобы вы успевали выдыхать и чтобы всегда было только в удовольствие! :)</p>
+                        <div class="ig__heading">
+                          <div class="ig__heading-pic"><img src="app/img/content/info/heading/1.png" alt="Евгения Заверняева"></div>
+                          <div class="ig__heading-info">
+                            <div class="ig__heading-post">Ведущая</div>
+                            <div class="ig__heading-name">Евгения Заверняева</div>
+                          </div>
+                        </div>
+                        <div class="ig__descr">
+                          <div class="ig__descr-block ig__process">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-process ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#process"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Описание процесса</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">процесс</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__video">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-video ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#video"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Видео фрагмент</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">ссылка на видео</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__excerpt">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-excerpt ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#excerpt"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Тестовый отрывок</span>
+                            <p class="ig__excerpt-subtext">Если вам понятно 70% слов и более — участие будет для вас максимально эффективным.</p>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">отрывок текста</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__screenshot">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-screenshot ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#screenshot"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Скриншот</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">скриншот</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ig__cost">
+                          <div class="ig__cost-line"><span class="ig__cost-price">1200 Р</span><span class="ig__cost-in">/ неделя</span><span class="ig__cost-quality">(3 занятия)</span></div>
+                          <p class="ig__cost-descr">Если вы что-то пропустили, то по запросу мы вышлем текст и/или видеозапись встречи.</p>
+                        </div>
+                      </div>
+                      <div class="info__group-block ig">
+                        <div class="ig__header">
+                          <div class="ig__header-block ig__days">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-days ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#days"></use>
+                              </svg>
+                            </div><span>Вт, Пт</span>
+                          </div>
+                          <div class="ig__header-block ig__timeStart">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-timeStart ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#timeStart"></use>
+                              </svg>
+                            </div><span>21:00</span>
+                          </div>
+                          <div class="ig__header-block ig__time">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-time ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#time"></use>
+                              </svg>
+                            </div><span>50 минут</span>
+                          </div>
+                        </div>
+                        <p class="ig__text">Начинающая группа. Менее регулярная, чем детские, чтобы вы успевали выдыхать и чтобы всегда было только в удовольствие! :)</p>
+                        <div class="ig__heading">
+                          <div class="ig__heading-pic"><img src="app/img/content/info/heading/1.png" alt="Александра Заверняева"></div>
+                          <div class="ig__heading-info">
+                            <div class="ig__heading-post">Ведущая</div>
+                            <div class="ig__heading-name">Александра Заверняева</div>
+                          </div>
+                        </div>
+                        <div class="ig__descr">
+                          <div class="ig__descr-block ig__process">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-process ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#process"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Описание процесса</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">процесс начальной англ</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__video">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-video ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#video"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Видео фрагмент</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">ссылка на видео начальной англ</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__excerpt">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-excerpt ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#excerpt"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Тестовый отрывок</span>
+                            <p class="ig__excerpt-subtext">Если вам понятно 70% слов и более — участие будет для вас максимально эффективным.</p>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">отрывок текста начальной англ</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__screenshot">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-screenshot ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#screenshot"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Скриншот</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">скриншот начальной англ</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ig__cost">
+                          <div class="ig__cost-line"><span class="ig__cost-price">2000 Р</span><span class="ig__cost-in">/ месяц</span><span class="ig__cost-quality">(10 занятий)</span></div>
+                          <p class="ig__cost-descr">Если вы что-то пропустили, то по запросу мы вышлем текст и/или видеозапись встречи.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="info__language-block">
+                      <div class="info__group">
+                        <div class="info__group-tabs">
+                          <div class="info__group-tab">Продвинутая группа</div>
+                        </div>
+                      </div>
+                      <div class="info__group-block ig">
+                        <div class="ig__header">
+                          <div class="ig__header-block ig__days">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-days ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#days"></use>
+                              </svg>
+                            </div><span>Пн, Ср, Пт</span>
+                          </div>
+                          <div class="ig__header-block ig__timeStart">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-timeStart ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#timeStart"></use>
+                              </svg>
+                            </div><span>22:00</span>
+                          </div>
+                          <div class="ig__header-block ig__time">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-time ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#time"></use>
+                              </svg>
+                            </div><span>30 минут</span>
+                          </div>
+                        </div>
+                        <p class="ig__text">Продолжающая группа. Менее регулярная, чем детские, чтобы вы успевали выдыхать и чтобы всегда было только в удовольствие! :)</p>
+                        <div class="ig__heading">
+                          <div class="ig__heading-pic"><img src="app/img/content/info/heading/1.png" alt="Евгения Заверняева"></div>
+                          <div class="ig__heading-info">
+                            <div class="ig__heading-post">Ведущая</div>
+                            <div class="ig__heading-name">Евгения Заверняева</div>
+                          </div>
+                        </div>
+                        <div class="ig__descr">
+                          <div class="ig__descr-block ig__process">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-process ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#process"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Описание процесса</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">процесс</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__video">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-video ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#video"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Видео фрагмент</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">ссылка на видео</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__excerpt">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-excerpt ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#excerpt"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Тестовый отрывок</span>
+                            <p class="ig__excerpt-subtext">Если вам понятно 70% слов и более — участие будет для вас максимально эффективным.</p>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">отрывок текста</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__screenshot">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-screenshot ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#screenshot"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Скриншот</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">скриншот</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ig__cost">
+                          <div class="ig__cost-line"><span class="ig__cost-price">1200 Р</span><span class="ig__cost-in">/ неделя</span><span class="ig__cost-quality">(3 занятия)</span></div>
+                          <p class="ig__cost-descr">Если вы что-то пропустили, то по запросу мы вышлем текст и/или видеозапись встречи.</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div class="info__age-block">
                     <div class="info__language">
-                      <div class="info__language-tab">Русский</div>
-                      <div class="info__language-tab">Английский</div>
-                      <div class="info__language-tab">Французский</div>
+                      <div class="info__language-active">
+                        <div class="info__language-active-flag"><img src="app/img/content/info/flags/russia.png" alt="active flag"></div><span class="info__language-active-text"></span>
+                      </div>
+                      <div class="info__language-tabs hide">
+                        <div class="info__language-tab" data-name="russia">Русский</div>
+                        <div class="info__language-tab" data-name="england">Английский</div>
+                        <div class="info__language-tab" data-name="france">Французский</div>
+                      </div>
                     </div>
                     <div class="info__language-block">
-                      <div class="info__content">
-                        <p>Слишком сложно читать неадаптированную литературу? С нами намного легче! Мы встречаемся онлайн, ведущий читает текст, который виден на экране, параллельно мы разбираем незнакомые слова, обсуждаем смысл. 3</p>
-                        <p>Почему это легче, чем в одиночку, и чем отличается от аудио книг:</p>
-                        <ul>
-                          <li>на экране текст, лицо читающего, легче разобрать звук, когда видно мимику;</li>
-                          <li>слушатели распределяются по группам, на основании уровня языка, и по выбору книг;</li>
-                          <li>идет живой контакт с группой, при необходимости, поясняем и разбираем больше, снижаем темп чтения.</li>
-                        </ul>
-                        <p>После личного тестирования, точнее, индивидуального чтения, определяем, насколько это вам будет полезно, предлагаем группу и книгу.</p>
+                      <div class="info__group">
+                        <div class="info__group-tabs">
+                          <div class="info__group-tab">Продвинутая группа</div>
+                          <div class="info__group-tab">Начальная группа</div>
+                        </div>
                       </div>
-                      <div class="info__content">
-                        <p>Слишком сложно читать неадаптированную литературу? С нами намного легче! Мы встречаемся онлайн, ведущий читает текст, который виден на экране, параллельно мы разбираем незнакомые слова, обсуждаем смысл. 4</p>
-                        <p>Почему это легче, чем в одиночку, и чем отличается от аудио книг:</p>
-                        <ul>
-                          <li>на экране текст, лицо читающего, легче разобрать звук, когда видно мимику;</li>
-                          <li>слушатели распределяются по группам, на основании уровня языка, и по выбору книг;</li>
-                          <li>идет живой контакт с группой, при необходимости, поясняем и разбираем больше, снижаем темп чтения.</li>
-                        </ul>
-                        <p>После личного тестирования, точнее, индивидуального чтения, определяем, насколько это вам будет полезно, предлагаем группу и книгу.</p>
+                      <div class="info__group-block ig">
+                        <div class="ig__header">
+                          <div class="ig__header-block ig__days">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-days ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#days"></use>
+                              </svg>
+                            </div><span>Пн, Ср, Пт</span>
+                          </div>
+                          <div class="ig__header-block ig__timeStart">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-timeStart ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#timeStart"></use>
+                              </svg>
+                            </div><span>22:00</span>
+                          </div>
+                          <div class="ig__header-block ig__time">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-time ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#time"></use>
+                              </svg>
+                            </div><span>30 минут</span>
+                          </div>
+                        </div>
+                        <p class="ig__text">Продолжающая группа. Менее регулярная, чем детские, чтобы вы успевали выдыхать и чтобы всегда было только в удовольствие! :)</p>
+                        <div class="ig__heading">
+                          <div class="ig__heading-pic"><img src="app/img/content/info/heading/1.png" alt="Евгения Заверняева"></div>
+                          <div class="ig__heading-info">
+                            <div class="ig__heading-post">Ведущая</div>
+                            <div class="ig__heading-name">Евгения Заверняева</div>
+                          </div>
+                        </div>
+                        <div class="ig__descr">
+                          <div class="ig__descr-block ig__process">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-process ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#process"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Описание процесса</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">процесс</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__video">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-video ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#video"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Видео фрагмент</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">ссылка на видео</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__excerpt">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-excerpt ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#excerpt"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Тестовый отрывок</span>
+                            <p class="ig__excerpt-subtext">Если вам понятно 70% слов и более — участие будет для вас максимально эффективным.</p>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">отрывок текста</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__screenshot">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-screenshot ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#screenshot"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Скриншот</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">скриншот</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ig__cost">
+                          <div class="ig__cost-line"><span class="ig__cost-price">1200 Р</span><span class="ig__cost-in">неделя</span><span class="ig__cost-quality">(3 занятия)</span></div>
+                          <p class="ig__cost-descr">Если вы что-то пропустили, то по запросу мы вышлем текст и/или видеозапись встречи.</p>
+                        </div>
                       </div>
-                      <div class="info__content">
-                        <p>Слишком сложно читать неадаптированную литературу? С нами намного легче! Мы встречаемся онлайн, ведущий читает текст, который виден на экране, параллельно мы разбираем незнакомые слова, обсуждаем смысл. 5</p>
-                        <p>Почему это легче, чем в одиночку, и чем отличается от аудио книг:</p>
-                        <ul>
-                          <li>на экране текст, лицо читающего, легче разобрать звук, когда видно мимику;</li>
-                          <li>слушатели распределяются по группам, на основании уровня языка, и по выбору книг;</li>
-                          <li>идет живой контакт с группой, при необходимости, поясняем и разбираем больше, снижаем темп чтения.</li>
-                        </ul>
-                        <p>После личного тестирования, точнее, индивидуального чтения, определяем, насколько это вам будет полезно, предлагаем группу и книгу.</p>
+                      <div class="info__group-block ig">
+                        <div class="ig__header">
+                          <div class="ig__header-block ig__days">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-days ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#days"></use>
+                              </svg>
+                            </div><span>Вт, Пт</span>
+                          </div>
+                          <div class="ig__header-block ig__timeStart">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-timeStart ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#timeStart"></use>
+                              </svg>
+                            </div><span>21:00</span>
+                          </div>
+                          <div class="ig__header-block ig__time">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-time ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#time"></use>
+                              </svg>
+                            </div><span>50 минут</span>
+                          </div>
+                        </div>
+                        <p class="ig__text">Начинающая группа. Менее регулярная, чем детские, чтобы вы успевали выдыхать и чтобы всегда было только в удовольствие! :)</p>
+                        <div class="ig__heading">
+                          <div class="ig__heading-pic"><img src="app/img/content/info/heading/1.png" alt="Александра Заверняева"></div>
+                          <div class="ig__heading-info">
+                            <div class="ig__heading-post">Ведущая</div>
+                            <div class="ig__heading-name">Александра Заверняева</div>
+                          </div>
+                        </div>
+                        <div class="ig__descr">
+                          <div class="ig__descr-block ig__process">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-process ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#process"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Описание процесса</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">процесс начальной англ</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__video">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-video ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#video"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Видео фрагмент</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">ссылка на видео начальной англ</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__excerpt">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-excerpt ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#excerpt"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Тестовый отрывок</span>
+                            <p class="ig__excerpt-subtext">Если вам понятно 70% слов и более — участие будет для вас максимально эффективным.</p>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">отрывок текста начальной англ</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__screenshot">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-screenshot ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#screenshot"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Скриншот</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">скриншот начальной англ</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ig__cost">
+                          <div class="ig__cost-line"><span class="ig__cost-price">2000 Р</span><span class="ig__cost-in">месяц</span><span class="ig__cost-quality">(10 занятий)</span></div>
+                          <p class="ig__cost-descr">Если вы что-то пропустили, то по запросу мы вышлем текст и/или видеозапись встречи.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="info__language-block">
+                      <div class="info__group">
+                        <div class="info__group-tabs">
+                          <div class="info__group-tab">Продвинутая группа</div>
+                        </div>
+                      </div>
+                      <div class="info__group-block ig">
+                        <div class="ig__header">
+                          <div class="ig__header-block ig__days">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-days ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#days"></use>
+                              </svg>
+                            </div><span>Пн, Ср, Пт</span>
+                          </div>
+                          <div class="ig__header-block ig__timeStart">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-timeStart ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#timeStart"></use>
+                              </svg>
+                            </div><span>22:00</span>
+                          </div>
+                          <div class="ig__header-block ig__time">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-time ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#time"></use>
+                              </svg>
+                            </div><span>30 минут</span>
+                          </div>
+                        </div>
+                        <p class="ig__text">Продолжающая группа. Менее регулярная, чем детские, чтобы вы успевали выдыхать и чтобы всегда было только в удовольствие! :)</p>
+                        <div class="ig__heading">
+                          <div class="ig__heading-pic"><img src="app/img/content/info/heading/1.png" alt="Евгения Заверняева"></div>
+                          <div class="ig__heading-info">
+                            <div class="ig__heading-post">Ведущая</div>
+                            <div class="ig__heading-name">Евгения Заверняева</div>
+                          </div>
+                        </div>
+                        <div class="ig__descr">
+                          <div class="ig__descr-block ig__process">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-process ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#process"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Описание процесса</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">процесс</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__video">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-video ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#video"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Видео фрагмент</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">ссылка на видео</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__excerpt">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-excerpt ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#excerpt"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Тестовый отрывок</span>
+                            <p class="ig__excerpt-subtext">Если вам понятно 70% слов и более — участие будет для вас максимально эффективным.</p>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">отрывок текста</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__screenshot">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-screenshot ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#screenshot"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Скриншот</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">скриншот</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ig__cost">
+                          <div class="ig__cost-line"><span class="ig__cost-price">1200 Р</span><span class="ig__cost-in">неделя</span><span class="ig__cost-quality">(3 занятия)</span></div>
+                          <p class="ig__cost-descr">Если вы что-то пропустили, то по запросу мы вышлем текст и/или видеозапись встречи.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="info__language-block">
+                      <div class="info__group">
+                        <div class="info__group-tabs">
+                          <div class="info__group-tab">Начальная группа</div>
+                        </div>
+                      </div>
+                      <div class="info__group-block ig">
+                        <div class="ig__header">
+                          <div class="ig__header-block ig__days">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-days ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#days"></use>
+                              </svg>
+                            </div><span>Вт, Пт</span>
+                          </div>
+                          <div class="ig__header-block ig__timeStart">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-timeStart ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#timeStart"></use>
+                              </svg>
+                            </div><span>21:00</span>
+                          </div>
+                          <div class="ig__header-block ig__time">
+                            <div class="ig__header-icon">
+                              <svg class="icon icon-time ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#time"></use>
+                              </svg>
+                            </div><span>50 минут</span>
+                          </div>
+                        </div>
+                        <p class="ig__text">Начинающая группа. Менее регулярная, чем детские, чтобы вы успевали выдыхать и чтобы всегда было только в удовольствие! :)</p>
+                        <div class="ig__heading">
+                          <div class="ig__heading-pic"><img src="app/img/content/info/heading/1.png" alt="Александра Заверняева"></div>
+                          <div class="ig__heading-info">
+                            <div class="ig__heading-post">Ведущая</div>
+                            <div class="ig__heading-name">Александра Заверняева</div>
+                          </div>
+                        </div>
+                        <div class="ig__descr">
+                          <div class="ig__descr-block ig__process">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-process ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#process"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Описание процесса</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">процесс начальной англ</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__video">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-video ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#video"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Видео фрагмент</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">ссылка на видео начальной англ</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__excerpt">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-excerpt ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#excerpt"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Тестовый отрывок</span>
+                            <p class="ig__excerpt-subtext">Если вам понятно 70% слов и более — участие будет для вас максимально эффективным.</p>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">отрывок текста начальной англ</div>
+                            </div>
+                          </div>
+                          <div class="ig__descr-block ig__screenshot">
+                            <div class="ig__descr-icon">
+                              <svg class="icon icon-screenshot ">
+                                <use xlink:href="app/img/svg/symbol/sprite.svg#screenshot"></use>
+                              </svg>
+                            </div><span class="ig__descr-text">Скриншот</span>
+                            <div class="ig__descr-hide">
+                              <div class="ig__descr-overlay"></div>
+                              <div class="ig__descr-content">скриншот начальной англ</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ig__cost">
+                          <div class="ig__cost-line"><span class="ig__cost-price">2000 Р</span><span class="ig__cost-in">месяц</span><span class="ig__cost-quality">(10 занятий)</span></div>
+                          <p class="ig__cost-descr">Если вы что-то пропустили, то по запросу мы вышлем текст и/или видеозапись встречи.</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div class="info__action"><a class="btn btn--big" href="#order">Подать заявку на участие</a></div>
+                  <div class="info__warning">
+                    <div class="info__warning-row">
+                      <div class="info__warning-icon">
+                        <svg class="icon icon-warning ">
+                          <use xlink:href="app/img/svg/symbol/sprite.svg#warning"></use>
+                        </svg>
+                      </div><span class="info__warning-text">Сертификаты не заменяют пробное чтение</span>
+                    </div>
+                    <p class="info__warning-descr">Количество лет обучения и языковые сертификаты не дают нам информации о восприятии ребенком речи и текста, к тому же, для участия просто необходимо, чтобы сам текст, книга, заинтересовали ребенка — иначе ни что не удержит его внимания на экране. Поэтому для более точного определения, подходит ли группа ребенку, необходимо пройти индивидуальное пробное чтение с ведущим.</p>
+                  </div>
                 </div>
+                <div class="info__img"><img src="app/img/content/info/age/1.png" alt="Для взрослых"></div>
               </div>
             </div>
           </section>

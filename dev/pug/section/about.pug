@@ -1,4 +1,4 @@
-section.section.about(id=content.about.id)
+section.section.about(id=content.about.id data-scroll)
   .container
     .about__wrap
       span.about__subtitle= content.about.subtitle
@@ -10,20 +10,20 @@ section.section.about(id=content.about.id)
               img(src=item["img"] alt=item["name"])
             span.about__advantage-name= item["name"]
             p.about__advantage-text= item["text"]
-      .info__review
-        .info__block
-          .info__review-triangle
+      .about__review
+        .about__block
+          .about__review-triangle
             +icon(content.about.review.triangle)
-          .info__review-icon
+          .about__review-icon
             +icon(content.about.review.icon)
-          p.info__review-text Язык — это часть сознания, он часть тебя. Поэтому так сложно выучить язык по учебникам: учебник можно выучить, а&nbsp;прожить&nbsp;—&nbsp;никак.
-          p.info__review-text= content.about.review.text["2"]
-          p.info__review-text.hide= content.about.review.text["3"]
-          .info__review-more= content.about.review.more
-        .info__author
-          .info__author-info
-            span.info__author-name= content.about.review.author
-            span.info__author-post= content.about.review.post
-          .info__author-pic
+          p.about__review-text Язык — это часть сознания, он часть тебя. Поэтому так сложно выучить язык по учебникам: учебник можно выучить, а&nbsp;прожить&nbsp;—&nbsp;никак.
+          p.about__review-text= content.about.review.text["2"]
+          p.about__review-text.hide= content.about.review.text["3"]
+          .about__review-more= content.about.review.more
+        .about__author
+          .about__author-pic
             img(src=content.about.review.pic.src alt=content.about.review.pic.alt)
+          .about__author-info
+            span.about__author-name= content.about.review.author
+            span.about__author-post= content.about.review.post
       

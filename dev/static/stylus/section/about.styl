@@ -1,9 +1,3 @@
-.about
-  height 100vh
-  overflow-y scroll
-  position relative
-  z-index 2
-
 .about__wrap
   color white
   padding 150px 0
@@ -55,3 +49,106 @@
   font-family font-open
   font-size 14px
   line-height 18px
+
+.about__review
+  width 100%
+  max-width 1030px
+  display flex
+
+.about__block
+  max-width 714px
+  padding 65px 60px
+  display flex
+  flex-direction column
+  align-items flex-start
+  background rgba(white, .1)
+  border-radius standart-border-radius
+  position relative
+  margin-right 70px
+
+.about__review-triangle
+  position absolute
+  right -65px
+  top 100px
+  transform rotate(-90deg)
+  .icon
+    width 105px
+    height 26px
+    fill white
+
+.about__review-icon
+  position absolute
+  top 50px
+  left 40px
+  z-index -1
+  .icon
+    width 70px
+    height 40px
+    fill rgba(#182f4c, .9)
+
+.about__review-text
+  font-family font-lora
+  font-size 18px
+  font-weight 400
+  font-style italic
+  line-height 30px
+  @extend .trs
+  &+&
+    margin-top 25px
+  &.hide
+    height 0
+    overflow hidden
+    margin-top 0
+
+.about__review-more
+  font-family font-open
+  font-size 14px
+  font-weight 700
+  line-height 36px
+  display flex
+  align-items center
+  cursor pointer
+  margin-top 30px
+  &:before
+    content ''
+    display block
+    width 10px
+    height 10px
+    border 2px solid transparent
+    border-top-color carnation 
+    border-right-color carnation
+    border-radius 2px
+    transform rotate(45deg)
+    margin-right 10px
+    @extend .trs
+  &.hide
+    opacity 0
+    visibility hidden
+    height 0
+    margin-top 0
+
+.about__author
+  padding-top 55px
+  display flex
+  flex-direction column
+
+.about__author-pic
+  border-radius 50%
+  overflow hidden
+  align-self flex-start
+
+.about__author-info
+  margin-top 40px
+
+.about__author-name
+  font-family font-montserrat
+  font-size 18px
+  font-weight 600
+  display block
+  margin-bottom 20px
+
+.about__author-post
+  font-family font-lora
+  font-size 18px
+  font-weight 400
+  font-style italic

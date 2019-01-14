@@ -1,23 +1,92 @@
-section.section.info(id=content.info.id)
+section.section.info(id=content.info.id data-scroll)
   .container
     .info__wrap
-      .info__promo 
+      .info__promo
+        h2.info__title= content.info.title
         .info__age
           each item in content.info.age
             .info__age-tab= item["text"]
         each item in content.info.age
           .info__age-block
             .info__language
-              each lang in item["language"]
-                .info__language-tab= lang["text"]
-            .info__language-block
-              each lang in item["language"]
-                .info__content
-                  p= lang["content"]["text"]["1"]
-                  p= lang["content"]["text"]["2"]
-                  ul
-                    each listItem in lang["content"]["list"]
-                      li= listItem["text"]
-                  p= lang["content"]["text"]["3"]
+              .info__language-active
+                .info__language-active-flag
+                  img(src="app/img/content/info/flags/russia.png" alt="active flag")
+                span.info__language-active-text
+              .info__language-tabs.hide
+                each lang in item["language"]
+                  .info__language-tab(data-name=lang["data"])= lang["text"]
+            each lang in item["language"]
+                .info__language-block
+                  .info__group
+                    .info__group-tabs
+                      each group in lang["group"]
+                        .info__group-tab= group["name"]
+                  each group in lang["group"]
+                    .info__group-block.ig
+                      .ig__header
+                        .ig__header-block.ig__days
+                          .ig__header-icon
+                            +icon(content.info.days)
+                          span= group["days"]
+                        .ig__header-block.ig__timeStart
+                          .ig__header-icon
+                            +icon(content.info.timeStart)
+                          span= group["timeStart"]
+                        .ig__header-block.ig__time
+                          .ig__header-icon
+                            +icon(content.info.time)
+                          span= group["time"]
+                      p.ig__text= group["text"]
+                      .ig__heading
+                        .ig__heading-pic
+                          img(src=group["heading"]["img"] alt=group["heading"]["name"])
+                        .ig__heading-info
+                          .ig__heading-post= content.info.heading
+                          .ig__heading-name= group["heading"]["name"]
+                      .ig__descr
+                        .ig__descr-block.ig__process
+                          .ig__descr-icon
+                            +icon(content.info.process.icon)
+                          span.ig__descr-text= content.info.process.text
+                          .ig__descr-hide
+                            .ig__descr-overlay
+                            .ig__descr-content= group["process"]
+                        .ig__descr-block.ig__video
+                          .ig__descr-icon
+                            +icon(content.info.video.icon)
+                          span.ig__descr-text= content.info.video.text
+                          .ig__descr-hide
+                            .ig__descr-overlay
+                            .ig__descr-content= group["video"]
+                        .ig__descr-block.ig__excerpt
+                          .ig__descr-icon
+                            +icon(content.info.excerpt.icon)
+                          span.ig__descr-text= content.info.excerpt.text
+                          p.ig__excerpt-subtext= content.info.excerpt.descr
+                          .ig__descr-hide
+                            .ig__descr-overlay
+                            .ig__descr-content= group["excerpt"]
+                        .ig__descr-block.ig__screenshot
+                          .ig__descr-icon
+                            +icon(content.info.screenshot.icon)
+                          span.ig__descr-text= content.info.screenshot.text
+                          .ig__descr-hide
+                            .ig__descr-overlay
+                            .ig__descr-content= group["screenshot"]
+                      .ig__cost
+                        .ig__cost-line
+                          span.ig__cost-price= group["cost"]["price"]
+                          span.ig__cost-in= group["cost"]["in"]
+                          span.ig__cost-quality= group["cost"]["quality"]
+                        p.ig__cost-descr= content.info.costDescr
         .info__action
           a.btn.btn--big(href=content.general.btn.order.modal)= content.info.btn
+        .info__warning
+          .info__warning-row
+            .info__warning-icon
+              +icon(content.info.warning.icon)
+            span.info__warning-text= content.info.warning.text
+          p.info__warning-descr= content.info.warning.descr
+      .info__img
+        img(src="app/img/content/info/age/1.png" alt="Для взрослых")

@@ -90,31 +90,72 @@
 (function(){
 	var ageTab = $('.info__age-tab'),
 		ageBlock = $('.info__age-block'),
+		ageImg = $('.info__img img'),
+		languageTabs = $('.info__language-tabs')
 		languageTab = $('.info__language-tab'),
-		contentBlock = $('.info__content'),
+		languageActive = $('.info__language-active')
+		languageActiveText = $('.info__language-active-text'),
+		languageActiveFlag = $('.info__language-active-flag img'),
+		languageBlock = $('.info__language-block'),
+		groupTab = $('.info__group-tab'),
+		groupBlock = $('.info__group-block'),
+		hideClass = 'hide',
 		activeClass = 'active';
+
+	var changeActiveClass = function (elem) {
+		$(elem).addClass(activeClass).siblings().removeClass(activeClass);
+	}
+
+	var changeLanguageActive = function (text, name) {
+		languageActiveText.text(text)
+		languageActiveFlag.attr('src', 'app/img/content/info/flags/'+ name +'.png');
+	}
 
 	ageTab.first().addClass(activeClass);
 	ageBlock.first().addClass(activeClass);
 	ageBlock.first().find(languageTab).first().addClass(activeClass);
-	ageBlock.first().find(contentBlock).first().addClass(activeClass);
+	ageBlock.first().find(languageBlock).first().addClass(activeClass);
+	ageBlock.first().find(languageBlock).first().find(groupTab).first().addClass(activeClass);
+	ageBlock.first().find(languageBlock).first().find(groupBlock).first().addClass(activeClass);
+	changeLanguageActive(ageBlock.first().find(languageTab).first().text(), ageBlock.first().find(languageTab).first().data('name'))
 
 	ageTab.click(function(){
 		var index = $(this).index(),
-			curAgeBlock = ageBlock.eq(index);
+			curAgeBlock = ageBlock.eq(index),
+			curLanguageBlock = curAgeBlock.find(languageBlock).first();
 
-		$(this).addClass(activeClass).siblings().removeClass(activeClass);
-		curAgeBlock.addClass(activeClass).siblings().removeClass(activeClass);
-		curAgeBlock.find(languageTab).first().addClass(activeClass).siblings().removeClass(activeClass);
-		curAgeBlock.find(contentBlock).first().addClass(activeClass).siblings().removeClass(activeClass);
+		changeActiveClass($(this))
+		changeActiveClass(curAgeBlock)
+		changeActiveClass(curAgeBlock.find(languageTab).first())
+		changeActiveClass(curLanguageBlock)
+		changeActiveClass(curLanguageBlock.find(groupTab).first())
+		changeActiveClass(curLanguageBlock.find(groupBlock).first())
+		changeLanguageActive(curAgeBlock.find(languageTab).first().text(), curAgeBlock.find(languageTab).first().data('name'))
+		ageImg.attr('src', 'app/img/content/info/age/'+ ++index +'.png');
 	});
 
 	languageTab.click(function(){
 		var index = $(this).index(),
-			curContentBlock = $(this).closest('.info__language').siblings('.info__language-block').find(contentBlock).eq(index);
+			curContentBlock = $(this).closest('.info__language').siblings('.info__language-block').eq(index);
 		
-		$(this).addClass(activeClass).siblings().removeClass(activeClass);
-		curContentBlock.addClass(activeClass).siblings().removeClass(activeClass);
+		changeActiveClass($(this))
+		changeActiveClass(curContentBlock)
+		changeActiveClass(curContentBlock.find(groupTab).first())
+		changeActiveClass(curContentBlock.find(groupBlock).first())
+		changeLanguageActive($(this).text(), $(this).data('name'))
+		languageTabs.addClass(hideClass);
+	});
+
+	groupTab.click(function(){
+		var index = $(this).index(),
+			curGroupBlock = $(this).closest('.info__group').siblings('.info__group-block').eq(index);
+
+		changeActiveClass($(this))
+		changeActiveClass(curGroupBlock)
+	});
+
+	languageActive.click(function(){
+		languageTabs.toggleClass(hideClass)
 	});
 })();
 
