@@ -1,5 +1,6 @@
 // Начальная функция
 
+// загрузка страницы и первая анимация
 (function(){
 	// загрузка страницы
 	$(document).ready(function(){
@@ -76,6 +77,7 @@
 	});
 })();
 
+// смена слов в заголовке
 (function(){
 	$('.tbt__list').slick({
 		vertical: true,
@@ -87,6 +89,7 @@
 	});
 })();
 
+// переключение табов в информации о группах
 (function(){
 	var ageTab = $('.info__age-tab'),
 		ageBlock = $('.info__age-block'),
@@ -157,10 +160,32 @@
 	languageActive.click(function(){
 		languageTabs.toggleClass(hideClass)
 	});
+
+
 })();
 
+// попапы в табах информации о группах
 (function(){
-	var moreReviewLink = $('.info__review-more'),
+	var links = $('.ig__descr-block'),
+		hideBlock = links.find('.ig__descr-hide'),
+		activeClass = 'active';
+
+	links.click(function(e){
+		$(this).addClass(activeClass);
+		$(this).find(hideBlock).addClass(activeClass)
+	});
+
+	hideBlock.click(function(e){
+		e.stopPropagation();
+		if(e.target === $('.ig__descr-content')[0]) return;
+		$(this).closest(links).removeClass(activeClass)
+		$(this).removeClass(activeClass)
+	});
+})();
+
+// раскрытие текста в секции о курсах
+(function(){
+	var moreReviewLink = $('.about__review-more'),
 		hideTextBlocks = moreReviewLink.siblings('.hide'),
 		hideClass = 'hide';
 
@@ -170,6 +195,7 @@
 	});
 })();
 
+// слайдер в отзывах
 (function(){
 	$('.review__content').slick({
 		fade: true,
@@ -196,6 +222,7 @@
 	});
 })();
 
+// слайдер в архиве видеокурсов
 (function(){
 	var activeIndex = 0,
 		list = $('.archive__list'),
@@ -231,6 +258,7 @@
 	});
 })();
 
+// раскрытие текста в контактах
 (function(){
 	$('.contacts__more').click(function(){
 		var hideBlock = $(this).siblings('.contacts__hide'),
@@ -248,6 +276,7 @@
 	});
 })();
 
+// смена экранов
 (function(){
 	var activeIndex = 0,
 		flag = true,
@@ -258,7 +287,7 @@
 	var changeFlag = function() {
 		setTimeout(function(){
 			flag = true;
-		},400);
+		},600)
 	}
 
 	var changePos = function (index) {
@@ -276,30 +305,32 @@
 	}
 
 	var initChange = function (event) {
-		if (flag) {
-			flag = false
-			if (event.deltaY > 0 && activeIndex != allSection.length - 1) {
-				activeIndex++;
-			} 
-			if (event.deltaY < 0 && activeIndex != 0) {
-				activeIndex--;
-			}
-			changePos(activeIndex);
-			changeFlag();
+		if (event.deltaY > 0 && activeIndex != allSection.length - 1) {
+			activeIndex++;
+		} 
+		if (event.deltaY < 0 && activeIndex != 0) {
+			activeIndex--;
 		}
+		changePos(activeIndex);
 	}
-
 	
-	
-
 	document.onwheel = function (e) {
-		var sectionScroll = $(e.target.closest('.section'))[0];
+		var sectionScroll = allSection.eq(activeIndex)[0];
+		if (!sectionScroll.hasAttribute('data-scroll')) {
+			e.preventDefault()
+		}
+		if (flag) {
+			console.log(event.deltaY)	
 			
-		if ($(sectionScroll).find('.container').height() > window.innerHeight) {
-			if (event.deltaY > 0 && sectionScroll.scrollTop === sectionScroll.scrollHeight - sectionScroll.clientHeight) initChange(e)
-			if (event.deltaY < 0 && sectionScroll.scrollTop === 0) initChange(e)
-		} else {
-			initChange(e)
+			if ($(sectionScroll).find('.container').height() > window.innerHeight) {
+				if (event.deltaY > 0 && sectionScroll.scrollTop === sectionScroll.scrollHeight - sectionScroll.clientHeight) initChange(e)
+				if (event.deltaY < 0 && sectionScroll.scrollTop === 0) initChange(e)
+			} else {
+				e.preventDefault()
+				initChange(e)
+			}
+			flag = false;
+			changeFlag()
 		}
 	}
 

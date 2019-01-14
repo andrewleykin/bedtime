@@ -200,6 +200,38 @@
   align-items center
   position relative
   cursor pointer
+  &.active
+    z-index 100
+
+.ig__descr-hide
+  position fixed
+  top 0
+  left 0
+  bottom 0
+  right 0
+  display flex
+  justify-content center
+  align-items center
+  opacity 0
+  visibility hidden
+  &.active
+    opacity 1
+    visibility visible
+
+.ig__descr-overlay
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+  background rgba(black, .5)
+
+.ig__descr-content
+  background white
+  padding 30px
+  border-radius 30px
+  color bunting
+  z-index 2
 
 .ig__descr-icon
   margin-right 15px
