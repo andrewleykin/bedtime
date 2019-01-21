@@ -58,22 +58,22 @@
 				})
 			})
 		});
-	});
-
-	var scene = document.getElementById('parallax-1');
-	var scene2 = document.getElementById('parallax-2');
-
-	var parallaxInstance = new Parallax(scene, {
-		limitX: 30,
-		limitY: 20,
-		relativeInput: true
-	});
-
-	var parallaxInstance = new Parallax(scene2, {
-		invertX: true,
-		limitX: 20,
-		limitY: 10,
-		relativeInput: true
+		
+		var scene = document.getElementById('parallax-1');
+		var scene2 = document.getElementById('parallax-2');
+		
+		var parallaxInstance = new Parallax(scene, {
+			limitX: 30,
+			limitY: 20,
+			relativeInput: true
+		});
+		
+		var parallaxInstance = new Parallax(scene2, {
+			invertX: true,
+			limitX: 20,
+			limitY: 10,
+			relativeInput: true
+		});
 	});
 })();
 
@@ -281,8 +281,7 @@
 	var activeIndex = 0,
 		flag = true,
 		mainParent = $('.main'),
-		allSection = mainParent.find('.section'),
-		clouds = $('.top-banner__bg-clouds');
+		allSection = mainParent.find('.section');
 
 	var changeFlag = function() {
 		setTimeout(function(){
@@ -301,6 +300,7 @@
 		} else {
 			$('.header').removeClass('header--fixed');
 			$('.logo__main').removeClass('hide').siblings().addClass('hide');
+			$('.menu__item').removeClass('active');
 		}
 	}
 
@@ -320,8 +320,6 @@
 			e.preventDefault()
 		}
 		if (flag) {
-			console.log(event.deltaY)	
-			
 			if ($(sectionScroll).find('.container').height() > window.innerHeight) {
 				if (event.deltaY > 0 && sectionScroll.scrollTop === sectionScroll.scrollHeight - sectionScroll.clientHeight) initChange(e)
 				if (event.deltaY < 0 && sectionScroll.scrollTop === 0) initChange(e)
