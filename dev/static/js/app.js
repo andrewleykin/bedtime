@@ -284,6 +284,8 @@
 			flag = true,
 			mainParent = $('.main'),
 			allSection = mainParent.find('.section');
+			console.log("​allSection", allSection)
+		
 		
 		var changeFlag = function() {
 			setTimeout(function(){
