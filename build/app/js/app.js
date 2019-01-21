@@ -278,79 +278,82 @@
 
 // смена экранов
 (function(){
-	var activeIndex = 0,
-		flag = true,
-		mainParent = $('.main'),
-		allSection = mainParent.find('.section');
+	$(document).ready(function(){
 
-	var changeFlag = function() {
-		setTimeout(function(){
-			flag = true;
-		},600)
-	}
-
-	var changePos = function (index) {
-		var posTop = allSection.eq(index).position().top
-		mainParent.css('margin-top', '-' +posTop+ 'px');
-
-		if (index > 0) {
-			$('.header').addClass('header--fixed');
-			$('.logo__fixed').removeClass('hide').siblings().addClass('hide');
-			$('.menu__item').eq(index-1).addClass('active').siblings().removeClass('active');
-		} else {
-			$('.header').removeClass('header--fixed');
-			$('.logo__main').removeClass('hide').siblings().addClass('hide');
-			$('.menu__item').removeClass('active');
+		var activeIndex = 0,
+			flag = true,
+			mainParent = $('.main'),
+			allSection = mainParent.find('.section');
+		
+		var changeFlag = function() {
+			setTimeout(function(){
+				flag = true;
+			},600)
 		}
-	}
-
-	var initChange = function (event) {
-		if (event.deltaY > 0 && activeIndex != allSection.length - 1) {
-			activeIndex++;
-		} 
-		if (event.deltaY < 0 && activeIndex != 0) {
-			activeIndex--;
-		}
-		changePos(activeIndex);
-	}
-	
-	document.onwheel = function (e) {
-		var sectionScroll = allSection.eq(activeIndex)[0];
-		if (!sectionScroll.hasAttribute('data-scroll')) {
-			e.preventDefault()
-		}
-		if (flag) {
-			if ($(sectionScroll).find('.container').height() > window.innerHeight) {
-				if (event.deltaY > 0 && sectionScroll.scrollTop === sectionScroll.scrollHeight - sectionScroll.clientHeight) initChange(e)
-				if (event.deltaY < 0 && sectionScroll.scrollTop === 0) initChange(e)
+		
+		var changePos = function (index) {
+			var posTop = allSection.eq(index).position().top
+			mainParent.css('margin-top', '-' +posTop+ 'px');
+			
+			if (index > 0) {
+				$('.header').addClass('header--fixed');
+				$('.logo__fixed').removeClass('hide').siblings().addClass('hide');
+				$('.menu__item').eq(index-1).addClass('active').siblings().removeClass('active');
 			} else {
-				e.preventDefault()
-				initChange(e)
+				$('.header').removeClass('header--fixed');
+				$('.logo__main').removeClass('hide').siblings().addClass('hide');
+				$('.menu__item').removeClass('active');
 			}
-			flag = false;
-			changeFlag()
 		}
-	}
-
-	$('.menu__link').click(function(e) {
-		e.preventDefault();
-		activeIndex = $(this).closest('.menu__item').index() + 1;
-		if (flag) {
-			flag = false;
+		
+		var initChange = function (event) {
+			if (event.deltaY > 0 && activeIndex != allSection.length - 1) {
+				activeIndex++;
+			} 
+			if (event.deltaY < 0 && activeIndex != 0) {
+				activeIndex--;
+			}
 			changePos(activeIndex);
-			changeFlag();
 		}
-	})
-
-	$('.logo').click(function(e) {
-		e.preventDefault();
-		activeIndex = 0;
-		if (flag) {
-			flag = false;
-			changePos(activeIndex);
-			changeFlag();
+		
+		document.onwheel = function (e) {
+			var sectionScroll = allSection.eq(activeIndex)[0];
+			if (!sectionScroll.hasAttribute('data-scroll')) {
+				e.preventDefault()
+			}
+			if (flag) {
+				if ($(sectionScroll).find('.container').height() > window.innerHeight) {
+					if (event.deltaY > 0 && sectionScroll.scrollTop === sectionScroll.scrollHeight - sectionScroll.clientHeight) initChange(e)
+					if (event.deltaY < 0 && sectionScroll.scrollTop === 0) initChange(e)
+				} else {
+					e.preventDefault()
+					initChange(e)
+				}
+				flag = false;
+				changeFlag()
+			}
 		}
-	})
+		
+		$('.menu__link').click(function(e) {
+			e.preventDefault();
+			activeIndex = $(this).closest('.menu__item').index() + 1;
+			if (flag) {
+				flag = false;
+				changePos(activeIndex);
+				changeFlag();
+			}
+		})
+		
+		$('.logo').click(function(e) {
+			e.preventDefault();
+			activeIndex = 0;
+			if (flag) {
+				flag = false;
+				changePos(activeIndex);
+				changeFlag();
+			}
+		})
+	});
 })();
 
 $(document).ready(function () {
