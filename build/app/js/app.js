@@ -92,6 +92,7 @@
 // переключение табов в информации о группах
 (function(){
 	var ageTab = $('.info__age-tab'),
+		ageWrap = $('.info__age-wrap')
 		ageBlock = $('.info__age-block'),
 		ageImg = $('.info__img img'),
 		languageTabs = $('.info__language-tabs')
@@ -100,13 +101,24 @@
 		languageActiveText = $('.info__language-active-text'),
 		languageActiveFlag = $('.info__language-active-flag img'),
 		languageBlock = $('.info__language-block'),
+		languageWrap = $('.info__language-wrap'),
 		groupTab = $('.info__group-tab'),
 		groupBlock = $('.info__group-block'),
+		groupWrap = $('.info__group-wrap'),
 		hideClass = 'hide',
-		activeClass = 'active';
+		activeClass = 'active'
+		leaveClass = 'leave';
 
 	var changeActiveClass = function (elem) {
 		$(elem).addClass(activeClass).siblings().removeClass(activeClass);
+	}
+
+	var changeBlockClass = function (now, cur) {
+		$(now).removeClass(activeClass).addClass(leaveClass);
+		$(now).on('transitionend', function(){
+			$(now).removeClass(leaveClass)
+		});
+		$(cur).addClass(activeClass, 'trs-delay');
 	}
 
 	var changeLanguageActive = function (text, name) {
@@ -121,40 +133,44 @@
 	ageBlock.first().find(languageBlock).first().find(groupTab).first().addClass(activeClass);
 	ageBlock.first().find(languageBlock).first().find(groupBlock).first().addClass(activeClass);
 	changeLanguageActive(ageBlock.first().find(languageTab).first().text(), ageBlock.first().find(languageTab).first().data('name'))
-
+	
 	ageTab.click(function(){
 		var index = $(this).index(),
 			curAgeBlock = ageBlock.eq(index),
-			curLanguageBlock = curAgeBlock.find(languageBlock).first();
+			nowAgeBlock = ageBlock.filter('.' + activeClass),
+			curLanguageBlock = curAgeBlock.find(languageBlock).first(),
+			curGroupBlock = curLanguageBlock.find(groupBlock).first();
 
 		changeActiveClass($(this))
-		changeActiveClass(curAgeBlock)
+		changeBlockClass(nowAgeBlock, curAgeBlock)
 		changeActiveClass(curAgeBlock.find(languageTab).first())
 		changeActiveClass(curLanguageBlock)
 		changeActiveClass(curLanguageBlock.find(groupTab).first())
-		changeActiveClass(curLanguageBlock.find(groupBlock).first())
+		changeActiveClass(curGroupBlock)
 		changeLanguageActive(curAgeBlock.find(languageTab).first().text(), curAgeBlock.find(languageTab).first().data('name'))
 		ageImg.attr('src', 'app/img/content/info/age/'+ ++index +'.png');
 	});
 
 	languageTab.click(function(){
 		var index = $(this).index(),
-			curContentBlock = $(this).closest('.info__language').siblings('.info__language-block').eq(index);
+		curLanguageBlock = $(this).closest('.info__language').siblings('.info__language-wrap').find('.info__language-block').eq(index),
+		nowLanguageBlock = $(this).closest('.info__language').siblings('.info__language-wrap').find('.info__language-block').filter('.' + activeClass);
 		
 		changeActiveClass($(this))
-		changeActiveClass(curContentBlock)
-		changeActiveClass(curContentBlock.find(groupTab).first())
-		changeActiveClass(curContentBlock.find(groupBlock).first())
+		changeBlockClass(nowLanguageBlock, curLanguageBlock)
+		changeActiveClass(curLanguageBlock.find(groupTab).first())
+		changeActiveClass(curLanguageBlock.find(groupBlock).first())
 		changeLanguageActive($(this).text(), $(this).data('name'))
 		languageTabs.addClass(hideClass);
 	});
 
 	groupTab.click(function(){
 		var index = $(this).index(),
-			curGroupBlock = $(this).closest('.info__group').siblings('.info__group-block').eq(index);
+			curGroupBlock = $(this).closest('.info__group').siblings('.info__group-wrap').find('.info__group-block').eq(index),
+			nowGroupBlock = $(this).closest('.info__group').siblings('.info__group-wrap').find('.info__group-block').filter('.' + activeClass);
 
 		changeActiveClass($(this))
-		changeActiveClass(curGroupBlock)
+		changeBlockClass(nowGroupBlock, curGroupBlock)
 	});
 
 	languageActive.click(function(){
@@ -284,6 +300,8 @@
 			flag = true,
 			mainParent = $('.main'),
 			allSection = mainParent.find('.section');
+			console.log("​allSection", allSection)
+		
 		
 		var changeFlag = function() {
 			setTimeout(function(){

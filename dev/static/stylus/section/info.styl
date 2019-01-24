@@ -13,6 +13,8 @@
   width 100%
   max-width 590px
   padding-left 35px
+  position relative
+  color white
 
 .info__title
   color #ffffff
@@ -41,10 +43,33 @@
   &.active
     border-color rgba(white, .2)
 
+.info__age-wrap,
+.info__language-wrap,
+.info__group-wrap
+  position relative
+
+.info__age-wrap
+  min-height 583px
+
 .info__age-block
-  display none
+  width 100%
+  position absolute
+  top 0
+  left 100px
+  opacity 0
+  visibility hidden
+  transition all .2s linear
+  &.trs-delay
+    transition-delay .3s
   &.active
-    display block
+    opacity 1
+    left 0
+    visibility visible
+  &.leave
+    left -100px
+
+.info__language-wrap
+  min-height 713px
 
 .info__language
   margin-bottom 40px
@@ -53,9 +78,21 @@
   position relative
 
 .info__language-block
-  display none
+  width 100%
+  position absolute
+  top 0
+  left 100px
+  opacity 0
+  visibility hidden
+  transition all .2s linear
+  &.trs-delay
+    transition-delay .3s
   &.active
-    display block
+    opacity 1
+    left 0
+    visibility visible
+  &.leave
+    left -100px
 
 .info__language-active
   align-self flex-start
@@ -95,19 +132,22 @@
 
 .info__language-tabs
   position absolute
-  top calc(100% + 20px)
+  top calc(100% + 5px)
+  border-radius 8px
+  background white
   @extend .trs
+  z-index 2
   &.hide
     opacity 0
     visibility hidden
 
 .info__language-tab
-  font-family font-montserrat
   font-size 18px
   font-weight 600
   line-height 32px
   margin 0 25px
   cursor pointer
+  color bunting
   @extend .trs
   &:hover
     color kournikova
@@ -115,10 +155,25 @@
     color kournikova
     cursor default
 
+.info__group-wrap
+  min-height 451px
+
 .info__group-block
-  display none
+  width 100%
+  position absolute
+  top 0
+  left 100px
+  opacity 0
+  visibility hidden
+  transition all .2s linear
+  &.trs-delay
+    transition-delay .3s
   &.active
-    display block
+    opacity 1
+    left 0
+    visibility visible
+  &.leave
+    left -100px
 
 .info__group-tabs
   display flex
@@ -168,8 +223,22 @@
 
 .ig__heading
   display flex
-  align-items center
   margin-bottom 40px
+  position relative
+  z-index 2
+
+.ig__heading-wrap
+  display flex
+  align-items center
+  &:hover
+    .ig__heading-post,
+    .ig__heading-name
+      color bunting
+    .icon-fb-fill
+      opacity 1
+  &:hover + .ig__heading-hide
+    opacity 1
+    visibility visible
 
 .ig__heading-pic
   margin-right 25px
@@ -186,6 +255,44 @@
 .ig__heading-name
   font-size 14px
   font-weight 700
+  color white
+  position relative
+  .icon-fb-fill
+    fill bunting
+    position absolute
+    width 12px
+    height 12px
+    right -12px
+    top -6px
+    opacity 0
+
+.ig__heading-hide
+  position absolute
+  top -10px
+  left -10px
+  background white
+  border-radius 8px
+  padding 70px 20px 20px
+  z-index -1
+  max-width 400px
+  opacity 0
+  visibility hidden
+  @extend .trs
+
+.ig__heading-descr
+  font-family font-lora
+  font-style italic
+  line-height 20px
+  font-size 12px
+  color bunting
+  margin-bottom 15px
+  max-width 250px
+
+.ig__heading-text
+  font-family font-open
+  line-height 18px
+  font-size 12px
+  color bunting
 
 .ig__descr
   display flex
@@ -232,6 +339,15 @@
   border-radius 30px
   color bunting
   z-index 2
+
+.ig__descr-content-title
+  font-family font-montserrat
+  color bunting
+  margin-bottom 50px
+  text-align center
+  font-size 32px
+  line-height 32px
+  font-weight 600
 
 .ig__descr-icon
   margin-right 15px
