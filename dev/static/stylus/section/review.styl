@@ -50,13 +50,13 @@
   position absolute
   left 50%
   transform translateX(-50%)
-  bottom -35px
+  bottom -87px
   display flex
   max-width 220px
 
 .review__user
   width 40px
-  height 76px
+  height 180px
   opacity .5
   position relative
   margin 0 25px
@@ -88,3 +88,28 @@
       opacity 1
       width 76px
       height 76px
+    .review__user-info
+      opacity 1
+      visibility visible
+
+.review__user-info
+  position absolute
+  bottom 2px
+  min-width 200px
+  left 50%
+  transform translateX(-50%)
+  opacity 0
+  visibility hidden
+  @extend .trs
+
+.review__user-name
+  display block
+  margin-bottom 10px
+  font-family font-montserrat
+  font-weight 600
+  font-size 18px
+
+.review__user-city
+  font-family font-lora
+  font-style italic
+  font-size 14px

@@ -1,0 +1,70 @@
+section.section.faq(id=content.faq.id data-scroll)
+  .container
+    .faq__wrap
+      h2.faq__title= content.faq.title
+      .faq__wrap-row
+        .faq__content
+          .faq__tab
+            .faq__tab-header
+              h3.faq__tab-title= content.faq.question["1"].title
+            .faq__tab-body
+              each item in content.faq.question["1"].list
+                .faq__tab-group.ftg
+                  h4.ftg__title= item["title"]
+                  .ftg__cost
+                    span.ftg__cost-num= item["cost"]
+                    span.ftg__cost-descr= content.faq.question["1"].weeks
+                  .ftg__info
+                    .ftg__info-block
+                      span.ftg__info-title= content.faq.question["1"].freak
+                      span.ftg__info-content= item["freak"]
+                    .ftg__info-block
+                      span.ftg__info-title= content.faq.question["1"].level
+                      span.ftg__info-content= item["level"]
+                  p.ftg__text= item["text"]
+              .faq__warning
+                +icon(content.faq.question["1"].icon)
+                p.faq__warning-text 
+                  strong Важно: 
+                  | участие оплачивается вперед, до среды текущей недели переводом на 
+                  a.faq__warning-link(href="#") счет
+                  |  или по 
+                  a.faq__warning-link(href="#") PayPal
+                  | . Мы не пересчитываем оплату при пропусках, а высылаем текст и/или видео запись пропущенной встречи.
+          .faq__tab
+            .faq__tab-header
+              h3.faq__tab-title= content.faq.question["2"].title
+            .faq__tab-body
+              p В любом неадаптированном тексте (рассказе, повести, стихах, а не учебном пособии), обязательно встретятся <b>новые слова.</b> Эти новые слова мы демонстрируем жестами, картинками, если дети понимают уже сложные объяснения, то мы объясняем слово иначе, перефразируем.<br>Слушатели заинтересованы сюжетом, сознание активно включается в попытки ПОНЯТЬ любое незнакомое слово<span class="faq__tab-mark">*</span>. Засчет активного влючения сознания рвсё новое лучше <b>запоминается,</b> врезаясь в память как нужная и полезная информация.
+              p Почему литература лучше, чем учебники? <br>Сознание складирует в память с маркировкой «важно, полезно» не только новую лексику, но и всё, что затрагивает нас эмоционально. А любой, даже простенький по тексту рассказ, обязательно затрагивает читателя эмоционально. Поэтому <b>грамматические конструкции</b> запоминаются автоматически, без каких-либо объяснений и правил. Более того, они запоминаются сразу в контекстах, как бы в идеальных примерах употребления. 
+              p= content.faq.question["2"].text
+              p.faq__tab-effect
+                span.faq__tab-mark * 
+                | — именно поэтому мы отвечаем отрицательно, если родители просят домашнее задание, или даже просто список новых слов в конце встречи. Если наш хитрый мозг знает, что может сэкономить энергию, меньше напрягаться, и только получит новые слова списком после занятия, то уровень запоминания снизится, а не повысится. Новые слова будут маркироваться как «новое, предложат дважды, запомню потом», а не как «неизвестное, важно, очень нужно понять». <br>Ещё про новые слова и повторяемость лексики: каждую встречу мы начинаем с того, что вспоминаем, что читали вчера, и на чём мы остановились. Участники пытаются пересказать содержание предыдущего отрывка, сознание снова ищет формулировки, услышанные вчера. Если это не получается, содержание пересказывает ведущий, и опять же, участники слышат повтор нового. 
+          .faq__tab
+            .faq__tab-header
+              h3.faq__tab-title= content.faq.question["3"].title
+            .faq__tab-body
+              each item in content.faq.question["3"].list
+                p= item["text"]
+          .faq__tab
+            .faq__tab-header
+              h3.faq__tab-title= content.faq.question["4"].title
+            .faq__tab-body
+              p= content.faq.question["4"].text
+        .faq__review
+          .faq__block
+            .faq__review-triangle
+              +icon(content.faq.review.triangle)
+            .faq__review-icon
+              +icon(content.faq.review.icon)
+            p.faq__review-text Язык — это часть сознания, он часть тебя. Поэтому так сложно выучить язык по учебникам: учебник можно выучить, а&nbsp;прожить&nbsp;—&nbsp;никак.
+            p.faq__review-text= content.faq.review.text["2"]
+            p.faq__review-text.hide= content.faq.review.text["3"]
+            .faq__review-more= content.faq.review.more
+          .faq__author
+            .faq__author-info
+              span.faq__author-name= content.faq.review.author
+              span.faq__author-post= content.faq.review.post
+            .faq__author-pic
+              img(src=content.faq.review.pic.src alt=content.faq.review.pic.alt)

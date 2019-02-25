@@ -1,8 +1,9 @@
 section.section.about(id=content.about.id data-scroll)
   .container
     .about__wrap
-      span.about__subtitle= content.about.subtitle
       h2.about__title= content.about.title
+      span.about__subtitle= content.about.subtitle
+      p.about__text= content.about.text
       .about__advantage
         each item in content.about.advantage
           .about__advantage-block
@@ -10,25 +11,39 @@ section.section.about(id=content.about.id data-scroll)
               img(src=item["img"] alt=item["name"])
             span.about__advantage-name= item["name"]
             p.about__advantage-text= item["text"]
-        .about__advantage-block
-          .about__advantage-img
-            img(src="app/img/content/about/advantage/1.png" alt="Живой контакт с группой")
-          span.about__advantage-name Живой контакт с&nbsp;группой
-          p.about__advantage-text при необходимости, поясняем и разбираем больше, снижаем темп чтения
-      .about__review
-        .about__block
-          .about__review-triangle
-            +icon(content.about.review.triangle)
-          .about__review-icon
-            +icon(content.about.review.icon)
-          p.about__review-text Язык — это часть сознания, он часть тебя. Поэтому так сложно выучить язык по учебникам: учебник можно выучить, а&nbsp;прожить&nbsp;—&nbsp;никак.
-          p.about__review-text= content.about.review.text["2"]
-          p.about__review-text.hide= content.about.review.text["3"]
-          .about__review-more= content.about.review.more
-        .about__author
-          .about__author-pic
-            img(src=content.about.review.pic.src alt=content.about.review.pic.alt)
-          .about__author-info
-            span.about__author-name= content.about.review.author
-            span.about__author-post= content.about.review.post
-      
+      .about__teachers
+        h2.about__title= content.about.teachers.title
+        p.about__text= content.about.teachers.text
+        .about__teachers-list
+          each item in content.about.teachers.list
+            .about__teachers-item
+              .about__teachers-img
+                img(src=item["img"] alt=item["name"])
+              h3.about__teachers-name= item["name"]
+              span.about__teachers-post= item["post"]
+              p.about__teachers-text= item["text"]
+      .about__example
+        h2.about__title= content.about.example.title
+        .about__example-tabs
+          each item in content.about.example.tabs
+            .about__example-tab= item["text"]
+        .about__example-content
+          .about__example-block
+            .aev
+              .aev__list
+                each item in content.about.example.video
+                  .aev__block
+                    .aev__content
+                      video(src=item["video"])
+                    .aev__img
+                      .aev__logo
+                        img(src=content.general.logo.src alt="content.general.logo.alt")
+                      +icon(content.about.example.icon)
+                      img(src=item["img"] alt=item["name"])
+                      .aev__name= item["name"]
+          .about__example-block
+            .aep
+              .aep__list
+                each item in content.about.example.photo
+                  .aep__item
+                    img(src=item["img"] alt=item["alt"])

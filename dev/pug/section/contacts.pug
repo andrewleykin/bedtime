@@ -3,19 +3,14 @@ section.section.contacts(id=content.contacts.id)
     .contacts__wrap
       .contacts__teachers
         h2.contacts__title= content.contacts.title
-        each item in content.contacts.teachers.list
-          .contacts__teacher
-            .contacts__pic
-              img(src=item["src"] alt=item["name"])
-            .contacts__info
-              .contacts__name
-                span= item["name"]
-                a.contacts__link(target="_blank")
-                  +icon(content.contacts.teachers.icon)
-              span.contacts__post= item["post"]
-              .contacts__hide
-                p= item["text"]
-              .contacts__more= content.contacts.teachers.more
+        .contacts__content
+          .contacts__link-block
+            +icon(content.contacts.phone.icon)
+            a.contacts__link(href=content.contacts.phone.href)= content.contacts.phone.text
+            span.contacts__link-apps= content.contacts.phone.apps
+          .contacts__link-block
+            +icon(content.contacts.mail.icon)
+            a.contacts__link(href=content.contacts.mail.href)= content.contacts.mail.text
         .contacts__social
           span.contacts__social-title= content.contacts.social.title
           ul.contacts__social-list

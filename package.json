@@ -4,7 +4,8 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
   },
   "author": "Лейкин Андрей Романович",
   "license": "ISC",
@@ -41,6 +42,7 @@
     "gulp-cli": "^2.0.1",
     "gulp-concat-css": "^2.3.0",
     "jquery": "^3.2.1",
+    "masonry-layout": "^4.2.2",
     "node-sass": "^4.7.2",
     "normalize.css": "^7.0.0",
     "remodal": "^1.1.1",

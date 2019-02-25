@@ -89,22 +89,93 @@
 	});
 })();
 
+// слайдер учителей в секции о курсах
+(function(){
+	
+	$('.about__teachers-list').slick({
+		dots: false,
+		arrows: true,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		infinite: false,
+		adaptiveHeight: false,
+		prevArrow: '<button type="button" class="about__teachers-arrow about__teachers-arrow--prev"></button>',
+		nextArrow: '<button type="button" class="about__teachers-arrow about__teachers-arrow--next"></button>'
+	})
+})();
+
+// табы в секции о курсах
+(function(){
+	var tabs = $('.about__example-tab'),
+		blocks = $('.about__example-block'),
+		activeClass = 'active';
+	
+	var changeActiveClass = function (elem) {
+		$(elem).addClass(activeClass).siblings().removeClass(activeClass);
+	}
+
+	changeActiveClass(tabs.first())
+	changeActiveClass(blocks.first())
+
+	tabs.click(function(){
+		var index = $(this).index();
+
+		changeActiveClass(tabs.eq(index))
+		changeActiveClass(blocks.eq(index))
+	});
+	
+})();
+
+// сетка фоток в секции о курсах
+(function(){
+	var wrap = $('.aep__list') 
+		items = $('.aep__item'),
+	 	col1 = '',
+	 	col2 = '',
+	 	col3 = '',
+		html = '',
+		colCount = 0;
+	
+	for(i=0; i<items.length; i++) {
+		if (colCount === 0) {
+			col1+= items.eq(i).html()
+			colCount++
+			continue;
+		}
+		if (colCount === 1) {
+			col2+= items.eq(i).html()
+			colCount++
+			continue;
+		}
+		if (colCount === 2) {
+			col3+= items.eq(i).html()
+			colCount = 0
+			continue;
+		}
+	}
+	html+= `<div class="aep__col">${col1}</div><div class="aep__col">${col2}</div><div class="aep__col">${col3}</div>`;
+	wrap.html(html)
+
+})();
+
 // переключение табов в информации о группах
 (function(){
 	var ageTab = $('.info__age-tab'),
-		ageWrap = $('.info__age-wrap')
 		ageBlock = $('.info__age-block'),
 		ageImg = $('.info__img img'),
 		languageTabs = $('.info__language-tabs')
-		languageTab = $('.info__language-tab'),
+		languageTab = $('.info-language-tab'),
 		languageActive = $('.info__language-active')
-		languageActiveText = $('.info__language-active-text'),
+		languageActiveText = $('.language-active-text'),
+		levelActiveText = $('.level-active-text'),
 		languageActiveFlag = $('.info__language-active-flag img'),
 		languageBlock = $('.info__language-block'),
 		languageWrap = $('.info__language-wrap'),
-		groupTab = $('.info__group-tab'),
+		groupTab = $('.info-group-tab'),
 		groupBlock = $('.info__group-block'),
 		groupWrap = $('.info__group-wrap'),
+		groupTabs = $('.info-language-tabs-group'),
+		groupTabsWrap = $('.info__language-tabs-group-wrap')
 		hideClass = 'hide',
 		activeClass = 'active'
 		leaveClass = 'leave';
@@ -126,55 +197,76 @@
 		languageActiveFlag.attr('src', 'app/img/content/info/flags/'+ name +'.png');
 	}
 
-	ageTab.first().addClass(activeClass);
-	ageBlock.first().addClass(activeClass);
-	ageBlock.first().find(languageTab).first().addClass(activeClass);
-	ageBlock.first().find(languageBlock).first().addClass(activeClass);
-	ageBlock.first().find(languageBlock).first().find(groupTab).first().addClass(activeClass);
-	ageBlock.first().find(languageBlock).first().find(groupBlock).first().addClass(activeClass);
+	ageTab.first().addClass(activeClass); // таб возраста
+	ageBlock.first().addClass(activeClass); // блок возраста
+	ageBlock.first().find(languageBlock).first().addClass(activeClass); // блок языка
+	ageBlock.first().find('.info-language-tabs').find('.info__language-tab').first().addClass(activeClass); // табу языков
+	ageBlock.first().find('.info-language-tabs-group').find(groupTabsWrap).first().find(groupTab).first().addClass(activeClass); // табу группы
+	ageBlock.first().find(languageBlock).first().find(groupBlock).first().addClass(activeClass); // блок группы
+	ageBlock.first().find(groupTabs).find(groupTabsWrap).first().addClass(activeClass) // блок табов группы
 	changeLanguageActive(ageBlock.first().find(languageTab).first().text(), ageBlock.first().find(languageTab).first().data('name'))
+	levelActiveText.text(ageBlock.first().find(groupTabs).find(groupTabsWrap).first().find(groupTab).first().text())
+
+	// активный класс  табу групы
 	
 	ageTab.click(function(){
 		var index = $(this).index(),
 			curAgeBlock = ageBlock.eq(index),
 			nowAgeBlock = ageBlock.filter('.' + activeClass),
 			curLanguageBlock = curAgeBlock.find(languageBlock).first(),
-			curGroupBlock = curLanguageBlock.find(groupBlock).first();
+			curGroupBlock = curLanguageBlock.find(groupBlock).first(),
+			curGroupTabsBlock = curAgeBlock.find(groupTabs).find(groupTabsWrap).first(),
+			curGroupTab = curGroupTabsBlock.find(groupTab).first()			
+		
 
 		changeActiveClass($(this))
 		changeBlockClass(nowAgeBlock, curAgeBlock)
 		changeActiveClass(curAgeBlock.find(languageTab).first())
 		changeActiveClass(curLanguageBlock)
-		changeActiveClass(curLanguageBlock.find(groupTab).first())
 		changeActiveClass(curGroupBlock)
+		changeActiveClass(curGroupTabsBlock)
+		changeActiveClass(curGroupTab)
 		changeLanguageActive(curAgeBlock.find(languageTab).first().text(), curAgeBlock.find(languageTab).first().data('name'))
+		levelActiveText.text(curGroupTabsBlock.find(groupTab).first().text())
 		ageImg.attr('src', 'app/img/content/info/age/'+ ++index +'.png');
 	});
 
 	languageTab.click(function(){
 		var index = $(this).index(),
-		curLanguageBlock = $(this).closest('.info__language').siblings('.info__language-wrap').find('.info__language-block').eq(index),
-		nowLanguageBlock = $(this).closest('.info__language').siblings('.info__language-wrap').find('.info__language-block').filter('.' + activeClass);
+		curLanguageBlock = $(this).closest('.info__header').siblings('.info__language-wrap').find('.info__language-block').eq(index),
+		nowLanguageBlock = $(this).closest('.info__header').siblings('.info__language-wrap').find('.info__language-block').filter('.' + activeClass),
+		curGroupTabsBlock = $(this).closest('.info__age-block').find(groupTabsWrap).eq(index),
+		curGroupTab = curGroupTabsBlock.find(groupTab).first()
 		
 		changeActiveClass($(this))
 		changeBlockClass(nowLanguageBlock, curLanguageBlock)
 		changeActiveClass(curLanguageBlock.find(groupTab).first())
 		changeActiveClass(curLanguageBlock.find(groupBlock).first())
+		changeActiveClass(curGroupTabsBlock)
+		changeActiveClass(curGroupTab)
 		changeLanguageActive($(this).text(), $(this).data('name'))
+		levelActiveText.text(curGroupTabsBlock.find(groupTab).first().text())
 		languageTabs.addClass(hideClass);
 	});
 
 	groupTab.click(function(){
 		var index = $(this).index(),
-			curGroupBlock = $(this).closest('.info__group').siblings('.info__group-wrap').find('.info__group-block').eq(index),
-			nowGroupBlock = $(this).closest('.info__group').siblings('.info__group-wrap').find('.info__group-block').filter('.' + activeClass);
+			indexLanguage = $(this).closest('.info__header').find('.info-language-tabs').find('.info__language-tab').filter('.' + activeClass).index();
+			curGroupBlock = $(this).closest('.info__header').siblings('.info__language-wrap').find('.info__language-block').eq(indexLanguage).find(groupBlock).eq(index),
+			nowGroupBlock = $(this).closest('.info__header').siblings('.info__language-wrap').find('.info__language-block').eq(indexLanguage).find(groupBlock).filter('.' + activeClass);
+			console.log($(this).closest('.info__header').siblings('.info__language-wrap').find('.info__language-block'))
+			console.log('TCL: nowGroupBlock', nowGroupBlock)
 
-		changeActiveClass($(this))
-		changeBlockClass(nowGroupBlock, curGroupBlock)
+		
+
+		changeActiveClass($(this));
+		changeBlockClass(nowGroupBlock, curGroupBlock);
+		levelActiveText.text($(this).text())
+		languageTabs.addClass(hideClass);
 	});
 
 	languageActive.click(function(){
-		languageTabs.toggleClass(hideClass)
+		$(this).siblings(languageTabs).toggleClass(hideClass)
 	});
 
 
@@ -199,15 +291,33 @@
 	});
 })();
 
-// раскрытие текста в секции о курсах
+// раскрытие текста в секции faq
 (function(){
-	var moreReviewLink = $('.about__review-more'),
+	var moreReviewLink = $('.faq__review-more'),
 		hideTextBlocks = moreReviewLink.siblings('.hide'),
 		hideClass = 'hide';
 
 	moreReviewLink.click(function(){
 		$(this).addClass(hideClass);
 		hideTextBlocks.removeClass(hideClass);
+	});
+})();
+
+// аккордеон в секции faq
+(function(){
+	var link = $('.faq__tab-header'),
+		body = $('.faq__tab-body')
+
+	link.click(function(){
+		var curBlock= $(this).closest('.faq__tab');
+		if (curBlock.hasClass('active')) {
+			curBlock.removeClass('active');
+			curBlock.find(body).slideUp();
+		} else {
+			body.slideUp()
+			curBlock.find(body).slideDown();
+			curBlock.addClass('active').siblings().removeClass('active')
+		}
 	});
 })();
 
@@ -235,60 +345,6 @@
 		speed: 200,
 		draggable: false,
 		adaptiveHeight: true
-	});
-})();
-
-// слайдер в архиве видеокурсов
-(function(){
-	var activeIndex = 0,
-		list = $('.archive__list'),
-		items = $('.archive__item'),
-		lockBlock = $('.archive__lock'),
-		activeClass = 'active',
-		disableClass = 'disable',
-		hideClass = 'hide';
-
-	items.first().addClass(activeClass);
-
-	items.click(function(){
-		$(this).addClass(activeClass).siblings().removeClass(activeClass);
-		activeIndex = $(this).index();
-
-		var status = $(this).data('status'),
-			translatePerc = 755 * activeIndex,
-			translateString = 'translateX(-' +translatePerc+ 'px)'
-
-		list.css('transform', translateString);
-
-		if (!status) {
-			list.removeClass(disableClass);
-			lockBlock.addClass(hideClass);
-			setTimeout(function(){
-				list.addClass(disableClass);
-				lockBlock.removeClass(hideClass);
-			},500);
-		} else {
-			list.removeClass(disableClass);
-			lockBlock.addClass(hideClass);
-		}
-	});
-})();
-
-// раскрытие текста в контактах
-(function(){
-	$('.contacts__more').click(function(){
-		var hideBlock = $(this).siblings('.contacts__hide'),
-			activeClass = 'active';
-
-		if ($(this).hasClass(activeClass)) {
-			$(this).removeClass(activeClass);
-			$(this).text('Подробнее');
-			hideBlock.removeClass(activeClass);
-		} else {
-			$(this).addClass(activeClass);
-			$(this).text('Скрыть');
-			hideBlock.addClass(activeClass);
-		}
 	});
 })();
 

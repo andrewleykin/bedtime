@@ -11,8 +11,7 @@
 
 .info__promo
   width 100%
-  max-width 590px
-  padding-left 35px
+  max-width 500px
   position relative
   color white
 
@@ -21,27 +20,27 @@
   font-size 32px
   font-weight 600
   line-height 32px
-  margin-bottom 65px
+  margin-bottom 40px
 
 .info__age
-  margin-left -35px
-  margin-bottom 40px
+  margin-bottom 20px
   display flex
   align-items center
 
 .info__age-tab
   font-family font-montserrat
-  font-size 24px
+  font-size 18px
   font-weight 600
-  line-height 32px
+  line-height 24px
   display block
-  padding 15px 35px
+  padding 13px 30px
   cursor pointer
   border-radius 50px
   @extend .trs
-  border 4px solid transparent
+  border 2px solid transparent
+  &:hover,
   &.active
-    border-color rgba(white, .2)
+    border-color kournikova
 
 .info__age-wrap,
 .info__language-wrap,
@@ -49,7 +48,7 @@
   position relative
 
 .info__age-wrap
-  min-height 583px
+  min-height 300px
 
 .info__age-block
   width 100%
@@ -68,14 +67,32 @@
   &.leave
     left -100px
 
+.info__header
+  display flex
+  padding-bottom 40px
+  margin-bottom 40px
+  border-bottom 2px solid rgba(white, .2)
+
+.info__header-title
+  font-size 14px
+  font-family font-lora
+  margin-bottom 20px
+  padding-left 20px
+
+.info__header-active-text
+  font-family font-montserrat
+  font-size 14px
+  font-weight 600
+
 .info__language-wrap
-  min-height 713px
+  min-height 250px
 
 .info__language
-  margin-bottom 40px
   display flex
   flex-direction column
   position relative
+  &+&
+    margin-left 40px
 
 .info__language-block
   width 100%
@@ -100,12 +117,17 @@
   align-items center
   position relative
   cursor pointer
+  background rgba(white, .1);
+  border-radius 30px
+  width 230px
+  height 50px
+  padding-left 25px
   &:after
     content ''
     display block
     position absolute
-    top 5px
-    right -15px
+    top 17px
+    right 17px
     width 8px
     height 8px
     border 2px solid transparent
@@ -125,11 +147,6 @@
     max-width 22px
     absolute-center()
 
-.info__language-active-text
-  font-family font-montserrat
-  font-size 18px
-  font-weight 600
-
 .info__language-tabs
   position absolute
   top calc(100% + 5px)
@@ -140,6 +157,11 @@
   &.hide
     opacity 0
     visibility hidden
+
+.info__language-tabs-group-wrap
+  display none
+  &.active
+    display block
 
 .info__language-tab
   font-size 18px
@@ -156,7 +178,7 @@
     cursor default
 
 .info__group-wrap
-  min-height 451px
+  min-height 170px
 
 .info__group-block
   width 100%
@@ -230,15 +252,6 @@
 .ig__heading-wrap
   display flex
   align-items center
-  &:hover
-    .ig__heading-post,
-    .ig__heading-name
-      color bunting
-    .icon-fb-fill
-      opacity 1
-  &:hover + .ig__heading-hide
-    opacity 1
-    visibility visible
 
 .ig__heading-pic
   margin-right 25px
@@ -397,7 +410,7 @@
   max-width 250px
 
 .info__action
-  margin-top 20px
+  margin-top 50px
   margin-bottom 20px
 
 .info__warning-row

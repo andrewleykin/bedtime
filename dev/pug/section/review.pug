@@ -13,4 +13,9 @@ section.section.review(id=content.review.id)
       .review__users
         each item in content.review.list
           .review__user
-            img(src=item["src"], alt=item["alt"])
+            .review__user-wrap
+              .review__user-pic
+                img(src=item["src"], alt=item["alt"])
+              .review__user-info
+                span.review__user-name= item["name"]
+                span.review__user-city= item["city"]
