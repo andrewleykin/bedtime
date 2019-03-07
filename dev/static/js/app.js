@@ -119,43 +119,81 @@
 
 	tabs.click(function(){
 		var index = $(this).index();
+		var now = blocks.filter('.active');
+		var cur = blocks.eq(index);
 
-		changeActiveClass(tabs.eq(index))
-		changeActiveClass(blocks.eq(index))
+		now.removeClass(activeClass).addClass(leaveClass);
+		now.on('transitionend', function(){
+			now.removeClass(leaveClass)
+		});
+		cur.addClass(activeClass, 'trs-delay');
+
+		changeActiveClass(tabs.eq(index));
 	});
 	
 })();
 
 // сетка фоток в секции о курсах
 (function(){
-	var wrap = $('.aep__list') 
-		items = $('.aep__item'),
+	var list = $('.aep__list') 
+		items = list.find('.aep__item'),
 	 	col1 = '',
 	 	col2 = '',
-	 	col3 = '',
-		html = '',
+		col3 = '',
+		htmlCols = '',
 		colCount = 0;
 	
-	for(i=0; i<items.length; i++) {
+	for (i=0; i<items.length; i++) {
 		if (colCount === 0) {
-			col1+= items.eq(i).html()
+			col1+= items.eq(i)[0].outerHTML
 			colCount++
 			continue;
 		}
 		if (colCount === 1) {
-			col2+= items.eq(i).html()
+			col2+= items.eq(i)[0].outerHTML
 			colCount++
 			continue;
 		}
 		if (colCount === 2) {
-			col3+= items.eq(i).html()
+			col3+= items.eq(i)[0].outerHTML
 			colCount = 0
 			continue;
 		}
 	}
-	html+= `<div class="aep__col">${col1}</div><div class="aep__col">${col2}</div><div class="aep__col">${col3}</div>`;
-	wrap.html(html)
+	htmlCols+= `<div class="aep__col">${col1}</div><div class="aep__col">${col2}</div><div class="aep__col">${col3}</div>`;
+	list.html(htmlCols);
+})();
 
+// слайдер в сетке фоток в секции о курсах
+(function(){
+
+	$('.aep__item').click(function(){
+		var index = $(this).index();
+		var indexCol = $(this).closest('.aep__col').index();
+		var inst = $('[data-remodal-id=slider]').remodal();
+		var initSlideIndex = 0;
+
+		if (index === 0) {
+			initSlideIndex = indexCol
+		} else {
+			if (indexCol === 0) {
+				initSlideIndex = 3*index
+			} else {
+				initSlideIndex = 3*index+indexCol
+			}
+		}
+
+		inst.open();
+		$('.aep__slider').slick({
+			prevArrow: '<button type="button" class="about__teachers-arrow about__teachers-arrow--prev"></button>',
+			nextArrow: '<button type="button" class="about__teachers-arrow about__teachers-arrow--next"></button>',
+			initialSlide: initSlideIndex
+		})
+	});
+
+	$(document).on('closed', '.remodal', function (e) {
+		$('.aep__slider').slick('unslick')
+	});
 })();
 
 // переключение табов в информации о группах
@@ -356,7 +394,6 @@
 			flag = true,
 			mainParent = $('.main'),
 			allSection = mainParent.find('.section');
-			console.log("​allSection", allSection)
 		
 		
 		var changeFlag = function() {
@@ -368,12 +405,14 @@
 		var changePos = function (index) {
 			var posTop = allSection.eq(index).position().top
 			mainParent.css('margin-top', '-' +posTop+ 'px');
-			
+
 			if (index > 0) {
+				if (!mainParent.hasClass('non-first')) mainParent.addClass('non-first');
 				$('.header').addClass('header--fixed');
 				$('.logo__fixed').removeClass('hide').siblings().addClass('hide');
 				$('.menu__item').eq(index-1).addClass('active').siblings().removeClass('active');
 			} else {
+				if (mainParent.hasClass('non-first')) mainParent.removeClass('non-first');
 				$('.header').removeClass('header--fixed');
 				$('.logo__main').removeClass('hide').siblings().addClass('hide');
 				$('.menu__item').removeClass('active');

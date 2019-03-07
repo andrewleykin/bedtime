@@ -38,9 +38,13 @@
   border-radius 50px
   @extend .trs
   border 2px solid transparent
-  &:hover,
+  &:hover
+    background-color carnation
   &.active
     border-color kournikova
+    &:hover
+      background-color transparent
+      cursor default
 
 .info__age-wrap,
 .info__language-wrap,
@@ -85,7 +89,7 @@
   font-weight 600
 
 .info__language-wrap
-  min-height 250px
+  min-height 185px
 
 .info__language
   display flex
@@ -126,7 +130,7 @@
     content ''
     display block
     position absolute
-    top 17px
+    top 20px
     right 17px
     width 8px
     height 8px

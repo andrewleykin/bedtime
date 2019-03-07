@@ -1,3 +1,9 @@
+.about
+  overflow-x hidden
+  &.slider-open
+    overflow hidden
+    z-index 999
+
 .about__wrap
   color white
   padding 150px 0
@@ -69,7 +75,7 @@
   line-height 24px
   margin-bottom 20px
   width 100%
-  max-width 165px
+  max-width 180px
   @extend .trs
 
 .about__advantage-text
@@ -204,7 +210,7 @@
     border-bottom-color kournikova
     position absolute
     top 50%
-    left 50%
+    left 48%
     transform translate(-50%, -50%) rotate(-45deg)
   &--prev
     left 40px
@@ -237,14 +243,27 @@
   border-radius 50px
   @extend .trs
   border 2px solid transparent
-  &:hover,
+  &:hover
+    background-color carnation
   &.active
     border-color kournikova
+    &:hover
+      background-color transparent
+      cursor default
 
 .about__example-block
-  display none
+  opacity 0
+  visibility hidden
+  transform translateX(100px)
+  @extend .trs
+  &.trs-delay
+    transition-delay .3s
   &.active
-    display block
+    opacity 1
+    transform translateX(0px)
+    visibility visible
+  &.leave
+    transform translateX(-100px)
 
 .aev__list
   display flex
@@ -282,6 +301,9 @@
   font-size 18px
   font-family font-montserrat
 
+.aep
+  margin-top -200px
+
 .aep__list
   display flex
   justify-content space-between
@@ -289,13 +311,36 @@
   max-width 1130px
   margin 0 auto
 
+.aep__item
+  overflow hidden
+  border-radius 16px
+  img
+    @extend .trs
+  &:hover
+    img
+      transform scale(1.1)
+      transform-origin center
+
 .aep__col
   width 100%
   max-width 400px
   &:first-child
     max-width 250px
-  img
-    border-radius 16px
-    overflow hidden
-  img+img
+  .aep__item+.aep__item
     margin-top 40px
+
+.aep__slider
+  max-width 926px
+  margin 0 auto
+  .aep__item
+    display flex
+    justify-content center
+    align-items center
+    min-height 400px
+    &:hover
+      img
+        transform none
+
+[data-remodal-id="slider"]
+  background transparent
+  max-width 100%

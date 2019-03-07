@@ -28,22 +28,25 @@ section.section.about(id=content.about.id data-scroll)
           each item in content.about.example.tabs
             .about__example-tab= item["text"]
         .about__example-content
-          .about__example-block
-            .aev
-              .aev__list
-                each item in content.about.example.video
-                  .aev__block
-                    .aev__content
-                      video(src=item["video"])
-                    .aev__img
-                      .aev__logo
-                        img(src=content.general.logo.src alt="content.general.logo.alt")
-                      +icon(content.about.example.icon)
-                      img(src=item["img"] alt=item["name"])
-                      .aev__name= item["name"]
-          .about__example-block
-            .aep
-              .aep__list
-                each item in content.about.example.photo
-                  .aep__item
-                    img(src=item["img"] alt=item["alt"])
+          .about__example-block.aev
+            .aev__list
+              each item in content.about.example.video
+                .aev__block
+                  .aev__content
+                    video(src=item["video"])
+                  .aev__img
+                    .aev__logo
+                      img(src=content.general.logo.src alt="content.general.logo.alt")
+                    +icon(content.about.example.icon)
+                    img(src=item["img"] alt=item["name"])
+                    .aev__name= item["name"]
+          .about__example-block.aep
+            .aep__list
+              each item in content.about.example.photo
+                .aep__item(data-remodal-target="slider")
+                  img(src=item["img"] alt=item["alt"])
+.remodal(data-remodal-id="slider")
+  .aep__slider
+    each item in content.about.example.photo
+      .aep__item
+        img(src=item["img"] alt=item["alt"])
