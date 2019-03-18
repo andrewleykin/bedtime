@@ -269,7 +269,13 @@
 		ageImg.attr('src', 'app/img/content/info/age/'+ ++index +'.png');
 	});
 
+	languageTabs.click(function(e){
+		e.stopPropagation();
+		$(this).addClass(hideClass);
+	})
+
 	languageTab.click(function(){
+		if ($(this).hasClass(activeClass)) return false
 		var index = $(this).index(),
 		curLanguageBlock = $(this).closest('.info__header').siblings('.info__language-wrap').find('.info__language-block').eq(index),
 		nowLanguageBlock = $(this).closest('.info__header').siblings('.info__language-wrap').find('.info__language-block').filter('.' + activeClass),

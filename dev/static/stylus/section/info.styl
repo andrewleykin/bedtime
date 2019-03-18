@@ -39,11 +39,11 @@
   @extend .trs
   border 2px solid transparent
   &:hover
-    background-color carnation
+    color carnation
   &.active
     border-color kournikova
     &:hover
-      background-color transparent
+      color white
       cursor default
 
 .info__age-wrap,
@@ -153,11 +153,27 @@
 
 .info__language-tabs
   position absolute
-  top calc(100% + 5px)
-  border-radius 8px
+  padding 15px 0
+  top 32px
+  left 0
+  right 0
+  border-radius 16px
   background white
   @extend .trs
   z-index 2
+  cursor pointer
+  &:after
+    content ''
+    display block
+    position absolute
+    top 27px
+    right 15px
+    width 8px
+    height 8px
+    border 2px solid transparent
+    border-left-color bunting
+    border-top-color bunting
+    transform rotate(45deg)
   &.hide
     opacity 0
     visibility hidden
@@ -176,9 +192,9 @@
   color bunting
   @extend .trs
   &:hover
-    color kournikova
+    color carnation
   &.active
-    color kournikova
+    color carnation
     cursor default
 
 .info__group-wrap
@@ -430,10 +446,11 @@
     margin-right 10px
 
 .info__warning-text
-  font-size 14px
+  font-size 16px
+  line-height 24px
   font-weight 400
 
 .info__warning-descr
-  font-size 10px
-  line-height 12px
+  font-size 12px
+  line-height 14px
 
