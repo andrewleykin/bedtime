@@ -1,20 +1,33 @@
 .faq__wrap
   padding-top 150px
   padding-bottom 100px
-
-.faq__wrap-row
-  display flex
-  justify-content space-between
-
-.faq__content
-  width 100%
-  max-width 565px
+  @media (max-width breakpoint-md)
+    padding 0
+    margin-bottom 80px
 
 .faq__title
   font-weight 600
   font-size 32px
   font-family font-montserrat
   margin-bottom 40px
+  @media (max-width breakpoint-md)
+    text-align center
+    font-size 24px
+
+.faq__wrap-row
+  display flex
+  justify-content space-between
+  @media (max-width breakpoint-md)
+    display block
+
+.faq__content
+  width 100%
+  max-width 565px
+  @media (max-width breakpoint-xl)
+    margin-right 20px
+  @media (max-width breakpoint-md)
+    margin-right 0
+    margin-bottom 60px
 
 .faq__tab
   border-bottom 2px solid rgba(#fff, 0.2)
@@ -39,11 +52,15 @@
     border 2px solid transparent
     border-left-color white
     border-bottom-color white
+  @media (max-width breakpoint-md)
+    padding-bottom 25px
 
 .faq__tab-title
   font-weight 600
   font-size 18px
   font-family font-montserrat
+  @media (max-width breakpoint-md)
+    font-size 16px
 
 .faq__tab-body
   padding-bottom 40px
@@ -68,7 +85,7 @@
 
 .ftg__title
   font-size 12px
-  font-weight: bold;
+  font-weight bold
   letter-spacing 0.1em
   text-transform uppercase
   margin-bottom 20px
@@ -141,6 +158,9 @@
 .faq__review
   width 100%
   max-width 485px
+  @media (max-width breakpoint-md)
+    max-width 375px
+    margin 0 auto
 
 .faq__block
   max-width 100%
@@ -151,6 +171,13 @@
   background rgba(white, .1)
   border-radius standart-border-radius
   position relative
+  z-index 0
+  @media (max-width breakpoint-lg)
+    padding 30px 22px
+  @media (max-width breakpoint-md)
+    background linear-gradient(225.49deg, rgba(96, 234, 201, 0.2) 3.69%, rgba(235, 175, 241, 0.2) 120.05%)
+    padding 60px 47px 30px
+    text-align center
 
 .faq__review-triangle
   position absolute
@@ -160,6 +187,11 @@
     width 105px
     height 26px
     fill white
+  @media (max-width breakpoint-xl)
+    right 0
+  @media (max-width breakpoint-md)
+    right 50%
+    transform translateX(50%)
 
 .faq__review-icon
   position absolute
@@ -168,8 +200,14 @@
   z-index -1
   .icon
     width 70px
-    height 40px
+    height 60px
     fill rgba(#182f4c, .9)
+  @media (max-width breakpoint-md)
+    top 30px
+    left 50%
+    transform translateX(-50%)
+    .icon
+      fill #182f4c
 
 .faq__review-text
   font-family font-lora
@@ -184,6 +222,10 @@
     height 0
     overflow hidden
     margin-top 0
+  @media (max-width breakpoint-md)
+    font-size 14px
+    font-family font-open
+    font-style normal
 
 .faq__review-more
   font-family font-open
@@ -211,15 +253,25 @@
     visibility hidden
     height 0
     margin-top 0
+  @media (max-width breakpoint-md)
+    margin 25px auto 0
 
 .faq__author
   display flex
   align-items center
   padding-top 45px
   padding-left 60px
+  @media (max-width breakpoint-md)
+    flex-direction column-reverse
+    justify-content center
+    padding-left 0
+    text-align center
 
 .faq__author-info
   margin-right 40px
+  @media (max-width breakpoint-md)
+    margin-right 0
+    margin-top 25px
 
 .faq__author-name
   font-family font-montserrat
@@ -227,14 +279,21 @@
   font-weight 600
   display block
   margin-bottom 20px
+  @media (max-width breakpoint-md)
+    font-size 16px
+    margin-bottom 15px
 
 .faq__author-post
   font-family font-lora
   font-size 18px
   font-weight 400
   font-style italic
+  @media (max-width breakpoint-md)
+    font-size 14px
 
 .faq__author-pic
   border-radius 50%
   overflow hidden
   align-self flex-start
+  @media (max-width breakpoint-md)
+    margin 0 auto

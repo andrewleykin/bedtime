@@ -19,7 +19,35 @@
   align-items center
   justify-content space-between
   padding 0 75px
+  @media (max-width breakpoint-xl)
+    padding 0 30px
+  @media (max-width breakpoint-lg)
+    padding 0
 
 .header__menu,
 .header__action
   padding-top 25px
+  @media (max-width breakpoint-md)
+    display none
+
+.header__burger
+  display none
+  width 34px
+  height 12px
+  cursor pointer
+  position relative
+  &:before,&:after
+    content ''
+    display block
+    width 100%
+    height 3px
+    background-color #fff
+    border-radius 2px
+    position absolute
+  &:before
+    top 0
+  &:after
+    bottom 0
+  @media (max-width breakpoint-md)
+    display block
+  

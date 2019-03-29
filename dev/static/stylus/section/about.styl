@@ -3,6 +3,8 @@
   &.slider-open
     overflow hidden
     z-index 999
+  @media (max-width breakpoint-md)
+    margin-bottom 80px
 
 .about__wrap
   color white
@@ -11,6 +13,8 @@
   justify-content center
   flex-direction column
   align-items center
+  @media (max-width breakpoint-md)
+    padding 0
 
 .about__title
   max-width 590px
@@ -20,12 +24,19 @@
   font-weight 600
   line-height 40px
   margin-bottom 25px
+  @media (max-width breakpoint-md)
+    font-size 24px
+    line-height 30px
+    max-width 330px
 
 .about__subtitle
   font-family font-lora
   font-size 18px
   display block
   margin-bottom 45px
+  @media (max-width breakpoint-md)
+    font-size 16px
+    margin-bottom 30px
 
 .about__text
   font-size 14px
@@ -33,6 +44,11 @@
   text-align center
   margin-bottom 75px
   max-width 580px
+  @media (max-width breakpoint-md)
+    max-width 330px
+    margin-bottom 50px
+    font-size 12px
+    line-height 20px
 
 .about__advantage
   width 100%
@@ -40,8 +56,10 @@
   display flex
   flex-wrap wrap
   justify-content space-between
-  margin 0 -60px
-  margin-bottom 120px
+  margin 0 -60px 120px
+  @media (max-width breakpoint-md)
+    width calc(100% + 40px)
+    margin 0 -20px 80px
 
 .about__advantage-block
   width 100%
@@ -64,9 +82,35 @@
     .about__advantage-text
       opacity 1
       visibility visible
+  @media (max-width breakpoint-md)
+    position relative
+    width 100%
+    max-width 190px
+    margin 0
+    &:nth-child(4)
+      margin-left 0
+    &:nth-child(5)
+      margin-right 0
+    &:hover
+      .about__advantage-name
+        color white
+      .about__advantage-text
+        opacity 0
+        visibility hidden
+    &.slick-active
+      .about__advantage-img
+        opacity 1
+      .about__advantage-name,
+      .about__advantage-text
+        opacity 1
+        visibility visible
 
 .about__advantage-img
   margin-bottom 25px
+  @media (max-width breakpoint-md)
+    display flex
+    justify-content center
+    opacity .5
 
 .about__advantage-name
   font-family font-montserrat
@@ -77,6 +121,14 @@
   width 100%
   max-width 180px
   @extend .trs
+  @media (max-width breakpoint-md)
+    font-size 16px
+    line-height 20px
+    display block
+    max-width 150px
+    margin 0 auto 25px
+    opacity 0
+    visibility hidden
 
 .about__advantage-text
   font-family font-open
@@ -95,6 +147,23 @@
   opacity 0
   visibility hidden
   @extend .trs
+  @media (max-width breakpoint-md)
+    color white
+    font-size 12px
+    line-height 18px
+    position relative
+    top unset 
+    left unset
+    // top calc(100% + 25px)
+    // left 0
+    padding 0
+    background none
+    box-shadow none
+    z-index 0
+    border-radius 0
+    min-width auto
+    width calc(100% + 80px)
+    margin-left -40px
 
 .about__teachers
   margin-bottom 110px
@@ -105,9 +174,10 @@
     margin-right auto
   .about__text
     max-width 600px
-
-.about__teachers-slider
-  margin-top 60px
+  @media (max-width breakpoint-md)
+    margin-bottom 80px
+    .about__text
+      margin-bottom 40px
 
 .about__teachers-list
   max-width 100vw
@@ -131,6 +201,21 @@
     .about__teachers-text
       opacity 1
       visibility visible
+  @media (max-width breakpoint-md)
+    min-width 220px
+    margin 0 20px
+    cursor pointer
+    height auto
+    &:hover
+      z-index 10
+      .about__teachers-name,
+      .about__teachers-post
+        color white
+    &.slick-current
+      .about__teachers-more
+        opacity 1
+        visibility visible
+
 
 .about__teachers-img
   margin 0 auto 20px
@@ -161,12 +246,36 @@
   font-family font-montserrat
   max-width 130px
   @extend .trs
+  @media (max-width breakpoint-md)
+    font-size 16px
+    line-height 20px
 
 .about__teachers-post
   font-size 14px
   line-height 20px
   font-family font-lora
   @extend .trs
+  @media (max-width breakpoint-md)
+    display block
+    margin-bottom 20px
+
+.about__teachers-more
+  display none
+  width 8px
+  height 8px
+  border 1px solid transparent
+  border-bottom-color carnation
+  border-left-color carnation
+  position absolute
+  left 50%
+  transform translateX(-50%) rotate(-45deg)
+  bottom 20px
+  &.active
+    transform translateX(-50%) rotate(135deg)
+  @media (max-width breakpoint-md)
+    display block
+    opacity 0
+    visibility hidden
 
 .about__teachers-text
   font-family font-open
@@ -185,6 +294,22 @@
   opacity 0
   visibility hidden
   @extend .trs
+  @media (max-width breakpoint-md)
+    position relative
+    top unset
+    left unset
+    padding 0
+    background none
+    box-shadow none
+    z-index 0
+    border-radius 0
+    color white
+    min-width auto
+    width calc(100% + 40px)
+    margin-left -20px
+    opacity 1
+    visibility visible
+    display none
 
 .about__teachers-arrow
   width 64px
@@ -231,6 +356,8 @@
   align-items center
   justify-content center
   margin-bottom 60px
+  @media (max-width breakpoint-md)
+    margin-bottom 40px
 
 .about__example-tab
   font-family font-montserrat
@@ -251,6 +378,13 @@
       color white
       cursor default
 
+.about__example-content
+  overflow hidden
+  @media (max-width breakpoint-md)
+    &.full-width
+      width calc(100% + 40px)
+      margin-left -20px
+
 .about__example-block
   opacity 0
   visibility hidden
@@ -270,6 +404,17 @@
   justify-content space-between
   max-width 1130px
   margin 0 auto
+  @media (max-width breakpoint-md)
+    margin-left -20px
+    width calc(100% + 40px)
+
+.aev__block
+  @media (max-width breakpoint-md)
+    max-width 260px
+    margin 5px 10px 0
+    &.slick-current
+      max-width 280px
+      margin-top 0
 
 .aev__content
   display none
@@ -303,6 +448,8 @@
 
 .aep
   margin-top -200px
+  @media (max-width breakpoint-md)
+    margin-top -170px
 
 .aep__list
   display flex
@@ -310,6 +457,8 @@
   width 100%
   max-width 1130px
   margin 0 auto
+  @media (max-width breakpoint-md)
+    max-width 320px
 
 .aep__item
   overflow hidden
@@ -328,6 +477,12 @@
     max-width 250px
   .aep__item+.aep__item
     margin-top 40px
+  @media (max-width breakpoint-md)
+    max-width 170px
+    &:first-child
+      max-width 130px
+  .aep__item+.aep__item
+    margin-top 15px
 
 .aep__slider
   max-width 926px

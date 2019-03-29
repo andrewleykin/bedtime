@@ -2,7 +2,9 @@
 
 body
 	overflow hidden
-	// overflow-x hidden
+	@media (max-width breakpoint-md)
+		overflow visible
+		background-color bunting
 
 .container 
 	width 100%
@@ -26,6 +28,12 @@ body
 		position relative
 		z-index 2
 		justify-content flex-start
+	@media (max-width breakpoint-md)
+		justify-content flex-start
+		min-height auto
+		&[data-scroll]
+			overflow-y visible
+			height auto		
 
 .main
 	transition all .4s;

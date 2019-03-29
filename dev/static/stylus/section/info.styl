@@ -1,3 +1,7 @@
+.info
+  @media (max-width breakpoint-md)
+    margin-bottom 100px
+
 .info__wrap
   padding-top 150px
   padding-bottom 90px
@@ -8,6 +12,9 @@
   margin 0 auto
   position relative
   z-index 2
+  @media (max-width breakpoint-md)
+    padding 0
+    flex-direction column-reverse
 
 .info__promo
   width 100%
@@ -21,11 +28,22 @@
   font-weight 600
   line-height 32px
   margin-bottom 40px
+  &--md
+    display none
+  @media (max-width breakpoint-md)
+    display none
+    font-size 24px
+    line-height 30px
+    text-align center
+    &--md
+      display block
 
 .info__age
   margin-bottom 20px
   display flex
   align-items center
+  @media (max-width breakpoint-md)
+    justify-content center
 
 .info__age-tab
   font-family font-montserrat
@@ -76,6 +94,11 @@
   padding-bottom 40px
   margin-bottom 40px
   border-bottom 2px solid rgba(white, .2)
+  @media (max-width breakpoint-md)
+    display block
+    padding-bottom 30px
+    max-width 320px
+    margin 0 auto 20px
 
 .info__header-title
   font-size 14px
@@ -97,6 +120,10 @@
   position relative
   &+&
     margin-left 40px
+  @media (max-width breakpoint-md)
+    &+&
+      margin-left 0
+      margin-top 25px
 
 .info__language-block
   width 100%
@@ -138,6 +165,11 @@
     border-left-color white
     border-bottom-color white
     transform rotate(-45deg)
+  @media (max-width breakpoint-lg)
+    width 200px
+  @media (max-width breakpoint-md)
+    width 100%
+    max-width 320px
 
 .info__language-active-flag
   width 18px
@@ -245,6 +277,9 @@
     width 16px
     height 16px
     fill rgba(white, .5)
+  @media (max-width breakpoint-md)
+    margin-bottom 20px
+    justify-content center
 
 .ig__header-block
   display flex
@@ -254,9 +289,15 @@
   span
     font-size 14px
     font-weight 400
+  @media (max-width breakpoint-md)
+    flex-direction column
+    align-items center
 
 .ig__header-icon
   margin-right 10px
+  @media (max-width breakpoint-md)
+    margin-right 0
+    margin-bottom 10px
 
 .ig__text
   font-size 14px
@@ -268,10 +309,11 @@
   margin-bottom 40px
   position relative
   z-index 2
-
-.ig__heading-wrap
-  display flex
   align-items center
+  @media (max-width breakpoint-md)
+    flex-direction column
+    text-align center
+    margin-bottom 30px
 
 .ig__heading-pic
   margin-right 25px
@@ -279,53 +321,42 @@
   height 48px
   overflow hidden
   border-radius 50%
+  position relative
+  &:before
+    content ''
+    display block
+    width 80px
+    height 80px
+    border-radius 50%
+    background linear-gradient(230.92deg, rgba(96, 234, 201, 0.2) -15.12%, rgba(235, 175, 241, 0.2) 78.65%)
+    position absolute
+    top 0
+    left 0
+  @media (max-width breakpoint-md)
+    margin-right 0
+    margin-bottom 15px
+    width 80px
+    height 80px
+    z-index 1
+    display flex
+    justify-content center
+    align-items center
+    img 
+      width 72px
+    &:before
+      display block
 
 .ig__heading-post
   font-family font-lora
   font-size 14px
   margin-bottom 10px
+  display block
 
 .ig__heading-name
   font-size 14px
   font-weight 700
   color white
   position relative
-  .icon-fb-fill
-    fill bunting
-    position absolute
-    width 12px
-    height 12px
-    right -12px
-    top -6px
-    opacity 0
-
-.ig__heading-hide
-  position absolute
-  top -10px
-  left -10px
-  background white
-  border-radius 8px
-  padding 70px 20px 20px
-  z-index -1
-  max-width 400px
-  opacity 0
-  visibility hidden
-  @extend .trs
-
-.ig__heading-descr
-  font-family font-lora
-  font-style italic
-  line-height 20px
-  font-size 12px
-  color bunting
-  margin-bottom 15px
-  max-width 250px
-
-.ig__heading-text
-  font-family font-open
-  line-height 18px
-  font-size 12px
-  color bunting
 
 .ig__descr
   display flex
@@ -399,10 +430,11 @@
   right 30px
   font-style italic
 
-.ig__cost-line
+.ig__cost
   display flex
   align-items center
-  margin-bottom 15px
+  @media (max-width breakpoint-md)
+    justify-content center
 
 .ig__cost-price
   color kournikova
@@ -432,6 +464,15 @@
 .info__action
   margin-top 50px
   margin-bottom 20px
+  @media (max-width breakpoint-md)
+    margin-top 200px
+    display flex
+    justify-content center
+
+.info__warning
+  @media (max-width breakpoint-md)
+    max-width 320px
+    margin 0 auto
 
 .info__warning-row
   display flex
@@ -449,8 +490,14 @@
   font-size 16px
   line-height 24px
   font-weight 400
+  @media (max-width breakpoint-md)
+    font-size 14px
 
 .info__warning-descr
   font-size 12px
   line-height 14px
 
+.info__img
+  @media (max-width breakpoint-md)
+    max-width 245px
+    margin 0 auto 35px

@@ -2,6 +2,7 @@
 
 // загрузка страницы и первая анимация
 (function(){
+	if (window.innerWidth <= 768) return false
 	// загрузка страницы
 	$(document).ready(function(){
 		setTimeout(function(){
@@ -89,9 +90,37 @@
 	});
 })();
 
-// слайдер учителей в секции о курсах
+// слайдер преимуществ на мобильной версии
 (function(){
+	if (window.innerWidth > 768) return false
+	$('.about__advantage').slick({
+		centerMode: true,
+		arrows: false,
+		variableWidth: true
+	})
+})();
+
+// учителя в секции о курсах
+(function(){
+	var post = $('.about__teachers-post'),
+		item = $('.about__teachers-item'),
+		text = $('.about__teachers-text');
 	
+	// если больше 768, проставить отступы
+	if (window.innerWidth > 768) {
+		for (i=0; i<post.length; i++) {
+			var curItem = post.eq(i).closest(item),
+				curText = curItem.find(text);
+			
+			if (post.eq(i).height() > 20) {
+				curText.css('paddingTop', 240)
+			} else {
+				curText.css('paddingTop', 224)
+			}
+		}
+	}
+
+	// слайдер
 	$('.about__teachers-list').slick({
 		dots: false,
 		arrows: true,
@@ -100,22 +129,54 @@
 		infinite: false,
 		adaptiveHeight: false,
 		prevArrow: '<button type="button" class="about__teachers-arrow about__teachers-arrow--prev"></button>',
-		nextArrow: '<button type="button" class="about__teachers-arrow about__teachers-arrow--next"></button>'
+		nextArrow: '<button type="button" class="about__teachers-arrow about__teachers-arrow--next"></button>',
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 1,
+					centerMode: true,
+					arrows: false
+				}
+			}
+		]
 	})
+
+	// если меньше 768, то открывать текст по клику
+	if (window.innerWidth <= 768) {
+		item.click(function(e){
+			e.stopPropagation()
+			$(this).find(text).slideToggle()
+			$(this).find('.about__teachers-more').toggleClass('active')
+		})
+	}
 })();
 
 // табы в секции о курсах
 (function(){
 	var tabs = $('.about__example-tab'),
 		blocks = $('.about__example-block'),
-		activeClass = 'active';
-	
+		activeClass = 'active',
+		wrap = $('.about__example-content');
+
+		
 	var changeActiveClass = function (elem) {
 		$(elem).addClass(activeClass).siblings().removeClass(activeClass);
 	}
 
+	var checkActiveBlock = function () {
+		if (window.innerWidth > 768) return false
+		if (blocks.first().hasClass(activeClass)) {
+			wrap.addClass('full-width')
+		} else {
+			wrap.removeClass('full-width')
+		}
+	}
+	
 	changeActiveClass(tabs.first())
 	changeActiveClass(blocks.first())
+	checkActiveBlock()
+	wrap.css('height', blocks.first().height() < 200 ? 200 : blocks.first().height())
 
 	tabs.click(function(){
 		var index = $(this).index();
@@ -129,8 +190,21 @@
 		cur.addClass(activeClass, 'trs-delay');
 
 		changeActiveClass(tabs.eq(index));
+		checkActiveBlock()
+		wrap.css('height', cur.height())
 	});
 	
+})();
+
+// слайдер видео в секции о курсах
+(function(){
+	if (window.innerWidth > 768) return false
+	$('.aev__list').slick({
+		centerMode: true,
+		arrows: false,
+		variableWidth: true,
+		infinite: false
+	})
 })();
 
 // сетка фоток в секции о курсах
@@ -142,32 +216,50 @@
 		col3 = '',
 		htmlCols = '',
 		colCount = 0;
+
 	
-	for (i=0; i<items.length; i++) {
-		if (colCount === 0) {
-			col1+= items.eq(i)[0].outerHTML
-			colCount++
-			continue;
+	if (window.innerWidth > 768) {
+		for (i=0; i<items.length; i++) {
+			if (colCount === 0) {
+				col1+= items.eq(i)[0].outerHTML
+				colCount++
+				continue;
+			}
+			if (colCount === 1) {
+				col2+= items.eq(i)[0].outerHTML
+				colCount++
+				continue;
+			}
+			if (colCount === 2) {
+				col3+= items.eq(i)[0].outerHTML
+				colCount = 0
+				continue;
+			}
 		}
-		if (colCount === 1) {
-			col2+= items.eq(i)[0].outerHTML
-			colCount++
-			continue;
+		htmlCols+= `<div class="aep__col">${col1}</div><div class="aep__col">${col2}</div><div class="aep__col">${col3}</div>`;
+	} else {
+		for (i=0; i<items.length; i++) {
+			if (colCount === 0) {
+				col1+= items.eq(i)[0].outerHTML
+				colCount++
+				continue;
+			}
+			if (colCount === 1) {
+				col2+= items.eq(i)[0].outerHTML
+				colCount = 0
+				continue;
+			}
 		}
-		if (colCount === 2) {
-			col3+= items.eq(i)[0].outerHTML
-			colCount = 0
-			continue;
-		}
+		htmlCols+= `<div class="aep__col">${col1}</div><div class="aep__col">${col2}</div>`;
 	}
-	htmlCols+= `<div class="aep__col">${col1}</div><div class="aep__col">${col2}</div><div class="aep__col">${col3}</div>`;
+	
 	list.html(htmlCols);
 })();
 
 // слайдер в сетке фоток в секции о курсах
 (function(){
-
 	$('.aep__item').click(function(){
+		if (window.innerWidth <= 768) return false
 		var index = $(this).index();
 		var indexCol = $(this).closest('.aep__col').index();
 		var inst = $('[data-remodal-id=slider]').remodal();
@@ -395,7 +487,7 @@
 // смена экранов
 (function(){
 	$(document).ready(function(){
-
+		if (window.innerWidth <= 768) return false
 		var activeIndex = 0,
 			flag = true,
 			mainParent = $('.main'),

@@ -2,6 +2,9 @@
   background bunting 
   padding-top 200px
   padding-bottom 120px
+  @media (max-width breakpoint-md)
+    padding 0
+    margin-bottom 200px
 
 .review__wrap
   width 100%
@@ -16,6 +19,22 @@
   text-align center
   padding 0 100px
   z-index 1
+  @media (max-width breakpoint-md)
+    max-width 100%
+    display block
+    min-height auto
+    padding 0 90px
+
+.review__title
+  font-family font-montserrat
+  font-size 24px
+  font-weight 600
+  margin-bottom 90px
+  text-align center
+  display none
+  transform translateY(-20px)
+  @media (max-width breakpoint-md)
+    display block
 
 .review__border
   position absolute
@@ -28,6 +47,23 @@
     width 100%
     height 100%
     fill rgba(white, .1)
+  @media (max-width breakpoint-md)
+    display none
+  
+.review__border-md
+  display none
+  position absolute
+  top 45px
+  left 0
+  right 0
+  bottom -50px
+  z-index -1
+  .icon
+    width 100%
+    height 100%
+    fill rgba(white, .1)
+  @media (max-width breakpoint-md)
+    display block
 
 .review__icon
   position absolute
@@ -38,6 +74,10 @@
     width 40px
     height 27px
     fill rgba(white, .5)
+  @media (max-width breakpoint-md)
+    top 35px
+    .icon
+      width 33px
 
 .review__content
   max-width 100%
@@ -45,6 +85,10 @@
     font-family font-lora
     font-size 18px
     line-height 30px
+  @media (max-width breakpoint-md)
+    p
+      font-size 14px
+      line-height 24px
 
 .review__users
   position absolute
@@ -53,6 +97,8 @@
   bottom -87px
   display flex
   max-width 220px
+  @media (max-width breakpoint-md)
+    bottom -135px
 
 .review__user
   width 40px

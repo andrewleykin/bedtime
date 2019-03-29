@@ -1,8 +1,11 @@
 section.section.review(id=content.review.id)
   .container
     .review__wrap
+      h2.review__title= content.review.title
       .review__border
         +icon('border')
+      .review__border-md
+        +icon('border-md')
       .review__icon
         +icon(content.review.icon)
       .review__content

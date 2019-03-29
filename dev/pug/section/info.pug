@@ -1,5 +1,6 @@
 section.section.info(id=content.info.id data-scroll)
   .container
+    h2.info__title.info__title--md= content.info.title
     .info__wrap
       .info__promo
         h2.info__title= content.info.title
@@ -48,19 +49,15 @@ section.section.info(id=content.info.id data-scroll)
                                   +icon(content.info.time)
                                 span= group["time"]
                             .ig__heading
-                              .ig__heading-wrap
-                                .ig__heading-pic
-                                  img(src=group["heading"]["img"] alt=group["heading"]["name"])
-                                .ig__heading-info
-                                  .ig__heading-post= content.info.heading
-                                  .ig__heading-name(href="#" target="_blank")
-                                    span= group["heading"]["name"]
-                                    +icon('fb-fill')
+                              .ig__heading-pic
+                                img(src=group["heading"]["img"] alt=group["heading"]["name"])
+                              .ig__heading-info
+                                span.ig__heading-post= content.info.heading
+                                span.ig__heading-name(href="#" target="_blank")= group["heading"]["name"]
                             .ig__cost
-                              .ig__cost-line
-                                span.ig__cost-price= group["cost"]["price"]
-                                span.ig__cost-in= group["cost"]["in"]
-                                span.ig__cost-quality= group["cost"]["quality"]
+                              span.ig__cost-price= group["cost"]["price"]
+                              span.ig__cost-in= group["cost"]["in"]
+                              span.ig__cost-quality= group["cost"]["quality"]
         .info__action
           a.btn.btn--big(href=content.general.btn.order.modal)= content.info.btn
         .info__warning

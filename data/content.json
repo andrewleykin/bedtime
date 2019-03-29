@@ -448,6 +448,7 @@
   },
   "review": {
     "id": "review",
+    "title": "Отзывы",
     "list": [
       {
         "content": [
