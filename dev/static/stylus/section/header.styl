@@ -24,16 +24,36 @@
   @media (max-width breakpoint-lg)
     padding 0
 
+.header__logo
+  @media (max-width breakpoint-md)
+    z-index 100
+
 .header__menu,
 .header__action
   padding-top 25px
+
+.header__action
   @media (max-width breakpoint-md)
-    display none
+    padding-top 0
+    z-index -99
+    opacity 0
+    visibility hidden
+    position fixed
+    bottom 60px
+    left 50%
+    transform translateX(-50%)
+    @extend .trs
+    .btn
+      color bunting
+    &.menu-open
+      opacity 1
+      visibility visible
+      z-index 100
 
 .header__burger
   display none
   width 34px
-  height 12px
+  height 34px
   cursor pointer
   position relative
   &:before,&:after
@@ -44,10 +64,22 @@
     background-color #fff
     border-radius 2px
     position absolute
+    @extend .trs
   &:before
-    top 0
+    top 10px
   &:after
-    bottom 0
+    bottom 10px
   @media (max-width breakpoint-md)
     display block
+    &.menu-open
+      z-index 99
+      &:before,&:after
+        background-color bunting
+      &:before
+        transform rotate(45deg)
+        top 15px
+      &:after
+        transform rotate(-45deg)
+        bottom 15px
+
   

@@ -1,4 +1,17 @@
 .logo
-  img
-    &.hide
+  img.hide
+    display none
+  @media (max-width breakpoint-md)
+    img
       display none
+      &.hide
+        display block
+
+.logo__fixed
+  &.menu-open.hide
+    display none
+
+.logo__mobile
+  display none
+  &.menu-open
+    display block

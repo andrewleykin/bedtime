@@ -87,6 +87,40 @@
 		nextArrow: $('.tbt__arrow--next'),
 		autoplay: true,
 		autoplaySpeed: 3000,
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					vertical: false
+				}
+			}
+		]
+	});
+})();
+
+// мобильное меню
+(function(){
+	let activeClass = 'menu-open';
+	$('.header__burger').click(function(){
+		if (!$(this).hasClass(activeClass)) {
+			$('.menu').addClass(activeClass);
+			setTimeout(function(){
+				$('.menu__item').addClass(activeClass);
+				$('.logo__fixed').addClass(activeClass);
+				$('.logo__mobile').addClass(activeClass);
+				$('.header__action').addClass(activeClass);
+				$('.header__burger').addClass(activeClass);
+			}, 400)
+		} else {
+			$('.logo__fixed').removeClass(activeClass);
+			$('.logo__mobile').removeClass(activeClass);
+			$('.header__action').removeClass(activeClass);
+			$('.header__burger').removeClass(activeClass);
+			$('.menu__item').removeClass(activeClass);
+			setTimeout(function(){
+				$('.menu').removeClass(activeClass);
+			}, 200)
+		}
 	});
 })();
 

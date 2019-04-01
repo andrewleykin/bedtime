@@ -12,7 +12,8 @@
       "src": "app/img/general/logo.svg",
       "fixed": "app/img/general/logo-fixed.svg",
       "alt": "Bedtime book logo",
-      "href": "#top-banner"
+      "href": "#top-banner",
+      "mobile": "app/img/general/logo-mobile.svg"
     },
     "modal": {
       "order": {

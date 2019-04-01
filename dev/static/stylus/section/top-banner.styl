@@ -7,6 +7,11 @@
     display flex
     flex-direction column
     justify-content center
+  @media (max-width breakpoint-md)
+    margin-bottom 80px
+    .container
+      height auto
+      display block
 
 .top-banner__bg
   position fixed
@@ -25,6 +30,10 @@
   &.hide
     opacity 0
     transform scale(2)
+  @media (max-width breakpoint-md)
+    &.hide
+      opacity 1
+      transform scale(2)
 
 
 .top-banner__bg-clouds
@@ -41,6 +50,9 @@
     z-index 10
   &--2
     animation cloudsLinearMove 600s linear infinite
+  @media (max-width breakpoint-md)
+    opacity 1
+    background-size 90%
 
 @keyframes cloudsLinearMove {
   from { background-position: -10000px bottom;}
@@ -56,12 +68,19 @@
   justify-content space-between
   padding-top 80px
   z-index 3
+  @media (max-width breakpoint-md)
+    padding-top 100px
+    display block
+    text-align center
 
 .top-banner__info
   width 100%
   max-width 400px
   position relative
   z-index 12
+  @media (max-width breakpoint-md)
+    max-width 100%
+    margin-bottom 30px
 
 .top-banner__title
   margin-bottom 35px
@@ -73,6 +92,16 @@
   &.hide
     transform translateY(50px)
     opacity 0
+  @media (max-width breakpoint-lg)
+    font-size 40px
+  @media (max-width breakpoint-md)
+    max-width 320px
+    margin 0 auto 30px
+    font-size 40px
+    line-height 42px
+    &.hide
+      opacity 1
+      transform translateY(0px)
 
 .top-banner__descr
   color #ffffff
@@ -88,6 +117,13 @@
   &.hide
     transform translateY(50px)
     opacity 0
+  @media (max-width breakpoint-md)
+    font-size 16px
+    margin 0 auto 40px
+    text-align center
+    &.hide
+      opacity 1
+      transform translateY(0px)
 
 .top-banner__btn
   transition all .4s
@@ -99,12 +135,22 @@
   &.btn
     width 300px
     height 60px
+  @media (max-width breakpoint-md)
+    margin 0 auto
+    &.hide
+      opacity 1
+      transform translateY(0px)
 
 .top-banner__img
   flex none
   margin-left 10px
   position relative
   z-index 5
+  @media (max-width breakpoint-md)
+    margin-left 0
+    background url(../img/content/top-banner/img.png) center no-repeat
+    background-size contain
+    height 340px
 
 .tbt__slider
   display flex
@@ -112,7 +158,8 @@
 
 .tbt__list
   height 45px
-
+  @media (max-width breakpoint-md)
+    max-width 100%
 
 .tbt__item
   @extend .trs
@@ -125,12 +172,17 @@
 .tbt__wrap
   display flex
   color kournikova
-  // padding 5px 0
+  @media (max-width breakpoint-md)
+    justify-content center
 
 .tbt__arrows
   position absolute
   left -25px
   top -5px
+  @media (max-width breakpoint-lg)
+    left -15px
+  @media (max-width breakpoint-md)
+    position static
 
 .tbt__arrow
   width 14px
@@ -144,9 +196,16 @@
   &:hover
     .icon
       opacity 0.8
-
-.top-banner__img
-  position relative
+  @media (max-width breakpoint-md)
+    position absolute
+    top 50%
+    transform translateY(-50%) rotate(-90deg)
+    width 36px
+    height 36px
+    &--prev
+      left -25px
+    &--next
+      right -25px
 
 .top-banner__moon
   position relative
@@ -158,6 +217,8 @@
   box-shadow 0px 0px 50px 0px rgba(255,212,126,1)
   &.hide
     transform scale(0)
+  @media (max-width breakpoint-md)
+    display none
 
 .top-banner__books
   position absolute
@@ -169,6 +230,8 @@
     max-width none
   &.hide
     transform translate(-50%, 300px)
+  @media (max-width breakpoint-md)
+    display none
 
 
 .top-banner__book-item
@@ -208,3 +271,5 @@
     top 50%
     left 50%
     transform translate(-50%, -50%)
+  @media (max-width breakpoint-md)
+    display none

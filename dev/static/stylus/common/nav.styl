@@ -1,6 +1,26 @@
+.menu
+  @media (max-width breakpoint-md)
+    height 100vh
+    position fixed
+    left 0
+    top 0
+    bottom 0
+    right 0
+    z-index 99
+    background white
+    transform translateY(-100%)
+    @extend .trs
+    transition-duration .4s
+    &.menu-open
+      transform translateY(0)
+
 .menu__list
   display flex
   align-items center
+  @media (max-width breakpoint-md)
+    justify-content center
+    flex-direction column
+    height 100%
 
 .menu__item
   &+&
@@ -11,6 +31,21 @@
   @media (max-width breakpoint-lg)
     &+&
       margin-left 0px
+  @media (max-width breakpoint-md)
+    transform translateY(-10px)
+    opacity 0
+    @extend .trs
+    &:nth-child(2)
+      transition-delay .02s
+    &:nth-child(3)
+      transition-delay .06s
+    &:nth-child(4)
+      transition-delay .1s
+    &:nth-child(5)
+      transition-delay .14s
+    &.menu-open
+      transform translateY(0)
+      opacity 1
 
 .menu__link
   color white
@@ -25,3 +60,8 @@
   @extend .trs
   &:hover
     color carnation
+  @media (max-width breakpoint-md)
+    color bunting
+    font-size 16px
+    line-height 1
+    padding 30px
