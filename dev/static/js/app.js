@@ -87,11 +87,13 @@
 		nextArrow: $('.tbt__arrow--next'),
 		autoplay: true,
 		autoplaySpeed: 3000,
+		initialSlide: 0,
 		responsive: [
 			{
 				breakpoint: 768,
 				settings: {
-					vertical: false
+					vertical: false,
+					autoplay: false
 				}
 			}
 		]
@@ -132,6 +134,11 @@
 		arrows: false,
 		variableWidth: true
 	})
+
+	$('.about__advantage-img img').click(function(){
+		var index = $(this).closest('.about__advantage-block').data('slick-index')
+		$('.about__advantage').slick('slickGoTo', index, false)
+	})
 })();
 
 // учителя в секции о курсах
@@ -161,7 +168,6 @@
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		infinite: false,
-		adaptiveHeight: false,
 		prevArrow: '<button type="button" class="about__teachers-arrow about__teachers-arrow--prev"></button>',
 		nextArrow: '<button type="button" class="about__teachers-arrow about__teachers-arrow--next"></button>',
 		responsive: [
@@ -465,11 +471,17 @@
 (function(){
 	var moreReviewLink = $('.faq__review-more'),
 		hideTextBlocks = moreReviewLink.siblings('.hide'),
-		hideClass = 'hide';
+		hideClass = 'hide',
+		activeClass = 'active';
 
 	moreReviewLink.click(function(){
-		$(this).addClass(hideClass);
-		hideTextBlocks.removeClass(hideClass);
+		if ($(this).hasClass(activeClass)) {
+			$(this).removeClass(activeClass).text('Читать полностью');
+			hideTextBlocks.addClass(hideClass);
+		} else {
+			$(this).addClass(activeClass).text('Скрыть');
+			hideTextBlocks.removeClass(hideClass);
+		}
 	});
 })();
 

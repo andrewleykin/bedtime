@@ -68,8 +68,8 @@
     font-size 14px
     line-height 24px
     &.faq__tab-effect
-      font-size 10px
-      line-height 12px
+      font-size 12px
+      line-height 14px
     b
       font-weight bold
   p+p
@@ -247,11 +247,9 @@
     transform rotate(45deg)
     margin-right 10px
     @extend .trs
-  &.hide
-    opacity 0
-    visibility hidden
-    height 0
-    margin-top 0
+  &.active
+    &:before
+      transform translateY(2px) rotate(-45deg)
   @media (max-width breakpoint-md)
     margin 25px auto 0
 
