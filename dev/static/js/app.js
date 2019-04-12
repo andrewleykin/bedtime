@@ -277,23 +277,14 @@
 			}
 		}
 		htmlCols+= `<div class="aep__col">${col1}</div><div class="aep__col">${col2}</div><div class="aep__col">${col3}</div>`;
+		list.html(htmlCols);
 	} else {
-		for (i=0; i<items.length; i++) {
-			if (colCount === 0) {
-				col1+= items.eq(i)[0].outerHTML
-				colCount++
-				continue;
-			}
-			if (colCount === 1) {
-				col2+= items.eq(i)[0].outerHTML
-				colCount = 0
-				continue;
-			}
-		}
-		htmlCols+= `<div class="aep__col">${col1}</div><div class="aep__col">${col2}</div>`;
+		$('.aep__list').slick({
+			arrows: false,
+			variableWidth: true
+		})
 	}
 	
-	list.html(htmlCols);
 })();
 
 // слайдер в сетке фоток в секции о курсах
