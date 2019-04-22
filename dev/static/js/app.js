@@ -502,7 +502,8 @@
 		asNavFor: '.review__users',
 		cssEase: 'linear',
 		autoplay: true,
-		autoplaySpeed: 7000
+		autoplaySpeed: 7000,
+		adaptiveHeight: true
 	});
 
 	$('.review__users').slick({

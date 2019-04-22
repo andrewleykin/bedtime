@@ -11,8 +11,9 @@ section.section.review(id=content.review.id)
       .review__content
         each item in content.review.list
           .review__item
-            each val in item["content"]
-              p= val["text"]
+            .review__item-wrap
+              each val in item["content"]
+                p= val["text"]
       .review__users
         each item in content.review.list
           .review__user
