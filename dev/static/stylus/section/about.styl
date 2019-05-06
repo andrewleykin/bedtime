@@ -201,6 +201,12 @@
     .about__teachers-text
       opacity 1
       visibility visible
+  &:nth-child(3)
+    .about__teachers-name
+      max-width 100px
+  &:nth-last-child(-n+2)
+    .about__teachers-name
+      max-width 180px
   @media (max-width breakpoint-md)
     min-width 220px
     margin 0 20px
@@ -437,12 +443,32 @@
   top 20px
   max-width 80px
 
-.aev__name
+.aev__info
   position absolute
   left 20px
   bottom 20px
+
+.aev__name
   font-size 18px
   font-family font-montserrat
+  display block
+  margin-bottom 5px
+
+.aev__subname
+  font-family font-lora
+  font-size 14px
+  font-style italic
+
+.aev__remodal
+  padding 0
+  max-width 90%
+
+.aev__video
+  display none
+  video
+    max-width 100%
+  &.active
+    display block
 
 .aep
   margin-top -200px

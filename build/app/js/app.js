@@ -236,6 +236,22 @@
 	
 })();
 
+// попап видео в секции о курсах
+(function(){
+	$('.aev__info').click(function(e){
+		e.stopPropagation();
+	})
+	$('.aev__block').click(function(){
+		var videoBlock = $('.aev__video').eq($(this).index())
+		videoBlock.addClass('active').siblings().removeClass('active');
+		videoBlock.find('video')[0].play()
+	})
+
+	$(document).on('closing', '.aev__remodal', function (e) {
+		$('.aev__video.active').find('video')[0].pause()
+	});
+})();
+
 // слайдер видео в секции о курсах
 (function(){
 	if (window.innerWidth > 768) return false

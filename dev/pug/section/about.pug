@@ -32,15 +32,15 @@ section.section.about(id=content.about.id data-scroll)
           .about__example-block.aev
             .aev__list
               each item in content.about.example.video
-                .aev__block
-                  .aev__content
-                    video(src=item["video"])
+                .aev__block(data-remodal-target="video")
                   .aev__img
                     .aev__logo
                       img(src=content.general.logo.src alt="content.general.logo.alt")
                     +icon(content.about.example.icon)
                     img(src=item["img"] alt=item["name"])
-                    .aev__name= item["name"]
+                    .aev__info
+                      span.aev__name= item["name"]
+                      span.aev__subname= item["subname"]
           .about__example-block.aep
             .aep__list
               each item in content.about.example.photo
@@ -51,3 +51,8 @@ section.section.about(id=content.about.id data-scroll)
     each item in content.about.example.photo
       .aep__item
         img(src=item["img"] alt=item["alt"])
+.remodal.aev__remodal(data-remodal-id="video")
+  .aev__videos
+    each item in content.about.example.video
+      .aev__video
+        video(src=item["video"] controls)

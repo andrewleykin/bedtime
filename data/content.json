@@ -161,15 +161,27 @@
         },
         {
           "img": "app/img/content/about/teachers/3.png",
+          "name": "Лиза Шварц",
+          "post": "ведущая чтений на немецком",
+          "text": "Живёт в Германии, г. Франкфург-на-Одере, изучает культурологию в университете Виадрина. До этого Лиза выигрывала международные студенческие дебаты на немецком, и в качестве приза получила грант на поездку в Германию. Лиза - очень чуткий и внимательный ведущий, с ней комфортно начать говорить."
+        },
+        {
+          "img": "app/img/content/about/teachers/4.png",
           "name": "Лиза Максакова",
           "post": "Ведущая чтений на французском",
           "text": "Лиза Максакова — поэт, чьи стихи публикуются в журналах и сборниках с 2000 года, постоянный автор журнала Новый Мир. Анну можно увидеть и услышать на поэтических вечерах, или у нас в эфире на чтениях. Окончила факультет журналистики МГУ им. Ломоносова, жила и училась в США в последних классах школы. Важное дополнение: Анна ведет не только чтения на английском, но и на русском языке. Дети, родители которых переехали в дальние страны, но хотят, чтобы у детей сохранился русский, читают с Аней классические и современные юмористические и лирические рассказы, сказки. Поверьте, это стоит услышать!"
         },
         {
-          "img": "app/img/content/about/teachers/1.png",
-          "name": "Керстен и Иван Кемпбелл-Фергюсон",
+          "img": "app/img/content/about/teachers/5.png",
+          "name": "Керстен Кемпбелл‑Фергюсон",
           "post": "ведущие воскресных литературных встреч.",
-          "text": "Керстен и Иван выросли и живут в Англии, в городе Вустер. Иван изучает экономику в университете Ворвик, Керстен учится в Королевском колледже Вурстера. Они - брат и сестра, из прекрасной интеллигентной семьи. Керстен и Иван глубоко знают как английскую, так и русскую культуру (их мама родом из России), начитаны, образованы, внимательны."
+          "text": "Керстен вырос и живет в Англии, в городе Вустер. Учится в Королевском колледже Вурстера. Глубоко знает как английскую, так и русскую культуру (мама родом из России), начитан, образован, внимателен."
+        },
+        {
+          "img": "app/img/content/about/teachers/6.png",
+          "name": "Иван Кемпбелл‑Фергюсон",
+          "post": "ведущие воскресных литературных встреч.",
+          "text": "Иван вырос и живет в Англии, в городе Вустер. Изучает экономику в университете Ворвик. Глубоко знают как английскую, так и русскую культуру (мама родом из России), начитан, образован, внимателен."
         }
       ]
     },
@@ -188,17 +200,20 @@
         {
           "img": "app/img/content/about/example/video/1.png",
           "video": "app/video/1.mp4",
-          "name": "Horrid Henry"
+          "name": "'Wacky Wednesday' Dr.Seuss",
+          "subname": "английский, 6-8 лет"
         },
         {
           "img": "app/img/content/about/example/video/2.png",
           "video": "app/video/2.mp4",
-          "name": "The Killer Cat"
+          "name": "The Killer Cat",
+          "subname": "английский, 9-11 лет"
         },
         {
           "img": "app/img/content/about/example/video/3.png",
           "video": "app/video/3.mp4",
-          "name": "Mein Onkel Franz"
+          "name": "Conni und Osterhase",
+          "subname": "немецкий 9-11"
         }
       ],
       "photo": [
@@ -327,7 +342,7 @@
                 "time": "30 минут",
                 "heading": {
                   "name": "Александра Байчурина",
-                  "img": "app/img/content/info/heading/1.png"
+                  "img": "app/img/content/info/heading/2.png"
                 },
                 "cost": {
                   "price": "1500 Р",
@@ -342,7 +357,7 @@
                 "time": "30 минут",
                 "heading": {
                   "name": "Александра Байчурина",
-                  "img": "app/img/content/info/heading/1.png"
+                  "img": "app/img/content/info/heading/2.png"
                 },
                 "cost": {
                   "price": "1500 Р",
@@ -372,7 +387,7 @@
                 "time": "30 минут",
                 "heading": {
                   "name": "Александра Байчурина",
-                  "img": "app/img/content/info/heading/1.png"
+                  "img": "app/img/content/info/heading/2.png"
                 },
                 "cost": {
                   "price": "1500 Р",
@@ -423,7 +438,7 @@
                 "time": "30 минут",
                 "heading": {
                   "name": "Лиза Шварц",
-                  "img": "app/img/content/info/heading/1.png"
+                  "img": "app/img/content/info/heading/3.png"
                 },
                 "cost": {
                   "price": "1500 Р",
@@ -438,7 +453,7 @@
                 "time": "30 минут",
                 "heading": {
                   "name": "Лиза Шварц",
-                  "img": "app/img/content/info/heading/1.png"
+                  "img": "app/img/content/info/heading/3.png"
                 },
                 "cost": {
                   "price": "1500 Р",
@@ -459,7 +474,7 @@
                 "time": "30 минут",
                 "heading": {
                   "name": "Лиза Максакова",
-                  "img": "app/img/content/info/heading/1.png"
+                  "img": "app/img/content/info/heading/4.png"
                 },
                 "cost": {
                   "price": "1500 Р",
@@ -474,7 +489,7 @@
                 "time": "30 минут",
                 "heading": {
                   "name": "Лиза Максакова",
-                  "img": "app/img/content/info/heading/1.png"
+                  "img": "app/img/content/info/heading/4.png"
                 },
                 "cost": {
                   "price": "1500 Р",
@@ -495,7 +510,7 @@
                 "time": "30 минут",
                 "heading": {
                   "name": "Керстен Кемпбел-Фергюсон",
-                  "img": "app/img/content/info/heading/1.png"
+                  "img": "app/img/content/info/heading/5.png"
                 },
                 "cost": {
                   "price": "750 Р",
@@ -510,7 +525,7 @@
                 "time": "30 минут",
                 "heading": {
                   "name": "Иван Кемпбел-Фергюсон",
-                  "img": "app/img/content/info/heading/1.png"
+                  "img": "app/img/content/info/heading/6.png"
                 },
                 "cost": {
                   "price": "750 Р",
@@ -536,7 +551,7 @@
                 "time": "30 минут",
                 "heading": {
                   "name": "Лиза Шварц",
-                  "img": "app/img/content/info/heading/1.png"
+                  "img": "app/img/content/info/heading/3.png"
                 },
                 "cost": {
                   "price": "1200 Р",
@@ -551,7 +566,7 @@
                 "time": "30 минут",
                 "heading": {
                   "name": "Лиза Шварц",
-                  "img": "app/img/content/info/heading/1.png"
+                  "img": "app/img/content/info/heading/3.png"
                 },
                 "cost": {
                   "price": "800 Р",
@@ -572,7 +587,7 @@
                 "time": "30 минут",
                 "heading": {
                   "name": "Лиза Максакова",
-                  "img": "app/img/content/info/heading/1.png"
+                  "img": "app/img/content/info/heading/4.png"
                 },
                 "cost": {
                   "price": "1200 Р",
@@ -587,7 +602,7 @@
                 "time": "30 минут",
                 "heading": {
                   "name": "Лиза Максакова",
-                  "img": "app/img/content/info/heading/1.png"
+                  "img": "app/img/content/info/heading/4.png"
                 },
                 "cost": {
                   "price": "800 Р",
@@ -608,7 +623,7 @@
                 "time": "30 минут",
                 "heading": {
                   "name": "Александра Байчурина",
-                  "img": "app/img/content/info/heading/1.png"
+                  "img": "app/img/content/info/heading/2.png"
                 },
                 "cost": {
                   "price": "1200 Р",
@@ -623,7 +638,7 @@
                 "time": "30 минут",
                 "heading": {
                   "name": "Александра Байчурина",
-                  "img": "app/img/content/info/heading/1.png"
+                  "img": "app/img/content/info/heading/2.png"
                 },
                 "cost": {
                   "price": "800 Р",
