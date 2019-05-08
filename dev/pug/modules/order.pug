@@ -1,7 +1,7 @@
 .remodal.order(data-remodal-id=content.general.modal.order.id)
   button.remodal-close.order__close(data-remodal-action='close')
     +icon(content.modal.icon)
-  form.order__wrap.form(action="#" data-action=content.modal.action data-validation)
+  form.order__wrap.form(action=content.modal.action data-validation method="POST")
     h2.order__title Записаться на&nbsp;пробное чтение
     .form__group
       input.form__input(type=content.modal.email.type name=content.modal.email.name data-name=content.modal.email.data id=content.modal.email.id)
@@ -31,4 +31,4 @@
       input.form__input(type=content.modal.other.type name=content.modal.other.name id=content.modal.other.id)
       label.form__label(for=content.modal.other.id)= content.modal.other.label
     .form__action.form__action--order
-      btn.btn.order__btn(type=content.modal.btn.type)= content.modal.btn.text
+      button.btn.order__btn(type=content.modal.btn.type)= content.modal.btn.text

@@ -21,12 +21,13 @@ section.section.contacts(id=content.contacts.id)
       .contacts__connect
         h3.contacts__connect-title= content.contacts.form.title
         span.contacts__connect-subtitle= content.contacts.form.subtitle
-        form.contacts__connect-form.contacts-form.form(action=content.contacts.form.action)
+        form.contacts__connect-form.contacts-form.form(action=content.contacts.form.action data-validation method="POST")
           each item in content.contacts.form.list
             .form__group
               input.form__input(type=item["type"] name=item["name"] id=item["id"] data-name=item["data"])
               label.form__label(for=item["id"])= item["label"]
           .form__group.form__group--textarea
-            textarea.form__textarea(id=content.contacts.form.textarea.id name=content.contacts.form.textarea.name placeholder=content.contacts.form.textarea.placeholder)
+            textarea.form__textarea(id=content.contacts.form.textarea.id name=content.contacts.form.textarea.name placeholder=content.contacts.form.textarea.placeholder
+            data-name=content.contacts.form.textarea.data)
           .form__action
             button.btn.form__btn(type="submit")= content.contacts.form.btn

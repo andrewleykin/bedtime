@@ -102,9 +102,10 @@
 
 // мобильное меню
 (function(){
-	let activeClass = 'menu-open';
-	$('.header__burger').click(function(){
-		if (!$(this).hasClass(activeClass)) {
+	if (window.innerWidth > 768) return false
+	var activeClass = 'menu-open';
+	var animationMenu = function (bool) {
+		if (bool) {
 			$('.menu').addClass(activeClass);
 			setTimeout(function(){
 				$('.menu__item').addClass(activeClass);
@@ -123,6 +124,23 @@
 				$('.menu').removeClass(activeClass);
 			}, 200)
 		}
+	}
+	$('.header__burger').click(function(){
+		if (!$(this).hasClass(activeClass)) {
+			animationMenu(true)
+		} else {
+			animationMenu(false)
+		}
+	});
+
+	$('.menu__link').click(function(e){
+		e.preventDefault();
+		animationMenu(false)
+		//Animate
+    $('html, body').stop().animate({
+			scrollTop: $( $(this).attr('href') ).offset().top - 100
+		}, 400);
+		return false;
 	});
 })();
 
@@ -621,6 +639,127 @@
 	});
 })();
 
+// функция валидации формы
+(function(){
+
+	if ($('[data-validation]').length) {
+		initializeValidate();
+  }
+  
+	if($('.form').length) {
+		clearForm();
+	}
+
+	function clearForm(){
+		var inputs = $('.form').find('input, textarea'),
+			newVal = '';
+
+		for(i=0;i<inputs.length;i++) {
+			inputs.eq(i).val(newVal);
+		}
+	}
+
+	$('.form__input').each(function() {
+		$(this).focus(function() {
+				$(this).siblings('.form__label').addClass('hide');
+		});
+		$(this).blur(function(){
+				if(!($(this).val())){
+						$(this).siblings('.form__label').removeClass('hide')
+				};
+		});
+	});
+
+	/* Validate Form */
+	function initializeValidate() {
+		$('[data-validation]').each(function () {
+			var validator = $(this),
+				inputs = validator.find('input:not(:checkbox, [type=hidden], #order-other), textarea'),
+				submit = validator.find('button[type=submit]'),
+				stopSubmit = false;
+		
+			validator.on('change keyup', 'input[data-name]', function () {
+				var elm = $(this);
+				checkValidity(elm);
+			});
+
+			submit.on('click', function (e) {
+				var mass = [];
+				stopSubmit = true;
+				console.log("TCL: initializeValidate -> inputs", inputs)
+				for (var i = 0; i < inputs.length; i++) {
+					var input = inputs[i];
+					mass.push(input);
+
+					if (input.checkValidity() == true) {
+						var elm = input;
+						checkValidity(elm);
+					}
+
+					if ($(input).parent().hasClass('valid')) {
+						stopSubmit = false;
+					} else {
+						stopSubmit = true;
+						break;
+					}
+				}
+
+				if (stopSubmit) {
+					e.preventDefault();
+					console.log('no send mail')
+				}
+				
+				console.log('hi')
+			});
+		});
+	}
+
+	function checkValidity(elm) {
+	    var elm = $(elm),
+	        val = elm.val(),
+	        block = elm.parent(),
+	        name_reg = /^[A-Za-zА-Яа-яЁё\-\s]+$/,
+			    text_reg = /^[A-Za-zА-Яа-яёЁ\s\d]/,
+	        mail_reg = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i,
+	        phone_reg = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){11,14}(\s*)?$/,
+	        num_reg = /^\d+$/;
+
+
+	    if (elm.prop('disabled')) {
+	        return;
+	    } else if (elm.is('[data-name="name"]')) {
+	        if (name_reg.test(val)) {
+	            block.removeClass('invalid').addClass('valid');
+	        } else {
+	            block.removeClass('valid').addClass('invalid');
+	        }
+	    } else if (elm.is('[data-name="email"]')) {
+	        if (mail_reg.test(val)) {
+	            block.removeClass('invalid').addClass('valid');
+	        } else {
+	            block.removeClass('valid').addClass('invalid');
+	        }
+	    } else if (elm.is('[data-name="phone"]')) {
+	        if (phone_reg.test(val)) {
+	            block.removeClass('invalid').addClass('valid');
+	        } else {
+	            block.removeClass('valid').addClass('invalid');
+	        }
+	    } else if (elm.is('[data-name="num"]')) {
+	        if (num_reg.test(val)) {
+	            block.removeClass('invalid').addClass('valid');
+	        } else {
+	            block.removeClass('valid').addClass('invalid');
+	        }
+	    } else if (elm.is('[data-name="text"]')) {
+	        if (text_reg.test(val)) {
+	            block.removeClass('invalid').addClass('valid');
+	        } else {
+	            block.removeClass('valid').addClass('invalid');
+	        }
+	    } 
+	}
+})();
 $(document).ready(function () {
     svg4everybody({});
 });

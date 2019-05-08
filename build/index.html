@@ -6,6 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE = edge">
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no">
     <meta name="keywords" content="">
+    <link rel="apple-touch-icon" sizes="57x57" href="app/img/icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="app/img/icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="app/img/icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="app/img/icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="app/img/icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="app/img/icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="app/img/icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="app/img/icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="app/img/icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="app/img/icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="app/img/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="app/img/icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="app/img/icon/favicon-16x16.png">
+    <link rel="manifest" href="app/img/icon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="app/img/icon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" type="text/css" href="app/css/foundation.css">
     <link rel="stylesheet" type="text/css" href="app/css/main.css"><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
@@ -1284,7 +1301,7 @@
                 </div>
                 <div class="contacts__connect">
                   <h3 class="contacts__connect-title">Быстрая связь</h3><span class="contacts__connect-subtitle">Возникли вопросы? Отправьте сообщение и мы ответим в течение часа.</span>
-                  <form class="contacts__connect-form contacts-form form" action="#">
+                  <form class="contacts__connect-form contacts-form form" action="app/mail/sendContacts.php" data-validation method="POST">
                     <div class="form__group">
                       <input class="form__input" type="text" name="name" id="connect-name" data-name="name">
                       <label class="form__label" for="connect-name">Ваше имя</label>
@@ -1294,7 +1311,7 @@
                       <label class="form__label" for="connect-email">E-mail</label>
                     </div>
                     <div class="form__group form__group--textarea">
-                      <textarea class="form__textarea" id="connect-textarea" name="connect-textarea" placeholder="Сообщение"></textarea>
+                      <textarea class="form__textarea" id="message" name="message" placeholder="Сообщение" data-name="text"></textarea>
                     </div>
                     <div class="form__action">
                       <button class="btn form__btn" type="submit">отправить</button>
@@ -1311,7 +1328,7 @@
               <use xlink:href="app/img/svg/symbol/sprite.svg#close"></use>
             </svg>
           </button>
-          <form class="order__wrap form" action="#" data-action="app/mail/sendOrder.php" data-validation>
+          <form class="order__wrap form" action="app/mail/sendOrder.php" data-validation method="POST">
             <h2 class="order__title">Записаться на&nbsp;пробное чтение</h2>
             <div class="form__group">
               <input class="form__input" type="text" name="email" data-name="email" id="email">
@@ -1346,11 +1363,11 @@
               </select>
             </div>
             <div class="form__group"><span class="form__sublabel form__sublabel--other">Номер для звонка, сообщение  WhatsApp</span><span class="form__dont-required">Не обязательно</span>
-              <input class="form__input" type="text" name="other" id="other">
-              <label class="form__label" for="other">Другой предпочтительный способ связи</label>
+              <input class="form__input" type="text" name="other" id="order-other">
+              <label class="form__label" for="order-other">Другой предпочтительный способ связи</label>
             </div>
             <div class="form__action form__action--order">
-              <btn class="btn order__btn" type="submit">Отправить заявку</btn>
+              <button class="btn order__btn" type="submit">Отправить заявку</button>
             </div>
           </form>
         </div>
