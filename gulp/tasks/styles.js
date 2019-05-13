@@ -24,7 +24,6 @@ module.exports = function () {
                     message: error.message
                 };
             }))
-            .pipe($.gp.pxtorem())
             .pipe($.gcmq())
             .pipe($.gp.autoprefixer({
                 browsers: ['last 3 version']

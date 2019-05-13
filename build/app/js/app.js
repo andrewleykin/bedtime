@@ -171,8 +171,10 @@
 			var curItem = post.eq(i).closest(item),
 				curText = curItem.find(text);
 			
-			if (post.eq(i).height() > 20) {
+			if (post.eq(i).height() > 20 && post.eq(i).height() < 50) {
 				curText.css('paddingTop', 240)
+			} else if (post.eq(i).height() > 50) {
+				curText.css('paddingTop', 260)
 			} else {
 				curText.css('paddingTop', 224)
 			}
@@ -466,8 +468,17 @@
 		languageTabs.addClass(hideClass);
 	});
 
-	languageActive.click(function(){
+	languageActive.click(function(e){
+		e.stopPropagation();
 		$(this).siblings(languageTabs).toggleClass(hideClass)
+	});
+
+	$('.info').click(function(){
+		for(i=0; i<languageTabs.length;i++) {
+			if (!languageTabs.eq(i).hasClass(hideClass)) {
+				languageTabs.eq(i).addClass(hideClass)
+			}
+		}
 	});
 
 
