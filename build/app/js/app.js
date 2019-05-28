@@ -685,10 +685,13 @@
 	function initializeValidate() {
 		$('[data-validation]').each(function () {
 			var validator = $(this),
-				inputs = validator.find('input:not(:checkbox, [type=hidden], #order-other), textarea'),
-				submit = validator.find('button[type=submit]'),
-				stopSubmit = false;
-		
+			inputs = validator.find('input:not(:checkbox, [type=hidden], #order-other), textarea'),
+			submit = validator.find('button[type=submit]'),
+			stopSubmit = false,
+			url = validator.attr('action'),
+			data = validator.serializeArray(),
+			success = $('[data-remodal-id=success]').remodal();
+
 			validator.on('change keyup', 'input[data-name]', function () {
 				var elm = $(this);
 				checkValidity(elm);
@@ -697,7 +700,6 @@
 			submit.on('click', function (e) {
 				var mass = [];
 				stopSubmit = true;
-				console.log("TCL: initializeValidate -> inputs", inputs)
 				for (var i = 0; i < inputs.length; i++) {
 					var input = inputs[i];
 					mass.push(input);
@@ -714,13 +716,17 @@
 						break;
 					}
 				}
-
-				if (stopSubmit) {
-					e.preventDefault();
-					console.log('no send mail')
+				e.preventDefault();
+				if (!stopSubmit) {
+					$.ajax({
+						type: 'POST',
+						url,
+						data,
+					}).done(function() {
+						success.open();
+						clearForm();
+					});
 				}
-				
-				console.log('hi')
 			});
 		});
 	}

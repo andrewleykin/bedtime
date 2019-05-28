@@ -19,6 +19,10 @@
       "order": {
         "id": "order",
         "href": "#order"
+      },
+      "success": {
+        "id": "success",
+        "href": "#success"
       }
     }
   },
@@ -966,5 +970,10 @@
     },
     "icon": "close",
     "action": "app/mail/sendOrder.php"
+  },
+  "success": {
+    "title": "Спасибо!",
+    "text": "Ваша заявка успешно отправлена. Мы внимательно изучим ее и свяжемся с вами в течение суток.",
+    "icon": "success"
   }
 }
