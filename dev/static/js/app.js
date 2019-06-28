@@ -720,8 +720,8 @@
 				if (!stopSubmit) {
 					$.ajax({
 						type: 'POST',
-						url,
-						data,
+						url: url,
+						data: data,
 					}).done(function() {
 						success.open();
 						clearForm();
