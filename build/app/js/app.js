@@ -609,12 +609,16 @@
 		}
 		
 		var initChange = function (delta) {
+      console.log("TCL: initChange -> delta", delta)
+			console.log("TCL: initChange -> before activeIndex", activeIndex)
+			console.log("TCL: initChange -> allSection.length - 1", allSection.length - 1)
 			if (delta > 0 && activeIndex != allSection.length - 1) {
 				activeIndex++;
 			} 
 			if (delta < 0 && activeIndex != 0) {
 				activeIndex--;
 			}
+      console.log("TCL: initChange -> activeIndex", activeIndex)
 			changePos(activeIndex);
 		}
 
