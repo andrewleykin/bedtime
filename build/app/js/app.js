@@ -542,10 +542,12 @@
 // слайдер в отзывах
 (function(){
 	var fadeSlick = true;
+	var adaptiveSlick = true;
 	var ua = window.navigator.userAgent;
 	var msie = ua.indexOf("MSIE ");
 	if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
 		fadeSlick = false
+		adaptiveSlick = false
 	}
 	$('.review__content').slick({
 		fade: fadeSlick,
@@ -554,7 +556,7 @@
 		cssEase: 'linear',
 		autoplay: true,
 		autoplaySpeed: 7000,
-		adaptiveHeight: true
+		adaptiveHeight: adaptiveSlick
 	});
 
 	$('.review__users').slick({
@@ -593,13 +595,6 @@
 			var posTop = allSection.eq(index).position().top + 'px'
 			var translateValue = 'translateY(-' + posTop + ')'
 			mainParent[0].style.transform = translateValue
-			// mainParent.css({
-			// 	'-webkit-transform' : 'translateY(-' + posTop + ')',
-			// 	'-moz-transform'    : 'translateY(-' + posTop + ')',
-			// 	'-ms-transform'     : 'translateY(-' + posTop + ')',
-			// 	'-o-transform'      : 'translateY(-' + posTop + ')',
-			// 	'transform'         : 'translateY(-' + posTop + ')'
-			// })
 
 			if (index > 0) {
 				if (!mainParent.hasClass('non-first')) mainParent.addClass('non-first');
@@ -627,7 +622,6 @@
 		// mainParent.bind('mousewheel DOMMouseScroll', function(e) {})
 		
 		mainParent.on('DOMMouseScroll mousewheel wheel', function(e) {
-			console.log('hi')
 			var sectionScroll = allSection.eq(activeIndex)[0];
 			if (!sectionScroll.hasAttribute('data-scroll')) {
 				e.preventDefault()
