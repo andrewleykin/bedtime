@@ -600,33 +600,36 @@
 			}
 		}
 		
-		var initChange = function (event) {
-			if (event.deltaY > 0 && activeIndex != allSection.length - 1) {
+		var initChange = function (delta) {
+			if (delta > 0 && activeIndex != allSection.length - 1) {
 				activeIndex++;
 			} 
-			if (event.deltaY < 0 && activeIndex != 0) {
+			if (delta < 0 && activeIndex != 0) {
 				activeIndex--;
 			}
 			changePos(activeIndex);
 		}
+
+		// mainParent.bind('mousewheel DOMMouseScroll', function(e) {})
 		
-		document.onwheel = function (e) {
+		mainParent.bind('mousewheel DOMMouseScroll', function(e) {
 			var sectionScroll = allSection.eq(activeIndex)[0];
 			if (!sectionScroll.hasAttribute('data-scroll')) {
 				e.preventDefault()
 			}
 			if (flag) {
+				var delta = e.originalEvent.deltaY
 				if ($(sectionScroll).find('.container').height() > window.innerHeight) {
-					if (event.deltaY > 0 && sectionScroll.scrollTop === sectionScroll.scrollHeight - sectionScroll.clientHeight) initChange(e)
-					if (event.deltaY < 0 && sectionScroll.scrollTop === 0) initChange(e)
+					if (delta > 0 && sectionScroll.scrollTop === sectionScroll.scrollHeight - sectionScroll.clientHeight) initChange(delta)
+					if (delta < 0 && sectionScroll.scrollTop === 0) initChange(delta)
 				} else {
 					e.preventDefault()
-					initChange(e)
+					initChange(delta)
 				}
 				flag = false;
 				changeFlag()
 			}
-		}
+		})
 		
 		$('.menu__link').click(function(e) {
 			e.preventDefault();
