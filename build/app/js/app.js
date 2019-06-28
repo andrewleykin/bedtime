@@ -584,8 +584,14 @@
 		}
 		
 		var changePos = function (index) {
-			var posTop = allSection.eq(index).position().top
-			mainParent.css('margin-top', '-' +posTop+ 'px');
+			var posTop = allSection.eq(index).position().top + 'px'
+			mainParent.css({
+				'-webkit-transform' : 'translateY(-' + posTop + ')',
+				'-moz-transform'    : 'translateY(-' + posTop + ')',
+				'-ms-transform'     : 'translateY(-' + posTop + ')',
+				'-o-transform'      : 'translateY(-' + posTop + ')',
+				'transform'         : 'translateY(-' + posTop + ')'
+			})
 
 			if (index > 0) {
 				if (!mainParent.hasClass('non-first')) mainParent.addClass('non-first');
