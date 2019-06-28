@@ -541,8 +541,14 @@
 
 // слайдер в отзывах
 (function(){
+	var fadeSlick = true;
+	var ua = window.navigator.userAgent;
+	var msie = ua.indexOf("MSIE ");
+	if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+		fadeSlick = false
+	}
 	$('.review__content').slick({
-		fade: true,
+		fade: fadeSlick,
 		arrows: false,
 		asNavFor: '.review__users',
 		cssEase: 'linear',
