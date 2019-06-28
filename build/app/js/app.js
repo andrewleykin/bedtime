@@ -543,18 +543,20 @@
 (function(){
 	var fadeSlick = true;
 	var adaptiveSlick = true;
+	var autoplaySlick = true;
 	var ua = window.navigator.userAgent;
 	var msie = ua.indexOf("MSIE ");
 	if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
 		fadeSlick = false
 		adaptiveSlick = false
+		autoplaySlick = false
 	}
 	$('.review__content').slick({
 		fade: fadeSlick,
 		arrows: false,
 		asNavFor: '.review__users',
 		cssEase: 'linear',
-		autoplay: true,
+		autoplay: autoplaySlick,
 		autoplaySpeed: 7000,
 		adaptiveHeight: adaptiveSlick
 	});
