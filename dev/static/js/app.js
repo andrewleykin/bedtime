@@ -585,7 +585,8 @@
 		
 		var changePos = function (index) {
 			var posTop = allSection.eq(index).position().top + 'px'
-			mainParent[0].style.transform = 'translateY(-' + posTop + ')'
+			var translateValue = 'translateY(-' + posTop + ')'
+			mainParent[0].style.transform = translateValue
 			// mainParent.css({
 			// 	'-webkit-transform' : 'translateY(-' + posTop + ')',
 			// 	'-moz-transform'    : 'translateY(-' + posTop + ')',
