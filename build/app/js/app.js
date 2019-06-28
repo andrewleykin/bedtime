@@ -312,7 +312,7 @@
 				continue;
 			}
 		}
-		htmlCols+= `<div class="aep__col">${col1}</div><div class="aep__col">${col2}</div><div class="aep__col">${col3}</div>`;
+		htmlCols+= '<div class="aep__col">'+col1+'</div><div class="aep__col">'+col2+'</div><div class="aep__col">'+col3+'</div>`';
 		list.html(htmlCols);
 	} else {
 		$('.aep__list').slick({
