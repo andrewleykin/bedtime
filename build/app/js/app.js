@@ -546,11 +546,11 @@
 	var autoplaySlick = true;
 	var ua = window.navigator.userAgent;
 	var msie = ua.indexOf("MSIE ");
-	// if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
-	// 	fadeSlick = false
-	// 	adaptiveSlick = false
-	// 	autoplaySlick = false
-	// }
+	if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+		fadeSlick = false
+		// adaptiveSlick = false
+		autoplaySlick = false
+	}
 	$('.review__content').slick({
 		fade: fadeSlick,
 		arrows: false,

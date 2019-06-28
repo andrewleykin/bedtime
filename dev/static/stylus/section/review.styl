@@ -9,20 +9,20 @@
 .review__wrap
   width 100%
   max-width 730px
-  height auto
-  min-height 400px
+  height 400px
   margin 0 auto
   position relative
   display flex
   align-items center
   justify-content center
+  flex-direction column
   text-align center
   padding 0 100px
   z-index 1
   @media (max-width breakpoint-md)
     max-width 100%
     display block
-    min-height auto
+    height auto
     padding 0 90px
   @media (max-width breakpoint-sm)
     padding 0 30px
@@ -93,13 +93,6 @@
 
 .review__item
   height 100%
-
-.review__item-wrap
-  height 100%
-  display flex
-  justify-content center
-  align-items center
-  flex-direction column
 
 .review__users
   position absolute
