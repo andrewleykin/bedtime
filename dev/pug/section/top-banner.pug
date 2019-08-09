@@ -1,9 +1,6 @@
 section.section.top-banner(id=content.topBanner.id)
-  .top-banner__bg.hide(style="background-image: " + content.topBanner.bg.src)
   .container
     .top-banner__wrap
-      each item in content.topBanner.clouds
-        .top-banner__bg-clouds(style="background-image: " + item["src"] class=item["class"])
       .top-banner__info
         h1.top-banner__title.tbt.hide
           span.tbt__title= content.topBanner.title
