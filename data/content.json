@@ -27,7 +27,7 @@
     }
   },
   "topBanner": {
-    "id": "top-banner",
+    "id": "topHero",
     "bg": {
       "src": "url(app/img/content/top-banner/bg.jpg)",
       "alt": "top bannner bg"

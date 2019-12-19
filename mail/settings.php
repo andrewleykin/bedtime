@@ -1,8 +1,8 @@
 <?php
 
-$myUsername = 'andrewleykin@mail.ru'; // логин
-$myUserpassword = 'katerina1328'; // пароль
+$myUsername = ''; // логин
+$myUserpassword = ''; // пароль
 
-$myAddress = 'andrewleykin@mail.ru'; // кому будет уходить письмо
+$myAddress = ''; // кому будет уходить письмо
 
 ?>
